@@ -2,6 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.scss";
 
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -11,15 +13,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
+      <main>
         <h1>Welcome to our Exam Project - 4th Semester</h1>
 
-        <p className={styles.description}>
-          Get started by editing <code className={styles.code}>pages/index.js</code>
+        <h3>
+          Go to <Link href="/productList">product list</Link>
+        </h3>
+        <p>
+          Get started by editing <code>pages/index.js</code>
         </p>
       </main>
 
-      <footer className={styles.footer}>
+      <footer>
         <a href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app" target="_blank" rel="noopener noreferrer">
           Powered by{" "}
           <span className={styles.logo}>
