@@ -14,3 +14,58 @@
   --accent-blue: #63ccff;
   --accent-red: #d32f2f;
 }
+
+html {
+  font-family: var(--body-font);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+// Product Tile
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  row-gap: 2rem;
+}
+
+.product-tile {
+  max-width: 200px;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+  }
+
+  p,
+  h2 {
+    margin: 0.5rem 0 0 0;
+  }
+
+  h2 {
+    color: var(--blue-dark);
+  }
+
+  .price span {
+    font-weight: 700;
+  }
+}
+
+.flight-score {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+
+  p {
+    font-size: 1.5rem;
+    background-color: var(--blue-dark);
+    color: var(--white);
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    margin: 0;
+  }
+}
