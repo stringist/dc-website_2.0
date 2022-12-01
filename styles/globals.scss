@@ -24,6 +24,12 @@ a {
   color: inherit;
 }
 
+select {
+  background: none;
+  border: solid 1px var(--blue-light);
+  padding: 0.25rem;
+}
+
 // Product Tile
 .product-grid {
   display: grid;
@@ -69,5 +75,111 @@ a {
     text-align: center;
     line-height: 2rem;
     margin: 0;
+  }
+}
+
+// Product Page
+.product-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  margin: 5rem;
+
+  img {
+    max-width: 100%;
+  }
+
+  h2 {
+    color: var(--blue-dark);
+  }
+
+  .product-flight-score {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    color: var(--blue-dark);
+
+    :last-child {
+      border: none;
+    }
+  }
+
+  .score {
+    border-right: solid 1px var(--blue-dark);
+    padding: 0 0.5rem;
+    min-width: 4rem;
+
+    p {
+      margin: 0.5rem;
+      text-align: center;
+    }
+
+    .number {
+      font-size: 1.5rem;
+    }
+  }
+
+  .price {
+    color: var(--blue-light);
+    font-size: 1.5rem;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .only-stock {
+    font-size: 0.8rem;
+    color: var(--accent-red);
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    label {
+      font-weight: 700;
+    }
+  }
+
+  .input-grid {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .quant-input {
+    position: relative;
+    width: fit-content;
+
+    input {
+      height: 1.5rem;
+      padding: 0 1.75rem;
+      width: 4rem;
+      border: solid 1px var(--blue-light);
+      text-align: center;
+    }
+
+    div {
+      background-color: var(--blue-ligher);
+      color: var(--white);
+      position: absolute;
+      top: 0;
+      width: 1.5rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 300;
+      cursor: pointer;
+    }
+
+    .minus {
+      left: 0;
+    }
+    .plus {
+      right: 0;
+    }
   }
 }
