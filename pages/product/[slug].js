@@ -1,13 +1,15 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
-import React from "react";
-import { useState } from "react";
-import data from "../data";
+import React, { useContext } from "react";
+import { Store } from "../../utilities/Store";
+import data from "../../utilities/data";
 import Score from "../../components/product-page/Score";
 import Quantity from "../../components/product-page/Quantity";
 
 export default function ProductPage() {
-  const [quant, setQuant] = useState(1);
+  const [quant, setQuant] = [];
+
+  const { state, dispatch } = useContext(Store);
 
   const { query } = useRouter();
   const { slug } = query;
@@ -16,6 +18,16 @@ export default function ProductPage() {
   if (!product) {
     return <p> product not found</p>;
   }
+
+  const addToCartHandler = () => {
+    const itemExists = state.cart.cartItems.find((item) => item.slug === product.slug);
+    const quantity = itemExists ? itemExists.quantity + 1 : 1;
+
+    dispatch({ type: "CART_ADD_ITEM", payload: { ...product, quantity } });
+
+    console.log(state.cart.cartItems.length);
+  };
+
   return (
     <div className="product-page">
       <div className="left">
@@ -51,7 +63,7 @@ export default function ProductPage() {
           <Quantity name="Quantity" quant={quant} setQuant={setQuant} />
         </div>
 
-        <button>Add to basket</button>
+        <button onClick={addToCartHandler}>Add to basket</button>
       </div>
     </div>
   );

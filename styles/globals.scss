@@ -30,6 +30,25 @@ select {
   padding: 0.25rem;
 }
 
+// Category Page
+
+.category-page {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  > * {
+    padding: 1rem 2rem;
+  }
+
+  .filters {
+    border-right: solid 1px var(--blue-dark);
+  }
+
+  .products {
+    margin-left: 3rem;
+  }
+}
+
 // Product Tile
 .product-grid {
   display: grid;
@@ -40,17 +59,19 @@ select {
 .product-tile {
   max-width: 200px;
   text-align: center;
+  padding: 1rem;
+  cursor: pointer;
 
   img {
     max-width: 100%;
   }
 
   p,
-  h2 {
+  h3 {
     margin: 0.5rem 0 0 0;
   }
 
-  h2 {
+  h3 {
     color: var(--blue-dark);
   }
 
