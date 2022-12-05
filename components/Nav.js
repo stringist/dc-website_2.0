@@ -1,13 +1,12 @@
 import Link from "next/link";
 import SearchBar from "./searchBar";
-import styles from "../styles/nav.module.scss";
+import styles from "../styles/Nav.module.scss";
 
 export default function Nav() {
   return (
-    <nav>
-      <div className="left-wrapper">
-        {" "}
-        <div className="logo-container"></div>
+    <nav className={styles.nav}>
+      <div className={styles.leftWrapper}>
+        <div className={styles.logoContainer}></div>
         <ul>
           <li>
             <Link href="../pages/productList">
@@ -32,7 +31,7 @@ export default function Nav() {
         </ul>
       </div>
 
-      <div className="right-wrapper">
+      <div className={styles.rightWrapper}>
         <SearchBar />
       </div>
     </nav>

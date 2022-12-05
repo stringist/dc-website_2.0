@@ -1,3 +1,37 @@
-nav {
-  background-color: blue;
+@use "./colors.scss" as color;
+
+.nav {
+  width: 100%;
+  color: color.$off-white;
+  background-color: color.$blue-dark;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 4vw;
+  //   position: fixed;
+  height: 3.5rem;
+  //   margin-bottom: 10vw;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+  }
+
+  a {
+    color: color.$off-white;
+    text-decoration: none;
+  }
+}
+
+.leftWrapper,
+.rightWrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+.logoContainer {
+  width: 6rem;
+  height: 6rem;
+  position: relative;
+  background-image: url("./../public/images/DC_logo_new.svg");
 }
