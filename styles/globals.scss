@@ -29,6 +29,7 @@ $blue-grey: #cfd8dc;
 $blue-grey-dark: #9ea7aa;
 $accent-blue: #63ccff;
 $accent-red: #d32f2f;
+$space-after: 6rem;
 
 @font-face {
   font-family: "titanium";
@@ -44,6 +45,26 @@ $accent-red: #d32f2f;
 
 html {
   font-family: var(--body-font);
+}
+
+main {
+  background-color: $white;
+}
+
+section {
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: $space-after;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $blue-dark;
+  margin-bottom: 1rem;
 }
 
 a {
@@ -232,6 +253,8 @@ select {
   }
 }
 
+// landing page
+
 .heroWrapper {
   height: 50vh;
   width: 100%;
@@ -256,8 +279,24 @@ select {
   padding: 2rem;
   margin-left: 60vw;
   margin-top: -5%;
+  h2 {
+    color: $off-white;
+  }
 }
 
-// .landing {
-//   background-image: url("../public/images/hero_2.jpg");
-// }
+section h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.category-group {
+  display: flex;
+}
+
+.category-card {
+  // position: relative;
+  max-width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
