@@ -19,14 +19,14 @@ export default function Nav() {
             </Link>
           </li>
           <li>
-            <Link href="../pages/productList">
+            <Link href="/productList">
               <a>Accesories</a>
             </Link>
           </li>
           <li>
-            <Link href="../pages/about">
-              <a>About</a>
-            </Link>
+            <p>
+              <Link href="/about">About</Link>
+            </p>
           </li>
         </ul>
       </div>
