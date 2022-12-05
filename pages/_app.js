@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "./../styles/globals.scss";
 import Layout from "../components/layout";
 
@@ -6,6 +7,17 @@ function MyApp({ Component, pageProps }) {
     <Layout>
       <Component {...pageProps} />;
     </Layout>
+=======
+import "../styles/globals.scss";
+import { StoreProvider } from "../utilities/Store";
+import React, { useContext } from "react";
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <StoreProvider>
+      <Component {...pageProps} />
+    </StoreProvider>
+>>>>>>> about
   );
 }
 
