@@ -1,18 +1,21 @@
 import Head from "next/head";
 import Image from "next/image";
+import Hero from "../components/hero";
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
 
 export default function Home({ products }) {
   console.log(products);
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Disc Connection</title>
         <meta name="description" content="Salg af golf discs og udstyr til disc golf ultimate freestyle DDC guts" />
         <link rel="icon" href="/DC_logo_new.ico" />
       </Head>
-
+      <header>
+        <Hero title="Disc Connection" />
+      </header>
       <main>
         <h1>Welcome to our Exam Project - 4th Semester</h1>
 
@@ -20,7 +23,7 @@ export default function Home({ products }) {
           Go to <Link href="/productList">product list</Link>
         </h3>
       </main>
-    </div>
+    </>
   );
 }
 
