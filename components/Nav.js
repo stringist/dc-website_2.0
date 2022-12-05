@@ -6,25 +6,27 @@ export default function Nav() {
   return (
     <nav className={styles.nav}>
       <div className={styles.leftWrapper}>
-        <div className={styles.logoContainer}></div>
+        <Link href="/">
+          <div className={styles.logoContainer}></div>
+        </Link>
         <ul>
           <li>
-            <Link href="../pages/productList">
+            <Link href="/productList">
               <a>Discs</a>
             </Link>
           </li>
           <li>
-            <Link href="../pages/productList">
+            <Link href="/productList">
               <a>Bags</a>
             </Link>
           </li>
           <li>
-            <Link href="../pages/productList">
+            <Link href="/productList">
               <a>Accesories</a>
             </Link>
           </li>
           <li>
-            <Link href="../pages/about">
+            <Link href="/about">
               <a>About</a>
             </Link>
           </li>
