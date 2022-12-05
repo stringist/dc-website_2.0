@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import React, { useContext } from "react";
 import { Store } from "../../utilities/Store";
-import data from "../../utilities/data";
+
 import Score from "../../components/product-page/Score";
 import Quantity from "../../components/product-page/Quantity";
 
@@ -12,8 +12,8 @@ export default function ProductPage() {
   const { state, dispatch } = useContext(Store);
 
   const { query } = useRouter();
-  const { slug } = query;
-  const product = data.products.find((x) => x.slug === slug);
+  const { id } = query;
+  const product = products.find((x) => x._id === _id);
 
   if (!product) {
     return <p> product not found</p>;
@@ -31,7 +31,8 @@ export default function ProductPage() {
   return (
     <div className="product-page">
       <div className="left">
-        <Image src={product.image} alt={product.name} width={200} height={200} layout="responsive"></Image>
+        {console.log(product.image.length)}
+        <Image src={product.image[0]} alt={product.name} width={200} height={200} layout="responsive"></Image>
         <div className="product-flight-score">
           <Score name="Speed" score={product.speed}></Score>
           <Score name="Glide" score={product.glide}></Score>
