@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.scss";
 import Link from "next/link";
 
 export default function Home({ products }) {
+  console.log(products);
   return (
     <div className={styles.container}>
       <Head>
@@ -19,19 +20,7 @@ export default function Home({ products }) {
         <h3>
           Go to <Link href="/productList">product list</Link>
         </h3>
-        <p>
-          Get started by editing <code>pages/index.js</code>
-        </p>
       </main>
-
-      <footer>
-        <a href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app" target="_blank" rel="noopener noreferrer">
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   );
 }
@@ -41,8 +30,10 @@ export async function getStaticProps() {
     method: "GET",
     headers: { "cache-control": "no-cache", "x-apikey": "a7a3d1237d76a4c6bd5943e4230d2b86f526e" },
   });
+  const data = await req.json();
 
-  return {
-    props: { products: await req.json() },
-  };
+  if (data)
+    return {
+      props: { products: data },
+    };
 }

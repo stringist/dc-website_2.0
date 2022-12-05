@@ -1,6 +1,6 @@
 import Link from "next/link";
 // import Category from "../components/Category";
-import ProductItem from "../components/product-tile/ProductItem";
+import ProductTile from "../components/product-tile/ProductTile";
 // import data from "../utilities/data";
 import Breadcrumbs from "../components/Breadcrumbs";
 
@@ -22,7 +22,7 @@ export default function productList({ products }) {
         <h2>All Products</h2>
         <div className="product-grid">
           {products.map((product) => (
-            <ProductItem product={product} key={product._id} />
+            <ProductTile product={product} key={product._id} />
           ))}
         </div>
       </div>
@@ -30,13 +30,13 @@ export default function productList({ products }) {
   );
 }
 
-// export async function getStaticProps() {
-//   const req = await fetch("https://cocktails-240e.restdb.io/rest/disc-connection", {
-//     method: "GET",
-//     headers: { "cache-control": "no-cache", "x-apikey": "a7a3d1237d76a4c6bd5943e4230d2b86f526e" },
-//   });
+export async function getStaticProps() {
+  const req = await fetch("https://cocktails-240e.restdb.io/rest/disc-connection", {
+    method: "GET",
+    headers: { "cache-control": "no-cache", "x-apikey": "a7a3d1237d76a4c6bd5943e4230d2b86f526e" },
+  });
 
-//   return {
-//     props: { products: await req.json() },
-//   };
-// }
+  return {
+    props: { products: await req.json() },
+  };
+}
