@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["cocktails-240e.restdb.io"],
+    domains: ["kea.paufiaschi.com"],
   },
 };
 

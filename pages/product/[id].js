@@ -30,7 +30,7 @@ export default function ProductPage({ product }) {
     <div className="product-page">
       <div className="left">
         {console.log(product.image.length, `https://cocktails-240e.restdb.io/media/${product.image[0]}`)}
-        <Image src={`https://cocktails-240e.restdb.io/media/${product.image[0]}?key=a7a3d1237d76a4c6bd5943e4230d2b86f526e`} alt={product.name} width={200} height={200} layout="responsive"></Image>
+        <Image src={product.img} alt={product.name} width={200} height={200} layout="responsive"></Image>
         <div className="product-flight-score">
           <Score name="Speed" score={product.speed}></Score>
           <Score name="Glide" score={product.glide}></Score>

@@ -8,7 +8,7 @@ export default function ProductItem({ product }) {
   return (
     <Link href={`/product/${product._id}`}>
       <div className="product-tile">
-        <Image src={`https://cocktails-240e.restdb.io/media/${product.image[0]}`} alt={product.name} width={200} height={200} layout="responsive"></Image>
+        <Image src={product.img} alt={product.name} width={200} height={200} layout="responsive"></Image>
 
         <div className="flight-score">
           <FlightScore kind="Speed" score={product.speed} />
