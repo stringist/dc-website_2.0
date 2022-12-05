@@ -1,5 +1,5 @@
 import "./../styles/globals.scss";
-import Layout from "../components/layout";
+import Layout from "../components/Layout";
 import { StoreProvider } from "../utilities/Store";
 import React, { useContext } from "react";
 
