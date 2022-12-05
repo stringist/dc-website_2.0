@@ -30,6 +30,11 @@ $blue-grey-dark: #9ea7aa;
 $accent-blue: #63ccff;
 $accent-red: #d32f2f;
 
+@font-face {
+  font-family: "titanium";
+  src: url("../public/fonts/TitaniumMotorsStd-Oblique.otf") format("opentype");
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -226,3 +231,33 @@ select {
     }
   }
 }
+
+.heroWrapper {
+  height: 50vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-content: center;
+  h1 {
+    font-family: $accent-font;
+    color: $off-white;
+    font-size: 7vw;
+    text-align: center;
+  }
+}
+
+.schedule {
+  width: 30vw;
+  min-height: 10rem;
+  background-color: $blue;
+  color: $off-white;
+  position: relative;
+  padding: 2rem;
+  margin-left: 60vw;
+  margin-top: -5%;
+}
+
+// .landing {
+//   background-image: url("../public/images/hero_2.jpg");
+// }

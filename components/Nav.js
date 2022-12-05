@@ -1,5 +1,5 @@
 import Link from "next/link";
-import SearchBar from "./searchBar";
+import SearchBar from "./SearchBar";
 import styles from "../styles/Nav.module.scss";
 
 export default function Nav() {
