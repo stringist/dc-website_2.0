@@ -80,7 +80,7 @@ export default function Home({ products }) {
         </section>
       </main>
     </>
-  );
+  )
 }
 
 export async function getStaticProps() {
