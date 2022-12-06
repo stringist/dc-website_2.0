@@ -5,17 +5,22 @@ import Image from "next/image";
 import FlightScore from "./FlightScore";
 
 export default function ProductItem({ product }) {
+  let productImages = [];
+  product.img.includes(",") ? (productImages = product.img.split(",")) : (productImages = productImages.concat(product.img));
+
   return (
     <Link href={`/product/${product._id}`}>
       <div className="product-tile">
-        <Image src={product.img} alt={product.name} width={200} height={200} layout="responsive"></Image>
+        <Image src={productImages[0]} alt={product.name} width={200} height={200} layout="responsive" placeholder="blur" blurDataURL="/placeholder.png"></Image>
 
-        <div className="flight-score">
-          <FlightScore kind="Speed" score={product.speed} />
-          <FlightScore kind="Glide" score={product.glide} />
-          <FlightScore kind="Turn" score={product.turn} />
-          <FlightScore kind="Fade" score={product.fade} />
-        </div>
+        {product.speed !== 0 ? (
+          <div className="flight-score">
+            <FlightScore kind="Speed" score={product.speed} />
+            <FlightScore kind="Glide" score={product.glide} />
+            <FlightScore kind="Turn" score={product.turn} />
+            <FlightScore kind="Fade" score={product.fade} />
+          </div>
+        ) : null}
 
         <p>
           {product.brand} - {product.brand}
