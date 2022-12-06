@@ -7,7 +7,6 @@ export default function ProductPage({ products }) {
 
   return (
     <>
-      <h1>hi {category}</h1>
       <Products category={category} products={products}></Products>
     </>
   );

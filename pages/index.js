@@ -26,7 +26,7 @@ export default function Home({ products }) {
             <ProductTile></ProductTile>
             <ProductTile></ProductTile> */}
           </div>
-          <Link href="/productList/discs">
+          <Link href="/productList/Discs">
             <a className="arrow">View all discs</a>
           </Link>
         </section>
