@@ -1,4 +1,44 @@
-.footer {width: 100%;
-background-image: url('../public/images/footer_bg_large.png');
-background-size: cover;
-min-height: 12rem;}
+.footer {
+  width: 100%;
+  background-image: url("../public/images/footer_bg_large.png");
+  background-size: cover;
+  min-height: 12rem;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: auto;
+}
+
+.soMe {
+  width: 25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fb,
+.ig,
+.yt {
+  display: block;
+  height: 60px;
+  width: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.fb {
+  background-image: url("../public/images/icon_fb.svg");
+}
+
+.ig {
+  background-image: url("../public/images/icon_ig.svg");
+}
+
+.yt {
+  background-image: url("../public/images/icon_yt.svg");
+}
