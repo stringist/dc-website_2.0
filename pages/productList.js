@@ -1,5 +1,4 @@
 import Link from "next/link";
-// import Category from "../components/Category";
 import ProductTile from "../components/product-tile/ProductTile";
 // import data from "../utilities/data";
 import Breadcrumbs from "../components/Breadcrumbs";
