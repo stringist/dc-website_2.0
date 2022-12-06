@@ -1,8 +1,9 @@
-import AboutProfile from "../components/aboutProfile";
+import AboutProfile from "../components/about/AboutProfile";
 import Head from "next/head";
 import soeren from "../public/images/soeren.png";
 import sinus from "../public/images/sinus.png";
-import ClubLinks from "../components/clublinks";
+import ClubLinks from "../components/about/ClubLinks";
+import FindUs from "../components/about/Findus";
 import Hero from "../components/hero";
 export default function About() {
   return (
@@ -22,7 +23,8 @@ export default function About() {
           "Vi giver 10% online-rabat (og fysisk i Proshoppen i Tune) på ikke-nedsatte discs og udstyr med en pris på mellem 60 kr. og 2.000 kr. - til medlemmer af KFK Disc Golf, Tune IF Disc Golf, Ejby IF Disc Golf, Eggeslevmagle Discgolf, Helsingør Disc Golf Venner, Næstved Disc Golf Klub og MDK (Mølleparken DiscGolf Klub) , og det kan derfor meget nemt blive en god investering at melde sig ind i en af disse klubber. Læs mere om klubberne på deres respektive Facebook-sider:"
         }
       />
-      <ClubLinks></ClubLinks>
+      <ClubLinks />
+      <FindUs />
     </>
   );
 }
