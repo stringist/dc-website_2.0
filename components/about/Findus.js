@@ -2,7 +2,7 @@ import GoogleMaps from "./GoogleMaps";
 export default function FindUs() {
   return (
     <div>
-      <h1>Find Us</h1>
+      <h2>Find Us</h2>
       <p>
         Vi er som udgangspunkt til stede med vores &apos;mobile butik&apos; i
         Valbyparken 3-4 dage om ugen, herunder de fleste weekender (når vi ikke

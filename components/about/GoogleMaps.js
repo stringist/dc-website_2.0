@@ -4,7 +4,6 @@ export default function GoogleMaps({ ...props }) {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyAwdAIdaPnI9Pjf76sMMGmcOcVhOxoLsjs",
   });
-  console.log(props);
 
   if (!isLoaded) return <div>Loading...</div>;
   return (

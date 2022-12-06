@@ -5,6 +5,7 @@ import sinus from "../public/images/sinus.png";
 import ClubLinks from "../components/about/ClubLinks";
 import FindUs from "../components/about/Findus";
 import Hero from "../components/hero";
+import GetInTouch from "../components/about/GetInTouch";
 export default function About() {
   return (
     <>
@@ -25,6 +26,7 @@ export default function About() {
       />
       <ClubLinks />
       <FindUs />
+      <GetInTouch />
     </>
   );
 }
