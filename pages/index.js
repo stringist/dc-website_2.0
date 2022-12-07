@@ -17,7 +17,7 @@ export default function Home({ products }) {
       <header>
         <Hero title="Disc Connection" />
       </header>
-      <main>
+      <main className={styles.main}>
         <section id="featured">
           <h2>Featured</h2>
           <div className="featured-carousel">
