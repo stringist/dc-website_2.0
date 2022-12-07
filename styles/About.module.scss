@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10vh;
 }
 .profile {
   display: flex;
@@ -35,4 +36,18 @@
 .mapContainer {
   width: 25%;
   height: 25vh;
+}
+
+.clubLinks_Wrapper {
+  display: flex;
+  margin: 5vh 0 5vh 0;
+}
+
+.section1_clubLinks {
+  display: flex;
+  flex-direction: column;
+}
+.section2_clubLinks {
+  display: flex;
+  flex-direction: column;
 }
