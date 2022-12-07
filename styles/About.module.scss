@@ -1,10 +1,10 @@
 @use "./colors.scss" as color;
 
 .margin {
-  margin: 0 10vw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10vh;
 }
 .profile {
   display: flex;
@@ -27,12 +27,33 @@
   padding-right: 100px;
 }
 
-.map-container {
+.mapContainer {
   width: 25%;
   height: 25vh;
 }
+// Associate club links
 
-.mapContainer {
+.clubLinks_Wrapper {
+  display: flex;
+  margin: 5vh 0 5vh 0;
+}
+
+.section1_clubLinks {
+  display: flex;
+  flex-direction: column;
+}
+.section2_clubLinks {
+  display: flex;
+  flex-direction: column;
+}
+
+// Find us
+.find_us {
+  background-image: url(../public/images/aboutFindus.png);
+  background-size: cover;
+}
+// Google Maps
+.map-container {
   width: 25%;
   height: 25vh;
 }

@@ -3,8 +3,12 @@ import styles from "../../styles/About.module.scss";
 export default function AboutProfile({ ...props }) {
   console.log(props.name);
   return (
-    <div
-      style={props.name === "soeren" ? { flexDirection: "row" } : { flexDirection: "row-reverse" }}
+    <section
+      style={
+        props.name === "soeren"
+          ? { flexDirection: "row" }
+          : { flexDirection: "row-reverse" }
+      }
       className={styles.profile}
     >
       <div>
@@ -13,7 +17,7 @@ export default function AboutProfile({ ...props }) {
       <p className={props.name === "soeren" ? styles.soeren_p : styles.sinus_p}>
         {props.text}
       </p>
-    </div>
+    </section>
   );
 }
 {

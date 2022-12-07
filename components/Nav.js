@@ -11,17 +11,17 @@ export default function Nav() {
         </Link>
         <ul>
           <li>
-            <Link href="/productList">
+            <Link href="/productList/Discs">
               <a>Discs</a>
             </Link>
           </li>
           <li>
-            <Link href="/productList">
+            <Link href="/productList/Bags">
               <a>Bags</a>
             </Link>
           </li>
           <li>
-            <Link href="/productList">
+            <Link href="/productList/Accessories">
               <a>Accesories</a>
             </Link>
           </li>
