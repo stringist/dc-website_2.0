@@ -33,7 +33,7 @@ export default function Home({ products }) {
         </section>
         <HomeAbout />
         <ShopCategory />
-        <section id="linking-chains"></section>
+        {/* <section id="linking-chains"></section> */}
         <section id="brands">
           <h2>Brands</h2>
         </section>
