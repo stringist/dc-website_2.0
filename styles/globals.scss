@@ -152,6 +152,9 @@ select {
   .filters {
     border-right: solid 1px var(--blue-dark);
   }
+  .filters {
+    margin-top: 10rem;
+  }
 
   .products {
     margin-left: 3rem;
@@ -172,7 +175,7 @@ select {
   cursor: pointer;
 
   img {
-    max-width: 100%;
+    object-fit: cover;
   }
 
   p,
@@ -214,6 +217,21 @@ select {
   grid-template-columns: 1fr 1fr;
   gap: 5rem;
   margin: 5rem;
+
+  .left {
+    position: relative;
+  }
+
+  .arrow-left {
+    position: absolute;
+    left: -2rem;
+    top: 43%;
+  }
+  .arrow-rigth {
+    position: absolute;
+    right: -2rem;
+    top: 43%;
+  }
 
   img {
     max-width: 100%;

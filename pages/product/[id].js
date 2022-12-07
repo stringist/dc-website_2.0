@@ -5,6 +5,7 @@ import { Store } from "../../utilities/Store";
 
 import Score from "../../components/product-page/Score";
 import Quantity from "../../components/product-page/Quantity";
+import ProductItem from "../../components/product-tile/ProductTile";
 
 export default function ProductPage({ product }) {
   const { state, dispatch } = useContext(Store);
@@ -23,20 +24,48 @@ export default function ProductPage({ product }) {
 
     dispatch({ type: "CART_ADD_ITEM", payload: { ...product, quantity } });
 
-    console.log(state.cart.cartItems.length);
+    // console.log(state.cart.cartItems.length);
   };
+
+  let productImages = [];
+  product.img.includes(",") ? (productImages = product.img.split(",")) : (productImages = productImages.concat(product.img));
+  let imageSrc = productImages[0];
+
+  function changeSrcLeft() {
+    console.log("arrow clicked");
+    imageSrc === productImages[0] && productImages[2] ? (imageSrc = productImages[2]) : null;
+  }
+  function changeSrcRight() {
+    console.log("arrow clicked");
+
+    imageSrc === productImages[0] && productImages[1] ? (imageSrc = productImages[1]) : null;
+    console.log(imageSrc);
+  }
 
   return (
     <div className="product-page">
       <div className="left">
-        {console.log(product.image.length, `https://cocktails-240e.restdb.io/media/${product.image[0]}`)}
-        <Image src={product.img} alt={product.name} width={200} height={200} layout="responsive"></Image>
-        <div className="product-flight-score">
-          <Score name="Speed" score={product.speed}></Score>
-          <Score name="Glide" score={product.glide}></Score>
-          <Score name="Turn" score={product.turn}></Score>
-          <Score name="Fade" score={product.fade}></Score>
-        </div>
+        <Image src={imageSrc} alt={product.name} width={200} height={200} layout="responsive" placeholder="blur" blurDataURL="/placeholder.png"></Image>
+
+        {productImages[1] ? (
+          <>
+            <div className="arrow-left" onClick={changeSrcLeft}>
+              &#8592;
+            </div>
+            <div className="arrow-rigth" onClick={changeSrcRight}>
+              &#8594;
+            </div>
+          </>
+        ) : null}
+
+        {product.speed !== 0 ? (
+          <div className="product-flight-score">
+            <Score name="Speed" score={product.speed}></Score>
+            <Score name="Glide" score={product.glide}></Score>
+            <Score name="Turn" score={product.turn}></Score>
+            <Score name="Fade" score={product.fade}></Score>
+          </div>
+        ) : null}
       </div>
 
       <div className="right">
