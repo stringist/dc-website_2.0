@@ -65,7 +65,9 @@ h5 {
   line-height: 1.25;
 }
 .fullWidth {
-  margin: 0;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
 }
 // h1 {
 //   margin-top: 0;
@@ -108,11 +110,11 @@ main {
   background-color: $white;
 }
 
-/* section {
+section {
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: $space-after;
-} */
+}
 
 h1,
 h2,
@@ -429,16 +431,4 @@ button:focus-within {
 section h2 {
   text-align: center;
   font-size: 3rem;
-}
-
-.category-group {
-  display: flex;
-}
-
-.category-card {
-  // position: relative;
-  max-width: 30vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
