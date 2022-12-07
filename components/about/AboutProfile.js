@@ -11,13 +11,21 @@ export default function AboutProfile({ ...props }) {
       }
       className={styles.profile}
     >
-      <div className= {props.name === "soeren"
-    ? {styles.soeren_img}
-    : {styles.sinus_img}
-    }>
+      <div>
         <Image src={props.image} alt="black haired person" object-fit="fill" />
       </div>
-      <p>{props.text}</p>
+      <p className={props.name === "soeren" ? styles.soeren_p : styles.sinus_p}>
+        {props.text}
+      </p>
     </div>
   );
+}
+{
+  /* <ul className={`
+${menuStyles.menuNav} 
+${menuOpen ? menuStyles.showMenu : null} 
+${isOpening ? menuStyles.showingMenu : null} 
+${isClosing ? menuStyles.closingMenu : null}`}>
+
+</ul> */
 }
