@@ -5,6 +5,7 @@ import styles from "../styles/Home.module.scss";
 import Link from "next/link";
 import ProductTile from "../components/product-tile/ProductTile";
 import HomeAbout from "../components/home/HomeAbout";
+import ShopCategory from "../components/home/ShopCategory";
 
 export default function Home({ products }) {
   return (
@@ -31,29 +32,7 @@ export default function Home({ products }) {
           </Link>
         </section>
         <HomeAbout />
-        <section id="category">
-          <h2>Shop By Category</h2>
-          <div className="category-group">
-            <div className="category-card">
-              <Image src="/../public/images/placeholder_disc.png" alt="Discs" width="100%" height="300px"></Image>
-              <Link href="/productList">
-                <a>Discs</a>
-              </Link>
-            </div>
-            <div className="category-card">
-              <Image src="/../public/images/backpack.png" alt="Bags" width="100%" height="300px"></Image>
-              <Link href="/productList">
-                <a>Bags</a>
-              </Link>
-            </div>
-            <div className="category-card">
-              <Image src="/../public/images/placeholder_hat.png" alt="Accessories" width="100%" height="300px"></Image>
-              <Link href="/productList">
-                <a>Accessories</a>
-              </Link>
-            </div>
-          </div>
-        </section>
+        <ShopCategory />
         <section id="linking-chains"></section>
         <section id="brands">
           <h2>Brands</h2>
