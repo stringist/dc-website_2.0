@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api";
+import styles from "../../styles/About.module.scss";
 export default function GoogleMaps({ ...props }) {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: "AIzaSyAwdAIdaPnI9Pjf76sMMGmcOcVhOxoLsjs",
@@ -21,7 +22,7 @@ function Map(props) {
   /*   console.log(props.lat);
    */
   return (
-    <GoogleMap zoom={10} center={center} mapContainerClassName="map-container">
+    <GoogleMap zoom={10} center={center} mapContainerClassName={styles.mapContainer}>
       <MarkerF position={center} />
     </GoogleMap>
   );
