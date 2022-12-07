@@ -30,7 +30,7 @@ export default function Home({ products }) {
             <a className="arrow">View all discs</a>
           </Link>
         </section>
-        <section id="about"></section>
+
         <HomeAbout />
         <section id="category">
           <h2>Shop By Category</h2>

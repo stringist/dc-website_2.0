@@ -44,7 +44,7 @@ html {
 body {
   background: white;
   font-family: "Roboto", sans-serif;
-  font-weight: 400;
+  font-weight: 100;
   line-height: 1.25;
   color: rgb(0, 0, 0, 0.87);
 }
@@ -137,6 +137,62 @@ select {
   padding: 0.25rem;
 }
 
+button {
+  transition: all 0.3s;
+}
+button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+  background: $blue;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--header-font);
+  letter-spacing: 1px;
+  color: $off-white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin: 0 1rem 1rem 0;
+  padding: 0.75rem 2rem;
+  box-shadow: 4px 4px 0px $blue-dark;
+}
+
+button:hover {
+  transform: translate(-1px, -1px);
+}
+
+.secondary-button {
+  color: $blue-dark;
+  border: solid 1px $blue-dark;
+  background: $off-white;
+}
+
+.primary-button:hover {
+  /* color: $blue-dark; */
+  background-color: $blue-light;
+  box-shadow: 4px 4px 0px $blue-dark;
+}
+
+.secondary-button:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px var(--blue);
+  background: var(--blue-light);
+  border: none;
+  color: var(--white);
+}
+
+button:focus,
+button:active,
+button:focus-within {
+  outline: 0;
+  border-radius: 4px;
+}
+
 // Category Page
 
 .category-page {
@@ -148,7 +204,7 @@ select {
   }
 
   .filters {
-    border-right: solid 1px var(--blue-dark);
+    border-right: solid 1px $blue-dark;
   }
 
   .products {
@@ -179,7 +235,7 @@ select {
   }
 
   h3 {
-    color: var(--blue-dark);
+    color: $blue-dark;
   }
 
   .price span {
@@ -196,7 +252,7 @@ select {
 
   p {
     font-size: 1.5rem;
-    background-color: var(--blue-dark);
+    background-color: $blue-dark;
     color: var(--white);
     width: 2rem;
     height: 2rem;
@@ -218,14 +274,14 @@ select {
   }
 
   h2 {
-    color: var(--blue-dark);
+    color: $blue-dark;
   }
 
   .product-flight-score {
     display: flex;
     justify-content: center;
     margin: 2rem 0;
-    color: var(--blue-dark);
+    color: $blue-dark;
 
     :last-child {
       border: none;
@@ -233,7 +289,7 @@ select {
   }
 
   .score {
-    border-right: solid 1px var(--blue-dark);
+    border-right: solid 1px $blue-dark;
     padding: 0 0.5rem;
     min-width: 4rem;
 

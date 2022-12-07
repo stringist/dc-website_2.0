@@ -1,15 +1,39 @@
+@use "../styles/colors" as color;
+
 .container {
   padding: 0 2rem;
 }
 
 .main {
   min-height: 100vh;
-  padding: 0 10%;
+  // padding: 0 10%;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.about {
+  color: color.$off-white;
+
+  background-image: url("../public/images/blue_basket_bg.png");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+
+  article {
+    font-size: 1.2rem;
+    width: 80%;
+    padding: 6rem 10%;
+    margin: auto;
+  }
+
+  h2 {
+    color: color.$off-white;
+
+    text-align: left;
+  }
 }
 
 .footer {
