@@ -1,0 +1,25 @@
+@use "./colors.scss" as color;
+
+.margin {
+  margin: 0 10vw;
+}
+.profile {
+  display: flex;
+  margin-bottom: 2vw;
+  width: 100%;
+}
+
+.profile > p {
+  width: 100%;
+}
+.image_wrapper {
+  width: 100%;
+}
+
+.soeren_img {
+  margin-left: 0;
+}
+
+.sinus_img {
+  margin-left: auto;
+}
