@@ -66,14 +66,36 @@ export default function Products({ category, products }) {
   }
 
   function filterList() {
+    let results = categoryList;
     if (brandFilter.length > 0) {
-      results = brandFilter.map((brand) => categoryList.filter((product) => product.brand === brand));
+      // results = brandFilter.map((brand) => categoryList.filter((product) => product.brand === brand));
 
-      console.log("step 1 results", results);
+      var keys = ["brand"];
+      var values = brandFilter;
+
+      var result = results.filter(function (e) {
+        return keys.every(function (a) {
+          return values.includes(e[a]);
+        });
+      });
+      results = result;
+      // console.log("step 1 results", result);
     }
+
+    console.log("resultsssss", results);
+
     if (colorFilter.length > 0) {
-      results = colorFilter.map((color) => results[0].filter((product) => product.color === color));
-      console.log("step 2 results", results);
+      // results = colorFilter.map((color) => results[0].filter((product) => product.color === color));
+      var keys = ["color"];
+      var values = colorFilter;
+
+      var result = results.filter(function (e) {
+        return keys.every(function (a) {
+          return values.includes(e[a]);
+        });
+      });
+      results = result;
+      console.log("step 2 results", result);
     }
   }
 
