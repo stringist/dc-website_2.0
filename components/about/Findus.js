@@ -1,7 +1,8 @@
 import GoogleMaps from "./GoogleMaps";
+import styles from "../../styles/About.module.scss";
 export default function FindUs() {
   return (
-    <div>
+    <section className={styles.find_us}>
       <h2>Find Us</h2>
       <p>
         Vi er som udgangspunkt til stede med vores &apos;mobile butik&apos; i
@@ -27,6 +28,6 @@ export default function FindUs() {
         lat={55.64118851317173}
         lng={12.519380018285755}
       />
-    </div>
+    </section>
   ); /* 55.64118851317173, 12.519380018285755 */
 }

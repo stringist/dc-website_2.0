@@ -3,7 +3,7 @@ import styles from "../../styles/About.module.scss";
 export default function ClubLinks() {
   return (
     <>
-      <div className={styles.clubLinks_Wrapper}>
+      <section className={styles.clubLinks_Wrapper}>
         <div className={styles.section1_clubLinks}>
           <Link href="https://www.facebook.com/groups/kfkdiscgolf">
             - KFK Discgolf
@@ -27,7 +27,7 @@ export default function ClubLinks() {
             - Mølleparken Discgolf
           </Link>
         </div>
-      </div>
+      </section>
     </>
   );
 }

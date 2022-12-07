@@ -63,7 +63,9 @@ h5 {
   font-weight: 500;
   line-height: 1.3;
 }
-
+.fullWidth {
+  margin: 0;
+}
 // h1 {
 //   margin-top: 0;
 //   font-size: 4.209rem;
@@ -105,11 +107,11 @@ main {
   background-color: $white;
 }
 
-section {
+/* section {
   margin-left: 10%;
   margin-right: 10%;
   margin-bottom: $space-after;
-}
+} */
 
 h1,
 h2,
