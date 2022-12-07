@@ -16,8 +16,38 @@ export default function Footer() {
             <div class={styles.yt} />
           </a>
         </div>
-        <div className={styles.payment}></div>
-        <div className={styles.schedule}></div>
+        {/* placeholder - make this a dynamic Schedule component later */}
+        <div className={styles.schedule}>
+          <h4>Opening hours this week</h4>
+          <div className={styles.locations}>
+            <div>
+              <h5>Greve</h5>
+              <ul>
+                <li>Mon-Fri: 10-17</li>
+              </ul>
+            </div>
+            <div>
+              <h5>Valby Parken</h5>
+              <ul>
+                <li>Mon: 10-17</li>
+                <li>Wed, Fri: 13-17</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className={styles.address}>
+          <ul>
+            <li>Disc Connection I/S</li>
+            <li>Grevevej 20</li>
+            <li>2670 Greve</li>
+            <li>CVR nr: 29 58 82 01</li>
+            <li>
+              <a id={styles.email} href="mailto: dc@discconnection.dk">
+                dc@discconnection.dk
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </footer>
   );
