@@ -61,42 +61,72 @@ export default function Products({ category, products }) {
     filterList();
   }
   function handleSpeed(e) {
-    e.target.checked && !speedFilter.includes(e.target.value) ? setSpeedFilter((old) => old.concat(e.target.value)) : null;
-    !e.target.checked && speedFilter.includes(e.target.value) ? setSpeedFilter((old) => old.filter((color) => color !== e.target.value)) : null;
+    let speedNumber = parseFloat(e.target.value);
+    e.target.checked && !speedFilter.includes(speedNumber) ? setSpeedFilter((old) => old.concat(speedNumber)) : null;
+    !e.target.checked && speedFilter.includes(speedNumber) ? setSpeedFilter((old) => old.filter((speed) => speed !== speedNumber)) : null;
   }
 
+  // function filterList() {
+  //   let filteredList = categoryList;
+  //   if (brandFilter.length > 0) {
+  //     // results = brandFilter.map((brand) => categoryList.filter((product) => product.brand === brand));
+
+  //     var keys = ["brand"];
+  //     var values = brandFilter;
+
+  //     var result = categoryList.filter(function (e) {
+  //       return keys.every(function (a) {
+  //         return values.includes(e[a]);
+  //       });
+  //     });
+  //     filteredList = result;
+  //     // console.log("step 1 results", result);
+  //   }
+
+  //   console.log("filteredLisssssst", filteredList);
+
+  //   if (colorFilter.length > 0) {
+  //     // // results = colorFilter.map((color) => results[0].filter((product) => product.color === color));
+  //     // var keys = ["color"];
+  //     // var values = colorFilter;
+  //     // var result = results.filter(function (e) {
+  //     //   return keys.every(function (a) {
+  //     //     return values.includes(e[a]);
+  //     //   });
+  //     // });
+  //     // // results = result;
+  //     // console.log("step 2 results", result);
+  //   }
+  //   if (speedFilter.length > 0) {
+  //     // results = colorFilter.map((color) => results[0].filter((product) => product.color === color));
+  //     var keys = ["speed"];
+  //     var values = speedFilter;
+
+  //     var result = categoryList.filter(function (e) {
+  //       return keys.every(function (a) {
+  //         return values.includes(e[a]);
+  //       });
+  //     });
+
+  //     // results = result;
+  //     console.log("step 2 results", filteredList);
+  //   }
+  // }
+
   function filterList() {
-    let results = categoryList;
-    if (brandFilter.length > 0) {
-      // results = brandFilter.map((brand) => categoryList.filter((product) => product.brand === brand));
+    var useConditions = (search) => (a) =>
+        Object.keys(search).every(
+          (k) => a[k] === search[k] || (Array.isArray(search[k]) && search[k].includes(a[k])) || (typeof search[k] === "object" && +search[k].min <= a[k] && a[k] <= +search[k].max) || (typeof search[k] === "function" && search[k](a[k]))
+        ),
+      data = [
+        { id: "123", color: "Red", model: "Tesla" },
+        { id: "124", color: "Black", model: "Honda" },
+        { id: "125", color: "Red", model: "Audi" },
+        { id: "126", color: "Blue", model: "Tesla" },
+      ],
+      filters = { color: ["Red", "Blue"], model: "Tesla" };
 
-      var keys = ["brand"];
-      var values = brandFilter;
-
-      var result = results.filter(function (e) {
-        return keys.every(function (a) {
-          return values.includes(e[a]);
-        });
-      });
-      results = result;
-      // console.log("step 1 results", result);
-    }
-
-    console.log("resultsssss", results);
-
-    if (colorFilter.length > 0) {
-      // results = colorFilter.map((color) => results[0].filter((product) => product.color === color));
-      var keys = ["color"];
-      var values = colorFilter;
-
-      var result = results.filter(function (e) {
-        return keys.every(function (a) {
-          return values.includes(e[a]);
-        });
-      });
-      results = result;
-      console.log("step 2 results", result);
-    }
+    console.log(data.filter(useConditions(filters)));
   }
 
   return (
@@ -104,7 +134,7 @@ export default function Products({ category, products }) {
       <div className="category-page">
         <div className="filters">
           <p>Brand</p>
-
+          {console.log(speedFilter)}
           {brands.map((brand) => (
             <>
               <input type="checkbox" id={brand} name={brand} value={brand} onChange={handleBrands}></input>
