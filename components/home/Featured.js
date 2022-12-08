@@ -1,6 +1,6 @@
 import Link from "next/link";
 import FakeProductTile from "./FakeProductTile";
-import styles from "../../styles/home.module.scss";
+import styles from "../../styles/Home.module.scss";
 
 export default function Featured() {
   return (
@@ -13,7 +13,7 @@ export default function Featured() {
         <FakeProductTile />
       </div>
       <Link href="/productList/Discs">
-        <a className="arrow">View all discs</a>
+        <a className="arrow">View all discs </a>
       </Link>
     </section>
   );

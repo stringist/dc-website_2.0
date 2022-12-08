@@ -1,4 +1,4 @@
-import Link from "next/Link";
+import Link from "next/link";
 import styles from "../../styles/Home.module.scss";
 export default function HomeAbout() {
   return (
@@ -27,7 +27,7 @@ export default function HomeAbout() {
               height="1rem"
               fill="currentColor"
               class="bi bi-arrow-right-short"
-              viewBox="0 0 14 14"
+              viewBox="0 0 12 12"
             >
               <path
                 fill-rule="evenodd"

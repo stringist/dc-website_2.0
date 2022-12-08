@@ -16,14 +16,24 @@
 
 // featured
 .featured {
+  margin-top: 8rem;
   width: 100vw;
   display: flex;
   flex-direction: column;
+  gap: 2rem;
   align-items: center;
   // border: solid 1px lime;
+
+  a {
+    font-weight: 500;
+    font-size: 1.2rem;
+    color: color.$blue-dark;
+    border-bottom: solid 2px color.$blue-dark;
+  }
 }
 
 .carousel {
+  width: 75%;
   display: flex;
   justify-content: space-between;
 }
