@@ -100,10 +100,6 @@ small,
   font-family: $primary-font;
 }
 
-html {
-  font-family: var(--body-font);
-}
-
 main {
   background-color: $white;
 }
@@ -325,7 +321,7 @@ button:focus-within {
   }
 
   .price {
-    color: var(--blue-light);
+    color: $blue-light;
     font-size: 1.5rem;
 
     span {
@@ -335,7 +331,7 @@ button:focus-within {
 
   .only-stock {
     font-size: 0.8rem;
-    color: var(--accent-red);
+    color: $accent-red;
   }
 
   .input-group {
@@ -361,13 +357,13 @@ button:focus-within {
       height: 1.5rem;
       padding: 0 1.75rem;
       width: 4rem;
-      border: solid 1px var(--blue-light);
+      border: solid 1px $blue-light;
       text-align: center;
     }
 
     div {
-      background-color: var(--blue-ligher);
-      color: var(--white);
+      background-color: $blue-ligher;
+      color: $white;
       position: absolute;
       top: 0;
       width: 1.5rem;
