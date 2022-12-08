@@ -122,7 +122,7 @@ export default function Products({ category, products }) {
   filteredList = filterByBrands(filteredList);
   filteredList = filterByColors(filteredList);
   filteredList = filterBySpeeds(filteredList);
-  filteredList = filterByGlides(filteredList);
+  // filteredList = filterByGlides(filteredList);
 
   return (
     <>
@@ -139,47 +139,43 @@ export default function Products({ category, products }) {
           <legend>Color</legend>
           {colors.map((color) => (
             <div className={styles.input_group} key={uuidv4}>
-              <input type="checkbox" id={color} name={color} value={color} onChange={toggleColor}></input>
-              <label htmlFor={color}>{color}</label>
+              <input type="checkbox" id={`color${color}`} name={`color${color}`} value={color} onChange={toggleColor}></input>
+              <label htmlFor={`color${color}`}>{color}</label>
             </div>
           ))}
           <legend>Speed</legend>
           {speeds.map((speed) => (
             <div className={styles.input_group} key={uuidv4}>
-              <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleSpeed}></input>
-              <label htmlFor={speed}>{speed}</label>
+              <input type="checkbox" id={`speed${speed}`} name={`speed${speed}`} value={speed} onChange={toggleSpeed}></input>
+              <label htmlFor={`speed${speed}`}>{speed}</label>
             </div>
           ))}
           <legend>Glide</legend>
-          {glides.map((speed) => (
+          {glides.map((glide) => (
             <div className={styles.input_group} key={uuidv4}>
-              <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleGlide}></input>
-              <label htmlFor={speed}>{speed}</label>
+              <input type="checkbox" id={`glide${glide}`} name={`glide${glide}`} value={glide} onChange={toggleGlide}></input>
+              <label htmlFor={`glide${glide}`}>{glide}</label>
             </div>
           ))}
           <legend>Turn</legend>
-          {turns.map((speed) => (
+          {turns.map((turn) => (
             <div className={styles.input_group} key={uuidv4}>
-              <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleFilter}></input>
-              <label htmlFor={speed}>{speed}</label>
+              <input type="checkbox" id={`turn${turn}`} name={`turn${turn}`} value={turn} onChange={toggleFilter}></input>
+              <label htmlFor={`turn${turn}`}>{turn}</label>
             </div>
           ))}
           <legend>Fade</legend>
-          {fades.map((speed) => (
+          {fades.map((fade) => (
             <div className={styles.input_group} key={uuidv4}>
-              <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleFilter}></input>
-              <label htmlFor={speed}>{speed}</label>
+              <input type="checkbox" id={`fade${fade}`} name={`fade${fade}`} value={fade} onChange={toggleFilter}></input>
+              <label htmlFor={`fade${fade}`}>{fade}</label>
             </div>
           ))}
           <legend>Price range</legend>
         </div>
         <div className={styles.products}>
           <h1>{category}</h1>
-          <section className={styles.product_grid}>
-            {filteredList.map((product) => (
-              <ProductTile product={product} key={product._id} products={products} />
-            ))}
-          </section>
+          <section className={styles.product_grid}>{filteredList.length === 0 ? <p>No product found :(</p> : filteredList.map((product) => <ProductTile product={product} key={uuidv4} products={products} />)}</section>
         </div>
       </div>
     </>

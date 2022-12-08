@@ -19,10 +19,10 @@ export default function ProductTile({ product }) {
 
           {product.speed !== 0 ? (
             <div className={styles.flight_score}>
-              <FlightScore kind="Speed" score={product.speed} />
-              <FlightScore kind="Glide" score={product.glide} />
-              <FlightScore kind="Turn" score={product.turn} />
-              <FlightScore kind="Fade" score={product.fade} />
+              <FlightScore kind="Speed" score={product.speed} key={uuidv4} />
+              <FlightScore kind="Glide" score={product.glide} key={uuidv4} />
+              <FlightScore kind="Turn" score={product.turn} key={uuidv4} />
+              <FlightScore kind="Fade" score={product.fade} key={uuidv4} />
             </div>
           ) : null}
 
