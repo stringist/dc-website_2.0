@@ -1,15 +1,17 @@
 import "./../styles/globals.scss";
 import Layout from "../components/Layout";
-import { StoreProvider } from "../utilities/Store";
+
+import { Provider } from "react-redux";
+import store from "./redux/store";
 import React, { useContext } from "react";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <StoreProvider>
+    <Provider store={store}>
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </StoreProvider>
+    </Provider>
   );
 }
 

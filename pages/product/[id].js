@@ -1,14 +1,17 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import React, { useContext } from "react";
-import { Store } from "../../utilities/Store";
+
+import { useDispatch } from "react-redux";
+import { addToCart } from "../redux/cart.slice";
 
 import Score from "../../components/product-page/Score";
 import Quantity from "../../components/product-page/Quantity";
 import ProductItem from "../../components/product-tile/ProductTile";
 
 export default function ProductPage({ product }) {
-  const { state, dispatch } = useContext(Store);
+  // const { state, dispatch } = useContext(Store);
+  const dispatch = useDispatch();
 
   const { query } = useRouter();
   const { id } = query;
@@ -91,7 +94,7 @@ export default function ProductPage({ product }) {
           {/* <Quantity name="Quantity" quant={quant} setQuant={setQuant} /> */}
         </div>
 
-        <button onClick={addToCartHandler}>Add to basket</button>
+        <button onClick={() => dispatch(addToCart(product))}>Add to basket</button>
       </div>
     </div>
   );
