@@ -16,7 +16,7 @@ export default function FindUs() {
         <GoogleMaps
           titel={"Pro Shoppen"}
           adresse={"Grevevej 20, 2670 Greve"}
-          hours={"Mon-Fri: 10-17"}
+          hoursMonFri={"Mon-Fri: 10-17"}
           lat={55.59803972765034}
           lng={12.217857857672051}
         />
@@ -24,7 +24,8 @@ export default function FindUs() {
         <GoogleMaps
           titel={"Mobile butikken - Valbyparken"}
           adresse={"Hammelstrupvej 98, 2450 København"}
-          hours={"Mon-Fri: 10-17, Wed & Fri: 13-17"}
+          hoursMonFri={"Mon-Fri: 10-17"}
+          hoursWedFri={"Wed & Fri: 13-17"}
           lat={55.64118851317173}
           lng={12.519380018285755}
         />

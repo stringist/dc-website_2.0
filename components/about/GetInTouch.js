@@ -1,20 +1,23 @@
 import GetInTouchProfile from "./GetInTouchProfile";
+import styles from "../../styles/About.module.scss";
 export default function GetInTouch() {
   return (
-    <div>
+    <section className={styles.get_in_touch_wrapper}>
       <h2>Get in touch</h2>
-      <GetInTouchProfile
-        name={"Søren Ivø"}
-        position={"Salgsansvarlig, lageransvarlig"}
-        email={"si@discconnection.dk"}
-        telefon={"93 99 22 74"}
-      />
-      <GetInTouchProfile
-        name={"Sinus Frank"}
-        position={"Website, økonomi, administration"}
-        email={"sf@discconnection.dk "}
-        telefon={" 93 99 22 74"}
-      />
-    </div>
+      <article className={styles.get_in_touch__profiles_wrapper}>
+        <GetInTouchProfile
+          name={"Søren Ivø"}
+          position={"Salgsansvarlig, lageransvarlig"}
+          email={"si@discconnection.dk"}
+          telefon={93992274}
+        />
+        <GetInTouchProfile
+          name={"Sinus Frank"}
+          position={"Website, økonomi, administration"}
+          email={"sf@discconnection.dk "}
+          telefon={93992274}
+        />
+      </article>
+    </section>
   );
 }
