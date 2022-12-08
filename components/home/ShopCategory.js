@@ -6,24 +6,26 @@ export default function ShopCategory() {
     <section id="category">
       <h2>Shop By Category</h2>
       <div className={styles.categoryGroup}>
-        <div className={styles.categoryCard}>
-          <Image src="/../public/images/placeholder_disc.png" alt="Discs" width={200} height={200}></Image>
-          <Link href="/productList/Discs">
-            <a>Discs</a>
-          </Link>
-        </div>
-        <div className={styles.categoryCard}>
-          <Image src="/../public/images/backpack.png" alt="Bags" width={200} height={200}></Image>
-          <Link href="/productList/Bags">
-            <a>Bags</a>
-          </Link>
-        </div>
-        <div className={styles.categoryCard}>
-          <Image src="/../public/images/placeholder_hat.png" alt="Accessories" width={200} height={200}></Image>
-          <Link href="/productList/Accessories">
-            <a>Accessories</a>
-          </Link>
-        </div>
+        <Link href="/productList/Discs">
+          <a className={styles.categoryCard}>
+            <div className={`${styles.catImage} ${styles.discImage}`}></div>
+            Discs
+          </a>
+        </Link>
+
+        <Link href="/productList/Bags">
+          <a className={styles.categoryCard}>
+            <div className={`${styles.catImage} ${styles.bagImage}`}></div>
+            Bags
+          </a>
+        </Link>
+
+        <Link href="/productList/Accessories">
+          <a className={styles.categoryCard}>
+            <div className={`${styles.catImage} ${styles.accImage}`}></div>
+            Accessories
+          </a>
+        </Link>
       </div>
     </section>
   );

@@ -41,7 +41,6 @@
 
 .categoryGroup {
   display: flex;
-  flex: 3;
   justify-content: space-between;
   width: 50vw;
   margin: auto;
@@ -50,17 +49,35 @@
 
 .categoryCard {
   // position: relative;
-  max-width: 30vw;
+  // max-width: 5vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.25rem;
-  a {
-    color: color.$blue-dark;
-    font-weight: 500;
-    font-size: 1.25rem;
-    text-decoration: underline;
-  }
+  color: color.$blue-dark;
+  font-weight: 500;
+  font-size: 1.25rem;
+  text-decoration: underline;
+}
+
+.catImage {
+  width: 15vw;
+  height: 15vw;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.discImage {
+  background-image: url("../public/images/image6.jpg");
+}
+
+.bagImage {
+  background-image: url("../public/images/backpack.png");
+}
+
+.accImage {
+  background-image: url("../public/images/latitude64-tshirt.webp");
 }
 
 // .footer {
