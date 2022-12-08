@@ -7,6 +7,7 @@ import Featured from "../components/home/Featured";
 import ProductTile from "../components/product-tile/ProductTile";
 import HomeAbout from "../components/home/HomeAbout";
 import ShopCategory from "../components/home/ShopCategory";
+import BrandsGallery from "../components/home/BrandsGallery";
 
 export default function Home({ products }) {
   return (
@@ -24,9 +25,7 @@ export default function Home({ products }) {
         <HomeAbout />
         <ShopCategory />
         {/* <section id="linking-chains"></section> */}
-        <section id="brands">
-          <h2>Brands</h2>
-        </section>
+        <BrandsGallery />
       </main>
     </>
   );
