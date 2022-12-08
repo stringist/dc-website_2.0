@@ -1,11 +1,12 @@
 import Link from "next/link";
 import FakeProductTile from "./FakeProductTile";
+import styles from "../../styles/home.module.scss";
 
 export default function Featured() {
   return (
-    <section id="featured">
+    <section className={styles.featured}>
       <h2>Featured</h2>
-      <div className="featured-carousel">
+      <div className={styles.carousel}>
         <FakeProductTile />
         <FakeProductTile />
         <FakeProductTile />

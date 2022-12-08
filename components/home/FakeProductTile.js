@@ -25,9 +25,9 @@ export default function FakeProductTile() {
         </div>
 
         <p>
-          {"Latitude64"} - {"Latitude64"}
+          {"Latitude64"} - {"OptoFine"}
         </p>
-        <h3>some disc</h3>
+        <h3>Sick Disc</h3>
         <p className="price">
           <span>666</span> dkk
         </p>
