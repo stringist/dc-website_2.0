@@ -1,6 +1,6 @@
 import Image from "next/image";
 // import bg from "https://lumensity.dk/dc/basket_hero_full.png";
-import homeBG from "./../public/images/hero_2.jpg";
+import homeBG from "./../public/images/hero_2.png";
 import aboutBG from "./../public/images/basket_hero_full.png";
 
 function Hero({ title }) {

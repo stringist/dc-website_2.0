@@ -28,7 +28,7 @@ $blue-grey: #cfd8dc;
 $blue-grey-dark: #9ea7aa;
 $accent-blue: #63ccff;
 $accent-red: #d32f2f;
-$space-after: 6rem;
+$space-after: 8rem;
 
 @font-face {
   font-family: "titanium";
@@ -62,10 +62,12 @@ h5 {
   // margin: 3rem 0 1.38rem;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  line-height: 1.3;
+  line-height: 1.25;
 }
 .fullWidth {
-  margin: 0;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
 }
 // h1 {
 //   margin-top: 0;
@@ -104,11 +106,11 @@ main {
   background-color: $white;
 }
 
-/* section {
-  margin-left: 10%;
-  margin-right: 10%;
+section {
+  // margin-left: 10%;
+  // margin-right: 10%;
   margin-bottom: $space-after;
-} */
+}
 
 h1,
 h2,
@@ -128,6 +130,10 @@ a {
 ol,
 ul {
   list-style: none;
+}
+
+li {
+  line-height: 1.25;
 }
 
 select {
@@ -191,7 +197,10 @@ button:focus-within {
   outline: 0;
   border-radius: 4px;
 }
-
+.arrow::after {
+  color: inherit;
+  content: url("../public/images/arrow-right.svg");
+}
 // landing page
 
 .heroWrapper {
@@ -228,16 +237,4 @@ button:focus-within {
 section h2 {
   text-align: center;
   font-size: 3rem;
-}
-
-.category-group {
-  display: flex;
-}
-
-.category-card {
-  // position: relative;
-  max-width: 30vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
