@@ -2,9 +2,10 @@ import { useSelector, useDispatch } from "react-redux";
 import Image from "next/image";
 import { incrementQuantity, decrementQuantity, removeFromCart } from "./redux/cart.slice";
 
-export default function CartPage() {
+export default function Cart() {
   // Extracting cart state from redux store
   const cart = useSelector((state) => state.cart);
+  console.log(cart);
 
   // Reference to the dispatch function from redux store
   const dispatch = useDispatch();
@@ -28,17 +29,17 @@ export default function CartPage() {
             <div>Total Price</div>
           </div>
           {cart.map((item) => (
-            <div key={item.id}>
+            <div key={item._id}>
               <div>
-                <Image src={item.image} height="90" width="65" alt={item.name} />
+                <Image src={item.img} height="90" width="65" alt={item.name} />
               </div>
               <p>{item.item}</p>
               <p>$ {item.price}</p>
               <p>{item.quantity}</p>
               <div>
-                <button onClick={() => dispatch(incrementQuantity(item.id))}>+</button>
-                <button onClick={() => dispatch(decrementQuantity(item.id))}>-</button>
-                <button onClick={() => dispatch(removeFromCart(item.id))}>x</button>
+                <button onClick={() => dispatch(incrementQuantity(item._id))}>+</button>
+                <button onClick={() => dispatch(decrementQuantity(item._id))}>-</button>
+                <button onClick={() => dispatch(removeFromCart(item._id))}>x</button>
               </div>
               <p>$ {item.quantity * item.price}</p>
             </div>

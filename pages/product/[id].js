@@ -1,34 +1,21 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
-import React, { useContext } from "react";
+import React from "react";
 
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cart.slice";
 
 import Score from "../../components/product-page/Score";
-import Quantity from "../../components/product-page/Quantity";
-import ProductItem from "../../components/product-tile/ProductTile";
 
 export default function ProductPage({ product }) {
-  // const { state, dispatch } = useContext(Store);
   const dispatch = useDispatch();
 
   const { query } = useRouter();
   const { id } = query;
-  // const product = products.find((x) => x._id === _id);
 
   if (!product) {
     return <p> product not found</p>;
   }
-
-  const addToCartHandler = () => {
-    const itemExists = state.cart.cartItems.find((item) => item._id === product._id);
-    const quantity = itemExists ? itemExists.quantity + 1 : 1;
-
-    dispatch({ type: "CART_ADD_ITEM", payload: { ...product, quantity } });
-
-    // console.log(state.cart.cartItems.length);
-  };
 
   let productImages = [];
   product.img.includes(",") ? (productImages = product.img.split(",")) : (productImages = productImages.concat(product.img));
