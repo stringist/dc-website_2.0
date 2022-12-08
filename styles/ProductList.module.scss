@@ -1,0 +1,99 @@
+@use "./colors.scss" as color;
+
+// Category Page
+
+.category_page {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+
+  > * {
+    padding: 1rem 2rem;
+  }
+
+  .filters {
+    border-right: solid 1px color.$blue-dark;
+    margin-top: 5rem;
+
+    > :first-child {
+      margin-top: 0rem;
+    }
+  }
+
+  legend {
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+
+  input {
+    margin-right: 0.25rem;
+  }
+
+  .products {
+    margin-left: 3rem;
+  }
+}
+
+// Product Tile
+.product_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  row-gap: 2rem;
+}
+
+.product_tile {
+  max-width: 200px;
+  text-align: center;
+  padding: 1rem;
+  cursor: pointer;
+
+  img {
+    object-fit: cover;
+  }
+
+  p,
+  h3 {
+    margin: 0;
+  }
+
+  h3 {
+    color: color.$blue-dark;
+    font-size: 1.25rem;
+  }
+
+  .price span {
+    font-weight: 700;
+  }
+}
+
+.flight_score {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+
+  p {
+    font-size: 1.25rem;
+    background-color: color.$blue-dark;
+    color: color.$white;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    margin: 0;
+  }
+}
+
+.colors_available {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.color_span {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 2rem;
+  border: solid 1px color.$blue-dark;
+}

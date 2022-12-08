@@ -4,6 +4,13 @@ import React from "react";
 import { useState, useConditions } from "react";
 import intersect from "just-intersect";
 
+import styles from "../styles/ProductList.module.scss";
+
+function cuuid() {
+  const str = (Date.now().toString(16) + Math.random().toString(16).slice(2) + Math.random().toString(16).slice(2) + Math.random().toString(16).slice(2)).slice(0, 32);
+  return str.slice(0, 8) + "-" + str.slice(8, 12) + "-" + str.slice(12, 16) + "-" + str.slice(16, 20) + "-" + str.slice(20);
+}
+
 export default function Products({ category, products }) {
   const [brandFilter, setBrandFilter] = useState([]);
   const [colorFilter, setColorFilter] = useState([]);
@@ -62,86 +69,117 @@ export default function Products({ category, products }) {
       setColorFilter((old) => old.filter((el) => el !== e.target.value));
     }
   }
+  function toggleSpeed(e) {
+    const myNumber = parseFloat(e.target.value);
+    if (e.target.checked) {
+      setSpeedFilter((old) => old.concat(myNumber));
+    } else {
+      setSpeedFilter((old) => old.filter((el) => el !== myNumber));
+    }
+    console.log(speedFilter);
+  }
+  function toggleGlide(e) {
+    console.log(glideFilter);
+    const myNumber = parseFloat(e.target.value);
+
+    if (e.target.checked) {
+      setGlideFilter((old) => old.concat(myNumber));
+    } else {
+      setGlideFilter((old) => old.filter((el) => el !== myNumber));
+    }
+  }
 
   function toggleFilter() {}
 
   function filterByBrands(data) {
-    //we have an array of stuff and want to compoare it to a string
     if (brandFilter.length === 0) {
       return data;
     }
     return data.filter((el) => brandFilter.includes(el.brand));
   }
   function filterByColors(data) {
-    //we have an array of stuff and want to compare it to aa array of stuff
     if (colorFilter.length === 0) {
       return data;
     }
 
     return data.filter((el) => intersect(colorFilter, el.color).length);
   }
+  function filterBySpeeds(data) {
+    if (speedFilter.length === 0) {
+      return data;
+    }
+    return data.filter((el) => speedFilter.includes(el.speed));
+  }
+  function filterByGlides(data) {
+    if (glideFilter.length === 0) {
+      return data;
+    }
+    return data.filter((el) => glideFilter.includes(el.speed));
+  }
 
   let filteredList = [...categoryList];
 
   filteredList = filterByBrands(filteredList);
   filteredList = filterByColors(filteredList);
+  filteredList = filterBySpeeds(filteredList);
+  filteredList = filterByGlides(filteredList);
 
   return (
     <>
-      <div className="category-page">
-        <div className="filters">
+      <div className={styles.category_page}>
+        <div className={styles.filters}>
           <legend>Brand</legend>
           {brands.map((brand) => (
-            <>
+            <div className={styles.input_group} key={uuidv4}>
               <input type="checkbox" id={brand} name={brand} value={brand} onChange={toggleBrand}></input>
               <label htmlFor={brand}>{brand}</label>
-            </>
+            </div>
           ))}
 
           <legend>Color</legend>
           {colors.map((color) => (
-            <>
+            <div className={styles.input_group} key={uuidv4}>
               <input type="checkbox" id={color} name={color} value={color} onChange={toggleColor}></input>
               <label htmlFor={color}>{color}</label>
-            </>
+            </div>
           ))}
           <legend>Speed</legend>
           {speeds.map((speed) => (
-            <>
-              <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleFilter}></input>
+            <div className={styles.input_group} key={uuidv4}>
+              <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleSpeed}></input>
               <label htmlFor={speed}>{speed}</label>
-            </>
+            </div>
           ))}
           <legend>Glide</legend>
           {glides.map((speed) => (
-            <>
-              <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleFilter}></input>
+            <div className={styles.input_group} key={uuidv4}>
+              <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleGlide}></input>
               <label htmlFor={speed}>{speed}</label>
-            </>
+            </div>
           ))}
           <legend>Turn</legend>
           {turns.map((speed) => (
-            <>
+            <div className={styles.input_group} key={uuidv4}>
               <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleFilter}></input>
               <label htmlFor={speed}>{speed}</label>
-            </>
+            </div>
           ))}
           <legend>Fade</legend>
           {fades.map((speed) => (
-            <>
+            <div className={styles.input_group} key={uuidv4}>
               <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleFilter}></input>
               <label htmlFor={speed}>{speed}</label>
-            </>
+            </div>
           ))}
           <legend>Price range</legend>
         </div>
-        <div className="products">
+        <div className={styles.products}>
           <h1>{category}</h1>
-          <div className="product-grid">
+          <section className={styles.product_grid}>
             {filteredList.map((product) => (
               <ProductTile product={product} key={product._id} products={products} />
             ))}
-          </div>
+          </section>
         </div>
       </div>
     </>
