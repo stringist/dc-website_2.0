@@ -1,8 +1,17 @@
 import Link from "next/link";
 import SearchBar from "./SearchBar";
+import { useSelector } from "react-redux";
 import styles from "../styles/Nav.module.scss";
 
 export default function Nav() {
+  // Selecting cart from global state
+  const cart = useSelector((state) => state.cart);
+
+  // Getting the count of items
+  const getItemsCount = () => {
+    return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
+  };
+
   return (
     <nav className={styles.nav}>
       <div className={styles.leftWrapper}>
@@ -35,6 +44,9 @@ export default function Nav() {
 
       <div className={styles.rightWrapper}>
         <SearchBar />
+        <Link href="/cart">
+          <p>Cart ({getItemsCount()})</p>
+        </Link>
       </div>
     </nav>
   );

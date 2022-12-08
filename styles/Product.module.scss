@@ -1,0 +1,124 @@
+@use "./colors.scss" as color;
+
+// Product Page
+.product_page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  margin: 5rem;
+
+  .left {
+    position: relative;
+  }
+
+  .arrow_left {
+    position: absolute;
+    left: -2rem;
+    top: 43%;
+  }
+  .arrow_rigth {
+    position: absolute;
+    right: -2rem;
+    top: 43%;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  h2 {
+    color: color.$blue-dark;
+  }
+
+  .product_flight_score {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    color: color.$blue-dark;
+
+    :last-child {
+      border: none;
+    }
+  }
+
+  .score {
+    border-right: solid 1px color.$blue-dark;
+    padding: 0 0.5rem;
+    min-width: 4rem;
+    font-size: 1rem;
+
+    p {
+      margin: 0.5rem;
+      text-align: center;
+    }
+
+    .number {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+
+  .price {
+    color: color.$blue-light;
+    font-size: 1.5rem;
+
+    span {
+      font-weight: 700;
+    }
+  }
+
+  .only_stock {
+    font-size: 0.8rem;
+    color: color.$accent-red;
+  }
+
+  .input_group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    label {
+      font-weight: 700;
+    }
+  }
+
+  .input_grid {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .quant_input {
+    position: relative;
+    width: fit-content;
+
+    input {
+      height: 1.5rem;
+      padding: 0 1.75rem;
+      width: 4rem;
+      border: solid 1px color.$blue-light;
+      text-align: center;
+    }
+
+    div {
+      background-color: color.$blue-ligher;
+      color: color.$white;
+      position: absolute;
+      top: 0;
+      width: 1.5rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 300;
+      cursor: pointer;
+    }
+
+    .minus {
+      left: 0;
+    }
+    .plus {
+      right: 0;
+    }
+  }
+}

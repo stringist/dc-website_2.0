@@ -4,7 +4,7 @@ import Image from "next/image";
 
 import FlightScore from "./FlightScore";
 
-export default function ProductItem({ product }) {
+export default function ProductTile({ product }) {
   let productImages = [];
   product.img.includes(",") ? (productImages = product.img.split(",")) : (productImages = productImages.concat(product.img));
 

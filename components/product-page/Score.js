@@ -1,8 +1,10 @@
+import styles from "../../styles/Product.module.scss";
+
 export default function Score(props) {
   return (
-    <div className="score">
+    <div className={styles.score}>
       <p>{props.name}</p>
-      <p className="number">{props.score}</p>
+      <p className={styles.number}>{props.score}</p>
     </div>
   );
 }
