@@ -1,20 +1,17 @@
 import Image from "next/image";
 import styles from "../../styles/About.module.scss";
 export default function AboutProfile({ ...props }) {
-  console.log(props.name);
   return (
     <section
-      style={
-        props.name === "soeren"
-          ? { flexDirection: "row" }
-          : { flexDirection: "row-reverse" }
+      className={
+        props.name === "Søren" ? styles.profile : styles.profile_reverse
       }
-      className={styles.profile}
     >
       <div>
         <Image src={props.image} alt="black haired person" object-fit="fill" />
+        <p>{props.name}</p>
       </div>
-      <p className={props.name === "soeren" ? styles.soeren_p : styles.sinus_p}>
+      <p className={props.name === "Søren" ? styles.soeren_p : styles.sinus_p}>
         {props.text}
       </p>
     </section>

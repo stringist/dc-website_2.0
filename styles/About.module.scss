@@ -10,9 +10,33 @@
   display: flex;
   margin-bottom: 2vw;
   padding: 0 15vw;
+  flex-direction: row;
+}
+.profile :first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: color.$blue-dark;
+  font-weight: 400;
+}
+.profile_reverse {
+  display: flex;
+  margin-bottom: 2vw;
+  padding: 0 15vw;
+  flex-direction: row-reverse;
+}
+.profile_reverse :first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: color.$blue-dark;
+  font-weight: 400;
+}
+.profile > p {
+  width: 100%;
 }
 
-.profile > p {
+.profile_reverse > p {
   width: 100%;
 }
 .image_wrapper {
@@ -21,10 +45,13 @@
 
 .soeren_p {
   padding-left: 100px;
+  flex-direction: row;
 }
 
 .sinus_p {
   padding-right: 100px;
+
+  flex-direction: row-reverse;
 }
 
 .mapContainer {
@@ -35,7 +62,7 @@
 
 .clubLinks_Wrapper {
   display: flex;
-  margin: 5vh 0 5vh 0;
+  margin: 5vh 0 12vh 0;
 }
 
 .section1_clubLinks {
@@ -52,7 +79,7 @@
   background-image: url(../public/images/aboutFindus.png);
   background-size: cover;
   color: color.$white;
-  padding: 6.5vh 15vw;
+  padding: 9.5vh 15vw;
 }
 
 .find_us h2 {
@@ -61,14 +88,86 @@
 // Google Maps
 .map_wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 3vw;
+  margin-top: 7vh;
 }
 .map_wrapper h3 {
   color: color.$white;
+  margin-top: 1vh;
+}
+
+.map_wrapper p:last-child {
+  display: flex;
+  flex-direction: column;
+}
+.map_wrapper p:last-child span:first-child {
+  font-weight: 500;
 }
 .map_inner {
   display: flex;
-  width: 380px;
-  height: 280px;
+  width: 32vw;
+  height: 40vh;
+}
+
+// Get in touch
+.get_in_touch_wrapper {
+  margin: 10vh 0;
+}
+.get_in_touch__profiles_wrapper {
+  display: flex;
+  gap: 2rem;
+}
+
+.get_in_touch__profiles_wrapper > div > p:nth-child(1) {
+  font-weight: 500;
+}
+.get_in_touch__profiles_wrapper > div > p:nth-child(2) {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+@media screen and (max-width: 900px) {
+  .map_inner {
+    width: 40vw;
+    height: 30vh;
+  }
+}
+@media screen and (max-width: 700px) {
+  .profile {
+    flex-direction: column;
+  }
+  .profile_reverse {
+    flex-direction: column;
+  }
+  .soeren_p {
+    padding-left: 0px;
+  }
+  .clubLinks_Wrapper {
+    flex-direction: column;
+  }
+  .find_us {
+    width: 100%;
+  }
+  .map_wrapper {
+    flex-direction: column;
+  }
+  .map_inner {
+    width: 70vw;
+    height: 30vh;
+  }
+  .map_wrapper > article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .map_wrapper p:last-child {
+    color: red;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .get_in_touch__profiles_wrapper {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -8,12 +8,15 @@ export default function GoogleMaps({ ...props }) {
 
   if (!isLoaded) return <div>Loading...</div>;
   return (
-    <div className={styles.map_container}>
+    <article className={styles.map_container}>
       <Map lat={props.lat} lng={props.lng} />
       <h3>{props.titel}</h3>
       <p>{props.adresse}</p>
-      <p>Hours this week: {props.hours}</p>
-    </div>
+      <p>
+        <span> Hours this week:</span>
+        <span>{props.hoursMonFri}</span> {props.hoursWedFri}
+      </p>
+    </article>
   );
 }
 

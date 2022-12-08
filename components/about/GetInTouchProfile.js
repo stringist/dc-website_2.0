@@ -1,11 +1,14 @@
 export default function GetInTouchProfile({ ...props }) {
-  console.log(props);
   return (
     <div>
       <p>{props.name}</p>
       <p>{props.position}</p>
-      <p>{props.email}</p>
-      <p>{props.telefon}</p>
+      <p>
+        Email <a href={`mailto:${props.email}`}>{props.email}</a>
+      </p>
+      <p>
+        Telefon <a href={`tel:${props.telefon}`}>{props.telefon}</a>{" "}
+      </p>
     </div>
   );
 }
