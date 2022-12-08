@@ -1,8 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
-import Hero from "../components/hero";
+import Hero from "../components/Hero";
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
+import Featured from "../components/home/Featured";
 import ProductTile from "../components/product-tile/ProductTile";
 import HomeAbout from "../components/home/HomeAbout";
 import ShopCategory from "../components/home/ShopCategory";
@@ -19,18 +20,7 @@ export default function Home({ products }) {
         <Hero title="Disc Connection" />
       </header>
       <main className={styles.main}>
-        <section id="featured">
-          <h2>Featured</h2>
-          <div className="featured-carousel">
-            {/* <ProductTile></ProductTile>
-            <ProductTile></ProductTile>
-            <ProductTile></ProductTile>
-            <ProductTile></ProductTile> */}
-          </div>
-          <Link href="/productList/Discs">
-            <a className="arrow">View all discs</a>
-          </Link>
-        </section>
+        <Featured />
         <HomeAbout />
         <ShopCategory />
         {/* <section id="linking-chains"></section> */}
