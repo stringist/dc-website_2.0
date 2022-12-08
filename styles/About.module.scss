@@ -9,7 +9,7 @@
 .profile {
   display: flex;
   margin-bottom: 2vw;
-  width: 70%;
+  padding: 0 15vw;
 }
 
 .profile > p {
@@ -51,9 +51,24 @@
 .find_us {
   background-image: url(../public/images/aboutFindus.png);
   background-size: cover;
+  color: color.$white;
+  padding: 6.5vh 15vw;
+}
+
+.find_us h2 {
+  color: color.$white;
 }
 // Google Maps
-.map-container {
-  width: 25%;
-  height: 25vh;
+.map_wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 3vw;
+}
+.map_wrapper h3 {
+  color: color.$white;
+}
+.map_inner {
+  display: flex;
+  width: 380px;
+  height: 280px;
 }

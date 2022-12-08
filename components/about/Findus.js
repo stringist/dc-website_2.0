@@ -12,22 +12,23 @@ export default function FindUs() {
         Greve-banen ved Tune Kursuscenter besøges, hvor du kan se hele vores
         lager.
       </p>
+      <section className={styles.map_wrapper}>
+        <GoogleMaps
+          titel={"Pro Shoppen"}
+          adresse={"Grevevej 20, 2670 Greve"}
+          hours={"Mon-Fri: 10-17"}
+          lat={55.59803972765034}
+          lng={12.217857857672051}
+        />
 
-      <GoogleMaps
-        titel={"Pro Shoppen"}
-        adresse={"Grevevej 20, 2670 Greve"}
-        hours={"Mon-Fri: 10-17"}
-        lat={55.59803972765034}
-        lng={12.217857857672051}
-      />
-
-      <GoogleMaps
-        titel={"Mobile butikken - Valbyparken"}
-        adresse={"Hammelstrupvej 98, 2450 København"}
-        hours={"Mon-Fri: 10-17, Wed & Fri: 13-17"}
-        lat={55.64118851317173}
-        lng={12.519380018285755}
-      />
+        <GoogleMaps
+          titel={"Mobile butikken - Valbyparken"}
+          adresse={"Hammelstrupvej 98, 2450 København"}
+          hours={"Mon-Fri: 10-17, Wed & Fri: 13-17"}
+          lat={55.64118851317173}
+          lng={12.519380018285755}
+        />
+      </section>
     </section>
   ); /* 55.64118851317173, 12.519380018285755 */
 }

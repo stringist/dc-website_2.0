@@ -8,12 +8,12 @@ export default function GoogleMaps({ ...props }) {
 
   if (!isLoaded) return <div>Loading...</div>;
   return (
-    <>
+    <div className={styles.map_container}>
       <Map lat={props.lat} lng={props.lng} />
       <h3>{props.titel}</h3>
       <p>{props.adresse}</p>
-      <p>Hours this week:{props.hours}</p>
-    </>
+      <p>Hours this week: {props.hours}</p>
+    </div>
   );
 }
 
@@ -22,7 +22,11 @@ function Map(props) {
   /*   console.log(props.lat);
    */
   return (
-    <GoogleMap zoom={10} center={center} mapContainerClassName={styles.mapContainer}>
+    <GoogleMap
+      zoom={13}
+      center={center}
+      mapContainerClassName={styles.map_inner}
+    >
       <MarkerF position={center} />
     </GoogleMap>
   );
