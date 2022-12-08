@@ -246,7 +246,7 @@ export default function Products({ category, products }) {
 
             {/* {console.log("brandFilter", brandFilter.length > 0)} */}
             {filteredList.map((product) => (
-              <ProductTile product={product} key={product._id} />
+              <ProductTile product={product} key={product._id} products={products} />
             ))}
           </div>
         </div>

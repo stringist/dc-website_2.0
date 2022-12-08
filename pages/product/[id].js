@@ -1,11 +1,13 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
 import React from "react";
-
+import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cart.slice";
 
 import Score from "../../components/product-page/Score";
+
+import styles from "../../styles/Product.module.scss";
 
 export default function ProductPage({ product }) {
   const dispatch = useDispatch();
@@ -33,23 +35,23 @@ export default function ProductPage({ product }) {
   }
 
   return (
-    <div className="product-page">
-      <div className="left">
+    <div className={styles.product_page}>
+      <div className={styles.left}>
         <Image src={imageSrc} alt={product.name} width={200} height={200} layout="responsive" placeholder="blur" blurDataURL="/placeholder.png"></Image>
 
         {productImages[1] ? (
           <>
-            <div className="arrow-left" onClick={changeSrcLeft}>
+            <div className={styles.arrow_left} onClick={changeSrcLeft}>
               &#8592;
             </div>
-            <div className="arrow-rigth" onClick={changeSrcRight}>
+            <div className={styles.arrow_rigth} onClick={changeSrcRight}>
               &#8594;
             </div>
           </>
         ) : null}
 
         {product.speed !== 0 ? (
-          <div className="product-flight-score">
+          <div className={styles.product_flight_score}>
             <Score name="Speed" score={product.speed}></Score>
             <Score name="Glide" score={product.glide}></Score>
             <Score name="Turn" score={product.turn}></Score>
@@ -58,27 +60,43 @@ export default function ProductPage({ product }) {
         ) : null}
       </div>
 
-      <div className="right">
-        {product.countInStock < 5 ? <p className="only-stock">Only {product.countInStock} left!</p> : null}
+      <div className={styles.right}>
+        {product.countInStock < 5 ? <p className={styles.only_stock}>Only {product.countInStock} left!</p> : null}
         <h2>{product.name}</h2>
-        <h3>
-          {product.brand} | {product.brand}
-        </h3>
+        <h4>
+          {product.brand} {product.subcategory ? `| ${product.subcategory}` : null}
+        </h4>
 
         <p>{product.description}</p>
 
-        <p className="price">
+        <p className={styles.price}>
           <span>{product.price}</span> dkk
         </p>
 
-        <div className="input-grid">
-          <div className="input-group">
-            <label htmlFor="weight-color">Weight / Color:</label>
-            <select name="weight-color" id="weight-color">
-              <option value="pink">180g / Pink</option>
-            </select>
+        <div className={styles.input_grid}>
+          <div className={styles.input_group}>
+            {typeof color == "string" ? (
+              product.color.forEach((color) => (
+                <>
+                  <label htmlFor="weight-color">Color:</label>
+                  <select name="weight-color" id="weight-color">
+                    <option value={product.color} key={uuidv4()}>
+                      {product.color}
+                    </option>
+                  </select>
+                </>
+              ))
+            ) : (
+              <>
+                <p className={styles.color_label}>
+                  Color:
+                  <span className={styles.color_color}> {product.color}</span>
+                </p>
+              </>
+            )}
+
+            {console.log(typeof product.color !== "string")}
           </div>
-          {/* <Quantity name="Quantity" quant={quant} setQuant={setQuant} /> */}
         </div>
 
         <button onClick={() => dispatch(addToCart(product))}>Add to basket</button>
@@ -112,6 +130,7 @@ export async function getStaticProps(context) {
     method: "GET",
     headers: { "cache-control": "no-cache", "x-apikey": "a7a3d1237d76a4c6bd5943e4230d2b86f526e" },
   });
+
   const product = await req.json();
 
   if (product)
