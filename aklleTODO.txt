@@ -1,0 +1,16 @@
+Featured section
+
+copy scripts form Products to Featured
+
+filter - only featured = true
+
+product data
+
+max 4 to start with
+
+Brand List
+Axiom
+DGA
+Discmania
+Discraft
+Disctroyer
