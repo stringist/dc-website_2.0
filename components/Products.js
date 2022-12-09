@@ -15,9 +15,9 @@ export default function Products({ category, products }) {
   const [brandFilter, setBrandFilter] = useState([]);
   const [colorFilter, setColorFilter] = useState([]);
   const [speedFilter, setSpeedFilter] = useState([]);
-  const [glideFilter, setGlideFilter] = useState([]);
-  const [turnFilter, setTurnFilter] = useState([]);
-  const [fadeFilter, setFadeFilter] = useState([]);
+  const [subcFilter, setSubcFilter] = useState([]);
+
+  const [sortBy, setSortBy] = useState("name");
 
   let categoryList = products.filter((product) => product.category === category);
 
@@ -38,16 +38,11 @@ export default function Products({ category, products }) {
     ),
   ];
   let speeds = [...new Set(categoryList.map((product) => product.speed))];
-  let glides = [...new Set(categoryList.map((product) => product.glide))];
-  let turns = [...new Set(categoryList.map((product) => product.turn))];
-  let fades = [...new Set(categoryList.map((product) => product.fade))];
+
   sortData(brands);
   sortData(subcategories);
   sortData(colors);
   sortData(speeds);
-  sortData(glides);
-  sortData(turns);
-  sortData(fades);
 
   function sortData(data) {
     data.sort(function (a, b) {
@@ -78,16 +73,6 @@ export default function Products({ category, products }) {
     }
     console.log(speedFilter);
   }
-  function toggleGlide(e) {
-    console.log(glideFilter);
-    const myNumber = parseFloat(e.target.value);
-
-    if (e.target.checked) {
-      setGlideFilter((old) => old.concat(myNumber));
-    } else {
-      setGlideFilter((old) => old.filter((el) => el !== myNumber));
-    }
-  }
 
   function toggleFilter() {}
 
@@ -110,24 +95,38 @@ export default function Products({ category, products }) {
     }
     return data.filter((el) => speedFilter.includes(el.speed));
   }
-  function filterByGlides(data) {
-    if (glideFilter.length === 0) {
-      return data;
-    }
-    return data.filter((el) => glideFilter.includes(el.speed));
-  }
 
   let filteredList = [...categoryList];
 
   filteredList = filterByBrands(filteredList);
   filteredList = filterByColors(filteredList);
   filteredList = filterBySpeeds(filteredList);
-  // filteredList = filterByGlides(filteredList);
+
+  filteredList = sortList(filteredList, sortBy);
+
+  function handleSort(e) {
+    setSortBy(e.target.value);
+  }
+
+  function sortList(data, sort) {
+    console.log(sort);
+    return data.sort((a, b) => a[sort] > b[sort]);
+  }
 
   return (
     <>
+      {console.log(sortBy)}
       <div className={styles.category_page}>
         <div className={styles.filters}>
+          <div className={styles.sorting}>
+            <label htmlFor="sorting">Sort by:</label>
+            <select name="sorting" id="sorting" onChange={handleSort}>
+              <option value="name">Name A-Z</option>
+              <option value="price">Lowest Price</option>
+              <option value="speed">Lowest Speed</option>
+            </select>
+          </div>
+
           <legend>Brand</legend>
           {brands.map((brand) => (
             <div className={styles.input_group} key={uuidv4}>
@@ -150,28 +149,8 @@ export default function Products({ category, products }) {
               <label htmlFor={`speed${speed}`}>{speed}</label>
             </div>
           ))}
-          <legend>Glide</legend>
-          {glides.map((glide) => (
-            <div className={styles.input_group} key={uuidv4}>
-              <input type="checkbox" id={`glide${glide}`} name={`glide${glide}`} value={glide} onChange={toggleGlide}></input>
-              <label htmlFor={`glide${glide}`}>{glide}</label>
-            </div>
-          ))}
-          <legend>Turn</legend>
-          {turns.map((turn) => (
-            <div className={styles.input_group} key={uuidv4}>
-              <input type="checkbox" id={`turn${turn}`} name={`turn${turn}`} value={turn} onChange={toggleFilter}></input>
-              <label htmlFor={`turn${turn}`}>{turn}</label>
-            </div>
-          ))}
-          <legend>Fade</legend>
-          {fades.map((fade) => (
-            <div className={styles.input_group} key={uuidv4}>
-              <input type="checkbox" id={`fade${fade}`} name={`fade${fade}`} value={fade} onChange={toggleFilter}></input>
-              <label htmlFor={`fade${fade}`}>{fade}</label>
-            </div>
-          ))}
-          <legend>Price range</legend>
+
+          {/* <legend>Price range</legend> */}
         </div>
         <div className={styles.products}>
           <h1>{category}</h1>
