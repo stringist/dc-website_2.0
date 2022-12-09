@@ -21,7 +21,7 @@ export default function Home({ products }) {
         <Hero title="Disc Connection" />
       </header>
       <main className={styles.main}>
-        <Featured />
+        <Featured products={products} />
         <HomeAbout />
         <ShopCategory />
         {/* <section id="linking-chains"></section> */}
