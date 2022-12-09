@@ -7,7 +7,6 @@ import styles from "../../styles/Home.module.scss";
 import placeholder from "../../public/images/image4.jpg";
 
 export default function FeaturedTile({ product }) {
-  console.log(product);
   let productImages = [];
   product.img.includes(",")
     ? (productImages = product.img.split(","))
