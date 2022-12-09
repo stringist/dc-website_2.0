@@ -32,6 +32,63 @@
   }
 }
 
+.productTile {
+  // max-width: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  padding: 1rem;
+  cursor: pointer;
+
+  p {
+    width: 100%;
+  }
+
+  img {
+    object-fit: cover;
+  }
+
+  p,
+  h3 {
+    margin: 0;
+  }
+
+  h3 {
+    color: color.$blue-dark;
+    font-size: 1.25rem;
+  }
+
+  .price span {
+    font-weight: 700;
+  }
+
+  .bold {
+    font-weight: 500;
+  }
+}
+
+.flightScore {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 500;
+    background-color: color.$blue-dark;
+    color: color.$white;
+    width: 2rem;
+    height: 2rem;
+    text-align: center;
+    line-height: 2rem;
+    margin: 0;
+  }
+}
+
 .carousel {
   width: 75%;
   display: flex;
