@@ -10,9 +10,13 @@ export default function BrandsGallery() {
   return (
     <section className={styles.brands}>
       <h2>Brands</h2>
-      {names.map((brand) => (
-        <Image src={`${path}${brand}.png`} alt={brand} width={200} height={200} key={uuidv4} />
-      ))}
+      <div className={styles.logos}>
+        {names.map((brand) => (
+          <div className={styles.tile} key={uuidv4}>
+            <Image src={`${path}${brand}.png`} alt={brand} width={100} height={100} objectFit="contain" />
+          </div>
+        ))}
+      </div>
     </section>
   );
 }

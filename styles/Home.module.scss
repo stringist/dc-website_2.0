@@ -160,3 +160,21 @@
 .accImage {
   background-image: url("../public/images/latitude64-tshirt.webp");
 }
+
+// brands
+
+.brands {
+  width: 75vw;
+  .logos {
+    text-align: center;
+    margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 2rem;
+    row-gap: 1rem;
+  }
+  // .tile {
+  //   display: grid;
+  // }
+}
