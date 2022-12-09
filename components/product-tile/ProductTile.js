@@ -26,7 +26,10 @@ export default function ProductTile({ product }) {
             </div>
           ) : null}
 
-          <p>{product.brand}</p>
+          <p>
+            {product.brand}
+            {product.subcategory ? ` - ${product.subcategory}` : null}
+          </p>
           <h3>{product.name}</h3>
           <p className={styles.price}>
             <span>{product.price}</span> dkk

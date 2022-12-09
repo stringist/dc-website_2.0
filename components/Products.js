@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import React from "react";
 import { useState, useConditions } from "react";
 import intersect from "just-intersect";
+import Collapsible from "react-collapsible";
 
 import styles from "../styles/ProductList.module.scss";
 
@@ -57,6 +58,13 @@ export default function Products({ category, products }) {
       setBrandFilter((old) => old.filter((el) => el !== e.target.value));
     }
   }
+  function toggleSubc(e) {
+    if (e.target.checked) {
+      setSubcFilter((old) => old.concat(e.target.value));
+    } else {
+      setSubcFilter((old) => old.filter((el) => el !== e.target.value));
+    }
+  }
   function toggleColor(e) {
     if (e.target.checked) {
       setColorFilter((old) => old.concat(e.target.value));
@@ -82,6 +90,12 @@ export default function Products({ category, products }) {
     }
     return data.filter((el) => brandFilter.includes(el.brand));
   }
+  function filterBySubc(data) {
+    if (subcFilter.length === 0) {
+      return data;
+    }
+    return data.filter((el) => subcFilter.includes(el.subcategory));
+  }
   function filterByColors(data) {
     if (colorFilter.length === 0) {
       return data;
@@ -99,6 +113,7 @@ export default function Products({ category, products }) {
   let filteredList = [...categoryList];
 
   filteredList = filterByBrands(filteredList);
+  filteredList = filterBySubc(filteredList);
   filteredList = filterByColors(filteredList);
   filteredList = filterBySpeeds(filteredList);
 
@@ -127,30 +142,41 @@ export default function Products({ category, products }) {
             </select>
           </div>
 
-          <legend>Brand</legend>
-          {brands.map((brand) => (
-            <div className={styles.input_group} key={uuidv4}>
-              <input type="checkbox" id={brand} name={brand} value={brand} onChange={toggleBrand}></input>
-              <label htmlFor={brand}>{brand}</label>
-            </div>
-          ))}
+          <Collapsible trigger="Brand">
+            {brands.map((brand) => (
+              <div className={styles.input_group} key={uuidv4}>
+                <input type="checkbox" id={brand} name={brand} value={brand} onChange={toggleBrand}></input>
+                <label htmlFor={brand}>{brand}</label>
+              </div>
+            ))}
+          </Collapsible>
 
-          <legend>Color</legend>
-          {colors.map((color) => (
-            <div className={styles.input_group} key={uuidv4}>
-              <input type="checkbox" id={`color${color}`} name={`color${color}`} value={color} onChange={toggleColor}></input>
-              <label htmlFor={`color${color}`}>{color}</label>
-            </div>
-          ))}
-          <legend>Speed</legend>
-          {speeds.map((speed) => (
-            <div className={styles.input_group} key={uuidv4}>
-              <input type="checkbox" id={`speed${speed}`} name={`speed${speed}`} value={speed} onChange={toggleSpeed}></input>
-              <label htmlFor={`speed${speed}`}>{speed}</label>
-            </div>
-          ))}
+          <Collapsible trigger="Subcategory ">
+            {subcategories.map((subc) => (
+              <div className={styles.input_group} key={uuidv4}>
+                <input type="checkbox" id={subc} name={subc} value={subc} onChange={toggleSubc}></input>
+                <label htmlFor={subc}>{subc}</label>
+              </div>
+            ))}
+          </Collapsible>
 
-          {/* <legend>Price range</legend> */}
+          <Collapsible trigger="Color">
+            {colors.map((color) => (
+              <div className={styles.input_group} key={uuidv4}>
+                <input type="checkbox" id={`color${color}`} name={`color${color}`} value={color} onChange={toggleColor}></input>
+                <label htmlFor={`color${color}`}>{color}</label>
+              </div>
+            ))}
+          </Collapsible>
+
+          <Collapsible trigger="Speed">
+            {speeds.map((speed) => (
+              <div className={styles.input_group} key={uuidv4}>
+                <input type="checkbox" id={`speed${speed}`} name={`speed${speed}`} value={speed} onChange={toggleSpeed}></input>
+                <label htmlFor={`speed${speed}`}>{speed}</label>
+              </div>
+            ))}
+          </Collapsible>
         </div>
         <div className={styles.products}>
           <h1>{category}</h1>
