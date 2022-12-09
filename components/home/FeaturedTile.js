@@ -7,12 +7,13 @@ import styles from "../../styles/Home.module.scss";
 import placeholder from "../../public/images/image4.jpg";
 
 export default function FeaturedTile({ product }) {
+  console.log(product);
   let productImages = [];
   product.img.includes(",")
     ? (productImages = product.img.split(","))
     : (productImages = productImages.concat(product.img));
   return (
-    <Link href={`/product/${product.id}`}>
+    <Link href={`/product/${product._id}`}>
       <div className={styles.productTile}>
         <Image
           src={productImages[0]}
@@ -26,10 +27,10 @@ export default function FeaturedTile({ product }) {
 
         {product.speed !== 0 ? (
           <div className={styles.flightScore}>
-            <FlightScore kind="Speed" score={product.speed} key={uuidv4} />
-            <FlightScore kind="Glide" score={product.glide} key={uuidv4} />
-            <FlightScore kind="Turn" score={product.turn} key={uuidv4} />
-            <FlightScore kind="Fade" score={product.fade} key={uuidv4} />
+            <FlightScore kind="Speed" score={product.speed} />
+            <FlightScore kind="Glide" score={product.glide} />
+            <FlightScore kind="Turn" score={product.turn} />
+            <FlightScore kind="Fade" score={product.fade} />
           </div>
         ) : null}
 

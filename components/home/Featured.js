@@ -14,7 +14,7 @@ export default function Featured({ products }) {
       <h2>Featured</h2>
       <div className={styles.carousel}>
         {featuredProds.map((product) => (
-          <FeaturedTile key={uuidv4} product={product} />
+          <FeaturedTile key={uuidv4} product={product} id={product.id} />
         ))}
         {/* <FeaturedTile key={uuidv4} product ={featuredProds}/>
         <FeaturedTile key={uuidv4} />
