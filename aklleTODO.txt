@@ -14,3 +14,32 @@ DGA
 Discmania
 Discraft
 Disctroyer
+
+
+# 6 User interface
+- code
+- design
+- style guide
+
+# 2 Content
+- images
+- video
+- logos
+- ikons
+- graphics
+- social media posts
+
+# 2 UX
+- tests
+  - information architecture
+  - survey
+  - 5 minute test / think aloud
+# 1 Business
+- bmc
+- golden circle
+- other stuff
+
+# 1 Technology
+- next.js
+- stripe
+- "the diagram" (tm)(c)(pp)

@@ -10,18 +10,46 @@
   //   position: fixed;
   height: 3.5rem;
   font-weight: 400;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   //   margin-bottom: 10vw;
 
   ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 2.5rem;
   }
+  // li {
+  //   &:hover {
+  //     transform: translate(-3rem, -3rem);
+  //   }
+  // }
 
   a {
+    font-size: 1.1rem;
+    font-weight: 500;
     color: color.$off-white;
     text-decoration: none;
+    &:hover {
+      transition: all 0.3s;
+      font-size: 1.11rem;
+      font-weight: 600;
+      text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.25);
+      color: #fff;
+    }
+    & :active {
+      text-decoration: underline;
+      color: deeppink;
+    }
   }
+}
+
+.active {
+  text-decoration: underline;
+  color: deeppink;
+}
+
+.inactive {
+  font-size: 3rem;
 }
 
 .leftWrapper,
@@ -36,4 +64,33 @@
   height: 6rem;
   position: relative;
   background-image: url("./../public/images/DC_logo_new.svg");
+}
+
+.basket {
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  background-image: url("../public/images/basket_white.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  align-self: center;
+  &:hover {
+    color: rgb(45, 181, 115);
+    // cursor: pointer;
+  }
+}
+
+.countContainer {
+  height: 1.25rem;
+  width: 1.25rem;
+  font-size: 0.8rem;
+  // max-width: min-content;
+  border-radius: 50%;
+  background-color: color.$accent-red;
+  display: grid;
+  place-items: center;
+  position: relative;
+  right: -1.5rem;
+  top: -0.5rem;
 }

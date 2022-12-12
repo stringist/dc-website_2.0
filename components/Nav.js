@@ -2,8 +2,10 @@ import Link from "next/link";
 import SearchBar from "./SearchBar";
 import { useSelector } from "react-redux";
 import styles from "../styles/Nav.module.scss";
+import { useRouter } from "next/router";
 
 export default function Nav() {
+  const router = useRouter();
   // Selecting cart from global state
   const cart = useSelector((state) => state.cart);
 
@@ -19,7 +21,7 @@ export default function Nav() {
           <div className={styles.logoContainer}></div>
         </Link>
         <ul>
-          <li>
+          <li className={router.pathname == "/productList/Discs" ? styles.active : ""}>
             <Link href="/productList/Discs">
               <a>Discs</a>
             </Link>
@@ -45,7 +47,9 @@ export default function Nav() {
       <div className={styles.rightWrapper}>
         <SearchBar />
         <Link href="/cart">
-          <p>Cart ({getItemsCount()})</p>
+          <div className={styles.basket}>
+            <div className={styles.countContainer}>{getItemsCount()}</div>
+          </div>
         </Link>
       </div>
     </nav>
