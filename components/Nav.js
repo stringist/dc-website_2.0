@@ -5,48 +5,56 @@ import styles from "../styles/Nav.module.scss";
 // import { ActiveLink } from 'next-active-link';
 import { useRouter } from "next/router";
 
-
 export default function Nav() {
   // use router for active link styling
   const router = useRouter();
   // Selecting cart from global state
   const cart = useSelector((state) => state.cart);
-  
+
   // Getting the count of items
   const getItemsCount = () => {
     return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
   };
-  
+
   return (
     <nav className={styles.nav}>
       <div className={styles.leftWrapper}>
         <Link href="/">
-          <div className={styles.logoContainer}></div>
+          <div className={styles.logoContainer} title="Home"></div>
         </Link>
         <ul>
-          <li><button type="button" onClick={() => console.log(router.query.category)}>Check route</button></li>
+          {/* <li>
+            <button type="button" onClick={() => console.log(router.pathname)}>
+              Check route
+            </button>
+          </li> */}
           <li className={router.query.category == "Discs" ? styles.active : ""}>
-            <Link href="/productList/Discs"><a onClick={() => router.push('/productList/Discs')}>Discs</a></Link>
-            {/* <ActiveLink href="/productList/Discs" activeClassName={styles.active}  onActiveChange={(isActive) => console.log(isActive)} activeMatchOptions={{
-        exact: true
-      }}>
+            <Link href="/productList/Discs">
               <a>Discs</a>
-            </ActiveLink> */}
+            </Link>
           </li>
-          <li className={router.pathname == "/productList/[category]" ? styles.active : "notactive"}>
+          <li className={router.query.category == "Bags" ? styles.active : ""}>
             <Link href="/productList/Bags">
               <a>Bags</a>
             </Link>
           </li>
-          <li>
+          <li
+            className={
+              router.query.category == "Accessories" ? styles.active : ""
+            }
+          >
             <Link href="/productList/Accessories">
               <a>Accesories</a>
             </Link>
           </li>
-          <li>
-            <p>
-              <Link href="/about">About</Link>
-            </p>
+          <li
+            className={
+              router.pathname == "/about" ? styles.active : ""
+            }
+          >
+            <Link href="/about">
+              <a>About</a>
+            </Link>
           </li>
         </ul>
       </div>
