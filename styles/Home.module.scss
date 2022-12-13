@@ -138,6 +138,12 @@
   font-weight: 500;
   font-size: 1.25rem;
   text-decoration: underline;
+  &:hover {
+    transition: all .2s;
+    transform: scale(1.015);
+  filter: brightness(1.25);
+color: color.$blue-light;}
+&:active {color: color.$accent-blue;}
 }
 
 .catImage {
