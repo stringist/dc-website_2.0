@@ -99,7 +99,7 @@ export default function ProductPage({ product }) {
           </div>
         </div>
 
-        <button onClick={() => dispatch(addToCart(product))}>Add to basket</button>
+        <button className="primary-button" onClick={() => dispatch(addToCart(product))}>Add to basket</button>
       </div>
     </div>
   );
