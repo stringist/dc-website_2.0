@@ -1,10 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
+// import Image from "next/image";
 import Hero from "../components/Hero";
 import styles from "../styles/Home.module.scss";
-import Link from "next/link";
+// import Link from "next/link";
 import Featured from "../components/home/Featured";
-import ProductTile from "../components/product-tile/ProductTile";
+// import ProductTile from "../components/product-tile/ProductTile";
+// import { ActiveLink } from 'next-active-link';
+
 import HomeAbout from "../components/home/HomeAbout";
 import ShopCategory from "../components/home/ShopCategory";
 import BrandsGallery from "../components/home/BrandsGallery";

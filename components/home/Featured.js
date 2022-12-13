@@ -16,8 +16,8 @@ export default function Featured({ products }) {
           <FeaturedTile key={uuidv4} product={product} id={product.id} />
         ))}
       </div>
-      <Link href="/productList/Discs">
-        <a className="arrow">View all discs </a>
+      <Link href="/productList/Discs" className="blue-link">
+       <div className="blue-link"> <a className="arrow-blue">View all discs </a></div>
       </Link>
     </section>
   );
