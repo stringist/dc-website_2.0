@@ -5,7 +5,7 @@ import styles from "../styles/Nav.module.scss";
 // import { ActiveLink } from 'next-active-link';
 import { useRouter } from "next/router";
 
-export default function Nav() {
+export default function Nav(props) {
   // use router for active link styling
   const router = useRouter();
   // Selecting cart from global state
@@ -15,6 +15,8 @@ export default function Nav() {
   const getItemsCount = () => {
     return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
   };
+
+  console.log(props.products);
 
   return (
     <nav className={styles.nav}>
@@ -38,20 +40,12 @@ export default function Nav() {
               <a>Bags</a>
             </Link>
           </li>
-          <li
-            className={
-              router.query.category == "Accessories" ? styles.active : ""
-            }
-          >
+          <li className={router.query.category == "Accessories" ? styles.active : ""}>
             <Link href="/productList/Accessories">
               <a>Accesories</a>
             </Link>
           </li>
-          <li
-            className={
-              router.pathname == "/about" ? styles.active : ""
-            }
-          >
+          <li className={router.pathname == "/about" ? styles.active : ""}>
             <Link href="/about">
               <a>About</a>
             </Link>
@@ -60,7 +54,7 @@ export default function Nav() {
       </div>
 
       <div className={styles.rightWrapper}>
-        <SearchBar />
+        <SearchBar products={props.products} />
         <Link href="/cart">
           <div className={styles.basket}>
             <div className={styles.countContainer}>{getItemsCount()}</div>
