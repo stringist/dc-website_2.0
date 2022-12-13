@@ -2,8 +2,12 @@ import Link from "next/link";
 import SearchBar from "./SearchBar";
 import { useSelector } from "react-redux";
 import styles from "../styles/Nav.module.scss";
+// import { ActiveLink } from 'next-active-link';
+import { useRouter } from "next/router";
 
 export default function Nav() {
+  // use router for active link styling
+  const router = useRouter();
   // Selecting cart from global state
   const cart = useSelector((state) => state.cart);
 
@@ -16,28 +20,41 @@ export default function Nav() {
     <nav className={styles.nav}>
       <div className={styles.leftWrapper}>
         <Link href="/">
-          <div className={styles.logoContainer}></div>
+          <div className={styles.logoContainer} title="Home"></div>
         </Link>
         <ul>
-          <li>
+          {/* <li>
+            <button type="button" onClick={() => console.log(router.pathname)}>
+              Check route
+            </button>
+          </li> */}
+          <li className={router.query.category == "Discs" ? styles.active : ""}>
             <Link href="/productList/Discs">
               <a>Discs</a>
             </Link>
           </li>
-          <li>
+          <li className={router.query.category == "Bags" ? styles.active : ""}>
             <Link href="/productList/Bags">
               <a>Bags</a>
             </Link>
           </li>
-          <li>
+          <li
+            className={
+              router.query.category == "Accessories" ? styles.active : ""
+            }
+          >
             <Link href="/productList/Accessories">
               <a>Accesories</a>
             </Link>
           </li>
-          <li>
-            <p>
-              <Link href="/about">About</Link>
-            </p>
+          <li
+            className={
+              router.pathname == "/about" ? styles.active : ""
+            }
+          >
+            <Link href="/about">
+              <a>About</a>
+            </Link>
           </li>
         </ul>
       </div>
@@ -45,7 +62,9 @@ export default function Nav() {
       <div className={styles.rightWrapper}>
         <SearchBar />
         <Link href="/cart">
-          <p>Cart ({getItemsCount()})</p>
+          <div className={styles.basket}>
+            <div className={styles.countContainer}>{getItemsCount()}</div>
+          </div>
         </Link>
       </div>
     </nav>
