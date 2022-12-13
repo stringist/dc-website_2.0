@@ -198,6 +198,17 @@ button:focus-within {
   border-radius: 4px;
 }
 
+.section-link {cursor: pointer;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: $blue-dark;
+  border-bottom: solid 2px $blue-dark;
+&:hover {filter: brightness(2.5);
+  transform: translate(0, -1px);
+  transition: all .3s;
+  // box-shadow: 1px 1px 2px #000;
+}}
+
 .arrow-blue::after {
   color: $blue-dark;
   content: url("../public/images/arrow-right.svg");
