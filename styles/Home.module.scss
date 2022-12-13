@@ -40,6 +40,14 @@
   font-weight: 400;
   padding: 1rem;
   cursor: pointer;
+  &:hover {
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.15);
+    // max-width: 250px;
+    border-radius: 5px;
+    transform: scale(105%);
+    filter: brightness(1.1);
+    transition: all 0.25s ease;
+  }
 
   p {
     width: 100%;
@@ -139,11 +147,14 @@
   font-size: 1.25rem;
   text-decoration: underline;
   &:hover {
-    transition: all .2s;
+    transition: all 0.2s;
     transform: scale(1.015);
-  filter: brightness(1.25);
-color: color.$blue-light;}
-&:active {color: color.$accent-blue;}
+    filter: brightness(1.25);
+    color: color.$blue-light;
+  }
+  &:active {
+    color: color.$accent-blue;
+  }
 }
 
 .catImage {
