@@ -29,10 +29,10 @@ export default function Products({ category, products }) {
         if (Array.isArray(product.color)) {
           const iterator = product.color.values();
           for (let el of iterator) {
-            return el.charAt(0).toUpperCase() + el.substring(1);
+            return el;
           }
         } else {
-          return product.color.charAt(0).toUpperCase() + product.color.substring(1);
+          return product.color;
         }
       })
     ),
@@ -164,8 +164,8 @@ export default function Products({ category, products }) {
           <Collapsible trigger="Color">
             {colors.map((color, index) => (
               <div className={styles.input_group} key={index}>
-                <input type="checkbox" id={`color${color}`} name={`color${color}`} value={color} onChange={toggleColor}></input>
-                <label htmlFor={`color${color}`}>{color}</label>
+                <input type="checkbox" id={color} name={color} value={color} onChange={toggleColor}></input>
+                <label htmlFor={color}>{color.charAt(0).toUpperCase() + color.substring(1)}</label>
               </div>
             ))}
           </Collapsible>
@@ -174,8 +174,8 @@ export default function Products({ category, products }) {
             <Collapsible trigger="Speed">
               {speeds.map((speed, index) => (
                 <div className={styles.input_group} key={index}>
-                  <input type="checkbox" id={`speed${speed}`} name={`speed${speed}`} value={speed} onChange={toggleSpeed}></input>
-                  <label htmlFor={`speed${speed}`}>{speed}</label>
+                  <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleSpeed}></input>
+                  <label htmlFor={speed}>{speed}</label>
                 </div>
               ))}
             </Collapsible>
