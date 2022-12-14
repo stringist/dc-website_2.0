@@ -29,6 +29,7 @@ $blue-grey-dark: #9ea7aa;
 $accent-blue: #63ccff;
 $accent-red: #d32f2f;
 $space-after: 10rem;
+$shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 @font-face {
   font-family: "titanium";
@@ -45,7 +46,7 @@ html {
 body {
   background: white;
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.25;
   color: rgb(0, 0, 0, 0.87);
 }
@@ -223,12 +224,14 @@ button:focus-within {
 // landing page
 
 .heroWrapper {
-  height: 50vh;
+  height: 70vh;
   width: 100%;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: grid;
   place-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   h1 {
     font-family: $accent-font;
     color: $off-white;
@@ -246,6 +249,7 @@ button:focus-within {
   padding: 2rem;
   margin-left: 60vw;
   margin-top: -5%;
+  box-shadow: $shadow;
   h2 {
     color: $off-white;
   }

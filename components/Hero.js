@@ -9,7 +9,9 @@ function Hero({ title }) {
       <div
         className="heroWrapper"
         style={
-          title === "About" ? { backgroundImage: `url(${aboutBG.src})` } : { backgroundImage: `url(${homeBG.src})` }
+          title === "About"
+            ? { backgroundImage: `url(${aboutBG.src})`, backgroundPositionY: "bottom 30%" }
+            : { backgroundImage: `url(${homeBG.src})` }
         }
       >
         <h1>{title}</h1>
