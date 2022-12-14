@@ -1,0 +1,101 @@
+@use "./colors.scss" as color;
+
+.mobileNav {
+  position: fixed;
+  top: 0;
+  background-color: color.$blue-dark;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  padding: 1rem;
+  z-index: 99;
+
+  button {
+    padding: 0;
+    margin: 0;
+  }
+  svg {
+    fill: color.$white;
+  }
+  li a {
+    display: block;
+    padding: 1rem;
+
+    font-size: 1.5rem;
+
+    line-height: 2.5;
+  }
+}
+
+.navBar {
+  position: relative;
+}
+
+.navBar button {
+  // position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: fit-content;
+}
+
+.menuNav {
+  overflow-y: scroll;
+  list-style: none;
+  position: fixed;
+  top: 0;
+  background-color: color.$blue-dark;
+  left: -40vw;
+  bottom: 0;
+  height: 200vh;
+  width: 40vw;
+  overflow: hidden;
+
+  z-index: -1;
+  margin-top: 0;
+  color: color.$white;
+  li {
+    margin-left: 8rem;
+  }
+  li a {
+    display: flex;
+    padding-left: 2.5rem;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+  }
+}
+
+.menuNav.showMenu {
+  width: 75vw;
+}
+
+.menuNav li:first-child {
+  margin-top: 5rem;
+}
+
+.showingMenu {
+  transition: all 0.5s ease-out;
+  transform: translateX(160vw);
+}
+.closingMenu {
+  transition: all 0.5s ease-out;
+  transform: translateX(0vw);
+}
+
+@media only screen and (max-width: 700px) {
+  .menuNav {
+    &.showMenu {
+      width: 120vw;
+    }
+  }
+
+  // .navBar button {
+  //   right: 6rem;
+  //   top: 1rem;
+  // }
+}

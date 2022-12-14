@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import styles from "../styles/Nav.module.scss";
 // import { ActiveLink } from 'next-active-link';
 import { useRouter } from "next/router";
+import MobileNav from "./mobileMenu/MobileNav";
 
 export default function Nav(props) {
   // use router for active link styling
