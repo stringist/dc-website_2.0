@@ -72,7 +72,7 @@ export default function Cart() {
             <button
               onClick={() => {
                 checkout({
-                  lineItems: [
+                  items: [
                     cart.map(
                       (item) => (
                         (envId = "process.env.NEXT_PUBLIC_PRICE_ID_" + item.price_id),
