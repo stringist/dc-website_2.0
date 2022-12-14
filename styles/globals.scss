@@ -217,6 +217,9 @@ button:focus-within {
   content: url("../public/images/arrow-right.svg");
 }
 
+.desktop {
+  display: none;
+}
 // landing page
 
 .heroWrapper {
@@ -291,6 +294,12 @@ section h2 {
 }
 
 @media only screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
   section {
     h2 {
       font-size: 2.5rem;
