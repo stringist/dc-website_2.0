@@ -19,7 +19,7 @@ export default function Cart() {
   let envId;
 
   return (
-    <>
+    <main className={styles.cartPage}>
       <h1>Cart</h1>
       <div className={styles.cart_section}>
         {cart.length === 0 ? (
@@ -29,29 +29,39 @@ export default function Cart() {
             <table>
               <tr>
                 <th>Product</th>
-                <th>Quantity</th>
                 <th>Price per item</th>
+                <th>Quantity</th>
                 <th>Subtotal</th>
                 <th></th>
               </tr>
               {cart.map((item) => (
                 <tr className={styles.cart_item} key={item._id}>
-                  <td className={styles.cart_image}>
-                    <Image src={item.img} height="90" width="90" alt={item.name} responsive />
-
-                    <p>{item.name}</p>
+                  <td className={styles.cart_image_container}>
+                    <div className={styles.cart_image}>
+                      <Image src={item.img} height="90" width="90" alt={item.name} responsive />
+                      <p>{item.name}</p>
+                    </div>
                   </td>
                   <td>{item.price}</td>
 
                   <td>
                     <div className={styles.cart_quantity}>
-                      <button onClick={() => dispatch(decrementQuantity(item._id))}>-</button> <span>{item.quantity}</span> <button onClick={() => dispatch(incrementQuantity(item._id))}>+</button>
+                      <button onClick={() => dispatch(decrementQuantity(item._id))}>-</button>{" "}
+                      <span>{item.quantity}</span>{" "}
+                      <button onClick={() => dispatch(incrementQuantity(item._id))}>+</button>
                     </div>
                   </td>
                   <td>{item.quantity * item.price} dkk</td>
                   <td className={styles.cart_remove}>
                     <button onClick={() => dispatch(removeFromCart(item._id))}>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="20"
+                        height="20"
+                        fill="currentColor"
+                        class="bi bi-trash"
+                        viewBox="0 0 16 16"
+                      >
                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                         <path
                           fill-rule="evenodd"
@@ -106,6 +116,6 @@ export default function Cart() {
           </>
         )}
       </div>
-    </>
+    </main>
   );
 }
