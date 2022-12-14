@@ -2,7 +2,7 @@ import "./../styles/globals.scss";
 import Layout from "../components/Layout";
 
 import { Provider } from "react-redux";
-import store from "./redux/store";
+import store from "../redux/store";
 import React, { useContext } from "react";
 
 import { HydrationProvider, Server, Client } from "react-hydration-provider";
