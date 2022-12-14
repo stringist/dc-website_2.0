@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import Image from "next/image";
-import { incrementQuantity, decrementQuantity, removeFromCart } from "./redux/cart.slice";
+import { incrementQuantity, decrementQuantity, removeFromCart } from "../redux/cart.slice";
 import { checkout } from "../checkout";
 import styles from "../styles/Cart.module.scss";
 
