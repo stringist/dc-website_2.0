@@ -55,13 +55,7 @@
   width: 100%;
 }
 
-// .soeren_p {
-//   // padding-left: 100px;
-// }
-
 .sinus_p {
-  // padding-right: 100px;
-
   flex-direction: row-reverse;
 }
 
@@ -69,11 +63,12 @@
   width: 25%;
   height: 25vh;
 }
+
 // Associate club links
 
 .clubLinks_Wrapper {
   display: flex;
-  margin: 5vh 0 12vh 0;
+  justify-content: center;
   gap: 15vw;
 }
 
@@ -97,25 +92,17 @@
   }
 }
 
-.section1_clubLinks {
-  display: flex;
-  flex-direction: column;
-}
-.section2_clubLinks {
-  display: flex;
-  flex-direction: column;
-}
-
 // Find us
 .find_us {
-  background-image: url(../public/images/aboutFindus.png);
+  background-image: url("../public/images/forest_course.png");
   background-size: cover;
-  color: color.$white;
+  color: color.$off-white;
   padding: 9.5vh 15vw;
 }
 
 .find_us h2 {
-  color: color.$white;
+  color: color.$off-white;
+  margin-bottom: 2rem;
 }
 // Google Maps
 .map_wrapper {
@@ -143,12 +130,15 @@
 }
 
 // Get in touch
-.get_in_touch_wrapper {
-  margin: 10vh 0;
+
+.getInTouch {
+  h2 {
+    margin-bottom: 2rem;
+  }
 }
 .get_in_touch__profiles_wrapper {
   display: flex;
-  gap: 2rem;
+  gap: 8rem;
 }
 
 .get_in_touch__profiles_wrapper > div > p:nth-child(1) {
