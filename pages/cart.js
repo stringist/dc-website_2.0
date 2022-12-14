@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import Image from "next/image";
-import { incrementQuantity, decrementQuantity, removeFromCart } from "../redux/cart.slice";
-
+import { incrementQuantity, decrementQuantity, removeFromCart } from "./redux/cart.slice";
+import { checkout } from "../checkout";
 import styles from "../styles/Cart.module.scss";
 
 export default function Cart() {
@@ -15,6 +15,8 @@ export default function Cart() {
   function getTotalPrice() {
     return cart.reduce((accumulator, item) => accumulator + item.quantity * item.price, 0);
   }
+
+  let envId;
 
   return (
     <>
@@ -66,6 +68,41 @@ export default function Cart() {
               <p>Subtotal: {getTotalPrice()} dkk</p>
               <p>Delivery: 0 dkk</p>
             </aside>
+
+            <button
+              onClick={() => {
+                checkout({
+                  lineItems: [
+                    cart.map(
+                      (item) => (
+                        (envId = "process.env.NEXT_PUBLIC_PRICE_ID_" + item.price_id),
+                        console.log(envId),
+                        {
+                          price: envId,
+                          quantity: item.quantity,
+                        }
+                      )
+                    ),
+                  ],
+                });
+              }}
+            >
+              GO TO CHECKOUT
+            </button>
+            {/*  <button
+                onClick={() => {
+                  checkout({
+                    lineItems: [
+                      {
+                        price: process.env.NEXT_PUBLIC_PRICE_ID_1,
+                        quantity: 1,
+                      },
+                    ],
+                  });
+                }}
+              >
+                BUY!
+              </button> */}
           </>
         )}
       </div>
