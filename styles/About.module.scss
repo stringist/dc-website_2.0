@@ -9,11 +9,11 @@
 .profile,
 .profile_reverse {
   display: flex;
+  flex-direction: column;
   margin-bottom: 4rem;
-  padding: 0 15vw;
-  flex-direction: row;
+  padding: 0 5%;
   align-items: center;
-  gap: 5%;
+  gap: 4rem;
   font-size: 1.15rem;
   p {
     margin-bottom: 0;
@@ -41,14 +41,15 @@
     text-align: center;
   }
 }
-.profile_reverse {
-  flex-direction: row-reverse;
-}
+// .profile_reverse {
+//   flex-direction: row-reverse;
+// }
 
 .profile > p,
 .profile_reverse > p {
   // margin-top: 2rem;
   width: 90%;
+  order: -1;
 }
 
 .image_wrapper {
@@ -148,48 +149,64 @@
   font-size: 0.9rem;
   font-style: italic;
 }
-@media screen and (max-width: 900px) {
-  .map_inner {
-    width: 40vw;
-    height: 30vh;
-  }
-}
-@media screen and (max-width: 700px) {
-  .profile {
-    flex-direction: column;
-  }
+
+@media only screen and (min-width: 768px) {
+  .profile,
   .profile_reverse {
-    flex-direction: column;
-  }
-  .soeren_p {
-    padding-left: 0px;
-  }
-  .clubLinks_Wrapper {
-    flex-direction: column;
-  }
-  .find_us {
-    width: 100%;
-  }
-  .map_wrapper {
-    flex-direction: column;
-  }
-  .map_inner {
-    width: 70vw;
-    height: 30vh;
-  }
-  .map_wrapper > article {
-    display: flex;
-    flex-direction: column;
+    flex-direction: row-reverse;
+    margin-bottom: 4rem;
+    padding: 0 15vw;
     align-items: center;
-  }
-  .map_wrapper p:last-child {
-    color: red;
+    gap: 5%;
+    font-size: 1.15rem;
+    p {
+      margin-bottom: 0;
+    }
   }
 }
 
-@media screen and (max-width: 500px) {
-  .get_in_touch__profiles_wrapper {
-    display: flex;
-    flex-direction: column;
-  }
-}
+// @media screen and (max-width: 900px) {
+//   .map_inner {
+//     width: 40vw;
+//     height: 30vh;
+//   }
+// }
+// @media screen and (max-width: 700px) {
+//   .profile {
+//     flex-direction: column;
+//   }
+//   .profile_reverse {
+//     flex-direction: column;
+//   }
+//   .soeren_p {
+//     padding-left: 0px;
+//   }
+//   .clubLinks_Wrapper {
+//     flex-direction: column;
+//   }
+//   .find_us {
+//     width: 100%;
+//   }
+//   .map_wrapper {
+//     flex-direction: column;
+//   }
+//   .map_inner {
+//     width: 70vw;
+//     height: 30vh;
+//   }
+//   .map_wrapper > article {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
+//   .map_wrapper p:last-child {
+//     color: red;
+//   }
+// }
+
+// @media screen and (max-width: 500px) {
+//   .get_in_touch__profiles_wrapper {
+//     display: flex;
+//     flex-direction: column;
+//   }
+// }
