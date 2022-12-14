@@ -218,7 +218,8 @@ button:focus-within {
   content: url("../public/images/arrow-right.svg");
 }
 
-.desktop {
+.desktop,
+#desktopNav {
   display: none;
 }
 // landing page
@@ -300,11 +301,16 @@ section h2 {
 }
 
 @media only screen and (min-width: 768px) {
-  .mobile {
+  .mobile,
+  #mobileNav {
     display: none;
   }
   .desktop {
     display: block;
+  }
+
+  #desktopNav {
+    display: flex;
   }
   section {
     h2 {
