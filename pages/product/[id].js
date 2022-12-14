@@ -75,27 +75,23 @@ export default function ProductPage({ product }) {
 
         <div className={styles.input_grid}>
           <div className={styles.input_group}>
-            {typeof color == "string" ? (
-              product.color.forEach((color) => (
+            <>
+              {console.log(product.color.length)}
+              {product.color.length > 1 ? (
                 <>
                   <label htmlFor="weight-color">Color:</label>
                   <select name="weight-color" id="weight-color">
-                    <option value={product.color} key={uuidv4()}>
-                      {product.color}
-                    </option>
+                    {product.color.map((color) => (
+                      <option value={color} key={uuidv4()}>
+                        {color.charAt(0).toUpperCase() + color.substring(1)}
+                      </option>
+                    ))}
                   </select>
                 </>
-              ))
-            ) : (
-              <>
-                <p className={styles.color_label}>
-                  Color:
-                  <span className={styles.color_color}> {product.color}</span>
-                </p>
-              </>
-            )}
-
-            {console.log(typeof product.color !== "string")}
+              ) : (
+                <p>Color: {product.color[0].charAt(0).toUpperCase() + product.color[0].substring(1)}</p>
+              )}
+            </>
           </div>
         </div>
 
