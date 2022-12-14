@@ -2,7 +2,7 @@ import GetInTouchProfile from "./GetInTouchProfile";
 import styles from "../../styles/About.module.scss";
 export default function GetInTouch() {
   return (
-    <section className={styles.get_in_touch_wrapper}>
+    <section className={styles.getInTouch}>
       <h2>Get in touch</h2>
       <article className={styles.get_in_touch__profiles_wrapper}>
         <GetInTouchProfile

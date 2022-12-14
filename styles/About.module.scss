@@ -9,11 +9,11 @@
 .profile,
 .profile_reverse {
   display: flex;
+  flex-direction: column;
   margin-bottom: 4rem;
-  padding: 0 15vw;
-  flex-direction: row;
+  padding: 0 5%;
   align-items: center;
-  gap: 5%;
+  gap: 4rem;
   font-size: 1.15rem;
   p {
     margin-bottom: 0;
@@ -41,27 +41,22 @@
     text-align: center;
   }
 }
-.profile_reverse {
-  flex-direction: row-reverse;
-}
+// .profile_reverse {
+//   flex-direction: row-reverse;
+// }
 
 .profile > p,
 .profile_reverse > p {
   // margin-top: 2rem;
   width: 90%;
+  order: -1;
 }
 
 .image_wrapper {
   width: 100%;
 }
 
-// .soeren_p {
-//   // padding-left: 100px;
-// }
-
 .sinus_p {
-  // padding-right: 100px;
-
   flex-direction: row-reverse;
 }
 
@@ -69,12 +64,13 @@
   width: 25%;
   height: 25vh;
 }
+
 // Associate club links
 
 .clubLinks_Wrapper {
   display: flex;
-  margin: 5vh 0 12vh 0;
-  gap: 15vw;
+  flex-direction: column;
+  margin-left: 25vw;
 }
 
 .section1_clubLinks,
@@ -97,31 +93,24 @@
   }
 }
 
-.section1_clubLinks {
-  display: flex;
-  flex-direction: column;
-}
-.section2_clubLinks {
-  display: flex;
-  flex-direction: column;
-}
-
 // Find us
 .find_us {
-  background-image: url(../public/images/aboutFindus.png);
+  background-image: url("../public/images/forest_course.png");
   background-size: cover;
-  color: color.$white;
+  color: color.$off-white;
   padding: 9.5vh 15vw;
 }
 
 .find_us h2 {
-  color: color.$white;
+  color: color.$off-white;
+  margin-bottom: 2rem;
 }
 // Google Maps
 .map_wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  gap: 3vw;
+  gap: 4rem;
   margin-top: 7vh;
 }
 .map_wrapper h3 {
@@ -138,16 +127,20 @@
 }
 .map_inner {
   display: flex;
-  width: 32vw;
-  height: 40vh;
+  width: 100%;
+  height: 50vh;
 }
 
 // Get in touch
-.get_in_touch_wrapper {
-  margin: 10vh 0;
+
+.getInTouch {
+  h2 {
+    margin-bottom: 2rem;
+  }
 }
 .get_in_touch__profiles_wrapper {
   display: flex;
+  flex-direction: column;
   gap: 2rem;
 }
 
@@ -158,48 +151,90 @@
   font-size: 0.9rem;
   font-style: italic;
 }
-@media screen and (max-width: 900px) {
-  .map_inner {
-    width: 40vw;
-    height: 30vh;
-  }
-}
-@media screen and (max-width: 700px) {
-  .profile {
-    flex-direction: column;
-  }
+
+@media only screen and (min-width: 768px) {
+  .profile,
   .profile_reverse {
-    flex-direction: column;
-  }
-  .soeren_p {
-    padding-left: 0px;
+    flex-direction: row-reverse;
+    margin-bottom: 4rem;
+    padding: 0 15vw;
+    align-items: center;
+    gap: 5%;
+    font-size: 1.15rem;
+    p {
+      margin-bottom: 0;
+    }
   }
   .clubLinks_Wrapper {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15vw;
   }
-  .find_us {
-    width: 100%;
-  }
-  .map_wrapper {
-    flex-direction: column;
-  }
-  .map_inner {
-    width: 70vw;
-    height: 30vh;
-  }
-  .map_wrapper > article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .map_wrapper p:last-child {
-    color: red;
-  }
-}
 
-@media screen and (max-width: 500px) {
+  .map_wrapper {
+    flex-direction: row;
+    gap: 3vw;
+    margin-top: 7vh;
+  }
+
+  .map_inner {
+    display: flex;
+    width: 32vw;
+    height: 40vh;
+  }
+
   .get_in_touch__profiles_wrapper {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 8rem;
   }
+  // .profile_reverse {
+  //   flex-direction: row;
+  // }
 }
+
+// @media screen and (max-width: 900px) {
+//   .map_inner {
+//     width: 40vw;
+//     height: 30vh;
+//   }
+// }
+// @media screen and (max-width: 700px) {
+//   .profile {
+//     flex-direction: column;
+//   }
+//   .profile_reverse {
+//     flex-direction: column;
+//   }
+//   .soeren_p {
+//     padding-left: 0px;
+//   }
+//   .clubLinks_Wrapper {
+//     flex-direction: column;
+//   }
+//   .find_us {
+//     width: 100%;
+//   }
+//   .map_wrapper {
+//     flex-direction: column;
+//   }
+//   .map_inner {
+//     width: 70vw;
+//     height: 30vh;
+//   }
+//   .map_wrapper > article {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }
+//   .map_wrapper p:last-child {
+//     color: red;
+//   }
+// }
+
+// @media screen and (max-width: 500px) {
+//   .get_in_touch__profiles_wrapper {
+//     display: flex;
+//     flex-direction: column;
+//   }
+// }
