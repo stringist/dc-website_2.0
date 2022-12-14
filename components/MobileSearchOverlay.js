@@ -96,11 +96,11 @@ export default function MobileSearchOverlay(props) {
         {nPages > 1 ? (
           <div className={Styles.pagination}>
             <button className={Styles.paginationButton} onClick={previousPage}>
-              &#60;&#60; Previous
+              &#60;&#60;
             </button>
             {buttonss}
             <button className={Styles.paginationButton} onClick={nextPage}>
-              Next &#62;&#62;
+              &#62;&#62;
             </button>
           </div>
         ) : null}

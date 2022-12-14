@@ -1,5 +1,9 @@
 @use "./colors.scss" as color;
 
+#icon {
+  z-index: -3;
+}
+
 .overlay {
   position: absolute;
   width: 100vw;
@@ -21,6 +25,11 @@
     justify-content: center;
     gap: 1rem;
     margin: 3rem 6rem;
+  }
+
+  article {
+    display: flex;
+    justify-content: center;
   }
 
   h2 {
