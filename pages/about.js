@@ -4,7 +4,7 @@ import soeren from "../public/images/soeren.png";
 import sinus from "../public/images/sinus.png";
 import ClubLinks from "../components/about/ClubLinks";
 import FindUs from "../components/about/Findus";
-import Hero from "../components/hero";
+import Hero from "../components/Hero";
 import GetInTouch from "../components/about/GetInTouch";
 import styles from "../styles/About.module.scss";
 export default function About() {
