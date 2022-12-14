@@ -3,7 +3,7 @@ import Image from "next/image";
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/cart.slice";
+import { addToCart } from "../../redux/cart.slice";
 
 import Score from "../../components/product-page/Score";
 
@@ -20,9 +20,7 @@ export default function ProductPage({ product }) {
   }
 
   let productImages = [];
-  product.img.includes(",")
-    ? (productImages = product.img.split(","))
-    : (productImages = productImages.concat(product.img));
+  product.img.includes(",") ? (productImages = product.img.split(",")) : (productImages = productImages.concat(product.img));
   let imageSrc = productImages[0];
 
   function changeSrcLeft() {
