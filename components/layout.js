@@ -7,10 +7,10 @@ export default function Layout({ children }, { products }) {
 
   return (
     <>
-      <Nav products={products} />
+      <MobileNav />
+      {/* <Nav products={products} /> */}
       <main>{children}</main>
       <Footer />
-      <MobileNav />
     </>
   );
 }

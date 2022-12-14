@@ -2,12 +2,13 @@
 
 .mobileNav {
   position: fixed;
-  bottom: 0;
+  top: 0;
   background-color: color.$blue-dark;
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 1rem;
+  z-index: 99;
 
   button {
     padding: 0;
@@ -40,9 +41,9 @@
   position: fixed;
   top: 0;
   background-color: color.$blue-dark;
-  right: -40vw;
+  left: -40vw;
   bottom: 0;
-  height: 100vh;
+  height: 200vh;
   width: 40vw;
   overflow: hidden;
 
@@ -84,7 +85,7 @@
 }
 .closingMenu {
   transition: all 0.5s ease-out;
-  transform: translateX(0vw);
+  transform: translateX(40vw);
 }
 
 @media only screen and (max-width: 700px) {
