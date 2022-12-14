@@ -17,6 +17,7 @@
   table {
     width: 100%;
   }
+
   td {
     text-align: center;
   }
@@ -28,7 +29,7 @@
 
   .cart_image {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: auto;
     // padding: 1rem;
@@ -40,7 +41,7 @@
 }
 
 // .cart_item {
-//   background-color: deeppink;
+//   margin-top: 2rem;
 // }
 .cart_quantity {
   display: flex;
