@@ -64,10 +64,14 @@
   position: relative;
   background-image: url("./../public/images/DC_logo_new.svg");
   &:hover {
-    transform: rotate(720deg) scale(1.05);
-    transition: all 0.5s ease-in-out;
+    // transform: rotate(720deg) scale(1.05);
+    // transition: all 0.5s ease-in-out;
+    animation: spin .5s alternate;
+  
   }
 }
+
+@keyframes spin {from {transform: rotate(0deg);}to {transform: rotate(720deg);}}
 
 .basket {
   cursor: pointer;
