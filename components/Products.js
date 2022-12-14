@@ -184,7 +184,7 @@ export default function Products({ category, products }) {
         </div>
         <div className={styles.products}>
           <h1>{category}</h1>
-          <section className={styles.product_grid}>{filteredList.length === 0 ? <p>No product found :(</p> : filteredList.map((product) => <ProductTile product={product} key={uuidv4} products={products} />)}</section>
+          <section className={styles.product_grid}>{filteredList.length === 0 ? <p>No product found :(</p> : filteredList.map((product) => <ProductTile product={product} key={product._id} products={products} />)}</section>
         </div>
       </div>
     </>

@@ -9,6 +9,7 @@
   background-color: color.$white;
   z-index: -1;
   color: black;
+  padding-bottom: 3rem;
 
   section {
     display: flex;
@@ -67,6 +68,29 @@
     }
     &:hover path {
       fill: color.$accent-blue;
+    }
+  }
+
+  .pagination {
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+
+    button {
+      padding: 0.5rem;
+      min-width: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    button:not(.paginationButton) {
+      background: none;
+      color: color.$blue-dark;
+      box-shadow: none;
+      border: solid 1px color.$blue-dark;
+    }
+    button.paginationButton {
+      min-width: 7rem;
     }
   }
 }
