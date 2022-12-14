@@ -76,7 +76,6 @@ export default function ProductPage({ product }) {
         <div className={styles.input_grid}>
           <div className={styles.input_group}>
             <>
-              {console.log(product.color.length)}
               {product.color.length > 1 ? (
                 <>
                   <label htmlFor="weight-color">Color:</label>
