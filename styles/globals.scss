@@ -28,7 +28,8 @@ $blue-grey: #cfd8dc;
 $blue-grey-dark: #9ea7aa;
 $accent-blue: #63ccff;
 $accent-red: #d32f2f;
-$space-after: 8rem;
+$space-after: 10rem;
+$shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 @font-face {
   font-family: "titanium";
@@ -45,7 +46,7 @@ html {
 body {
   background: white;
   font-family: "Roboto", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.25;
   color: rgb(0, 0, 0, 0.87);
 }
@@ -198,66 +199,76 @@ button:focus-within {
   border-radius: 4px;
 }
 
-.section-link {cursor: pointer;
+.section-link {
+  cursor: pointer;
   font-weight: 500;
   font-size: 1.2rem;
   color: $blue-dark;
   border-bottom: solid 2px $blue-dark;
-&:hover {filter: brightness(2.5);
-  transform: translate(0, -1px);
-  transition: all .3s;
-  // box-shadow: 1px 1px 2px #000;
-}}
+  &:hover {
+    filter: brightness(2.5);
+    transform: translate(0, -1px);
+    transition: all 0.3s;
+    // box-shadow: 1px 1px 2px #000;
+  }
+}
 
 .arrow-blue::after {
   color: $blue-dark;
   content: url("../public/images/arrow-right.svg");
 }
 
-
+.desktop {
+  display: none;
+}
 // landing page
 
 .heroWrapper {
-  height: 50vh;
+  height: 70vh;
   width: 100%;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   display: grid;
   place-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   h1 {
     font-family: $accent-font;
     color: $off-white;
-    font-size: 7vw;
+    font-size: 4.5rem;
     text-align: center;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.87);
+    // filter: drop-shadow(4px 4px 0 $blue-dark);
   }
 }
 
 .schedule {
   width: 30vw;
   min-height: 10rem;
-  background-color: $blue;
+  background-color: $blue-dark;
   color: $off-white;
   position: relative;
   padding: 2rem;
   margin-left: 60vw;
   margin-top: -5%;
+  box-shadow: $shadow;
   h2 {
     color: $off-white;
   }
 }
 
-.blue-link :hover {color: $blue-light;
-
+.blue-link :hover {
+  color: $blue-light;
 }
 
 section h2 {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 // REACT Collapsible
 .Collapsible {
-  margin: 1rem .5rem;
+  margin: 1rem 0.5rem;
   cursor: pointer;
 
   .Collapsible__trigger {
@@ -284,6 +295,20 @@ section h2 {
       &:after {
         transform: rotateZ(180deg);
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+  .desktop {
+    display: block;
+  }
+  section {
+    h2 {
+      font-size: 2.5rem;
     }
   }
 }

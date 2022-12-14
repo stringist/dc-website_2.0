@@ -6,50 +6,61 @@
   align-items: center;
   margin-top: 10vh;
 }
-.profile {
-  display: flex;
-  margin-bottom: 2vw;
-  padding: 0 15vw;
-  flex-direction: row;
-}
-.profile :first-child {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: color.$blue-dark;
-  font-weight: 400;
-}
+.profile,
 .profile_reverse {
   display: flex;
-  margin-bottom: 2vw;
+  margin-bottom: 4rem;
   padding: 0 15vw;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  align-items: center;
+  gap: 5%;
+  font-size: 1.15rem;
+  p {
+    margin-bottom: 0;
+  }
 }
+.profile :first-child,
 .profile_reverse :first-child {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: color.$blue-dark;
+  color: color.$off-white;
   font-weight: 400;
+  gap: 0.5rem;
+  p {
+    font-size: 1rem;
+    background-color: #001229e0;
+    background-color: color.$blue-dark;
+    background-color: rgba(0, 0, 0, 0.85);
+    width: 100%;
+    padding: 0.35rem;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+  }
 }
-.profile > p {
-  width: 100%;
+.profile_reverse {
+  flex-direction: row-reverse;
 }
 
+.profile > p,
 .profile_reverse > p {
-  width: 100%;
+  // margin-top: 2rem;
+  width: 90%;
 }
+
 .image_wrapper {
   width: 100%;
 }
 
-.soeren_p {
-  padding-left: 100px;
-  flex-direction: row;
-}
+// .soeren_p {
+//   // padding-left: 100px;
+// }
 
 .sinus_p {
-  padding-right: 100px;
+  // padding-right: 100px;
 
   flex-direction: row-reverse;
 }
@@ -63,6 +74,27 @@
 .clubLinks_Wrapper {
   display: flex;
   margin: 5vh 0 12vh 0;
+  gap: 15vw;
+}
+
+.section1_clubLinks,
+.section2_clubLinks {
+  list-style-type: disc;
+}
+
+.section1_clubLinks li,
+.section2_clubLinks li {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.2rem;
+  color: color.$blue-dark;
+  text-decoration: underline;
+  &:hover {
+    filter: brightness(2.5);
+    transform: scale(101%);
+    transition: all 0.3s;
+    // box-shadow: 1px 1px 2px #000;
+  }
 }
 
 .section1_clubLinks {

@@ -20,7 +20,9 @@ export default function ProductPage({ product }) {
   }
 
   let productImages = [];
-  product.img.includes(",") ? (productImages = product.img.split(",")) : (productImages = productImages.concat(product.img));
+  product.img.includes(",")
+    ? (productImages = product.img.split(","))
+    : (productImages = productImages.concat(product.img));
   let imageSrc = productImages[0];
 
   function changeSrcLeft() {
@@ -37,8 +39,22 @@ export default function ProductPage({ product }) {
   return (
     <div className={styles.product_page}>
       <div className={styles.left}>
-        <Image src={imageSrc} alt={product.name} width={200} height={200} layout="responsive" placeholder="blur" blurDataURL="/placeholder.png"></Image>
-
+        <h2 className="mobile">{product.name}</h2>
+        <h4 className="mobile">
+          {product.brand} {product.subcategory ? `| ${product.subcategory}` : null}
+        </h4>
+        <div className={styles.imgContainer}>
+          <Image
+            src={imageSrc}
+            alt={product.name}
+            width={400}
+            height={400}
+            // layout="intrinsic"
+            objectFit="contain"
+            placeholder="blur"
+            blurDataURL="/placeholder.png"
+          />
+        </div>
         {productImages[1] ? (
           <>
             <div className={styles.arrow_left} onClick={changeSrcLeft}>
@@ -62,17 +78,12 @@ export default function ProductPage({ product }) {
 
       <div className={styles.right}>
         {product.countInStock < 5 ? <p className={styles.only_stock}>Only {product.countInStock} left!</p> : null}
-        <h2>{product.name}</h2>
-        <h4>
+        <h2 className="desktop">{product.name}</h2>
+        <h4 className="desktop">
           {product.brand} {product.subcategory ? `| ${product.subcategory}` : null}
         </h4>
 
         <p>{product.description}</p>
-
-        <p className={styles.price}>
-          <span>{product.price}</span> dkk
-        </p>
-
         <div className={styles.input_grid}>
           <div className={styles.input_group}>
             <>
@@ -93,8 +104,13 @@ export default function ProductPage({ product }) {
             </>
           </div>
         </div>
+        <p className={styles.price}>
+          <span>{product.price}</span> dkk
+        </p>
 
-        <button className="primary-button" onClick={() => dispatch(addToCart(product))}>Add to basket</button>
+        <button className="primary-button" onClick={() => dispatch(addToCart(product))}>
+          Add to basket <div className={styles.basketContainer} />
+        </button>
       </div>
     </div>
   );

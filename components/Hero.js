@@ -1,6 +1,7 @@
 import Image from "next/image";
 // import bg from "https://lumensity.dk/dc/basket_hero_full.png";
-import homeBG from "./../public/images/hero_2.png";
+import homeBG from "./../public/images/hero_vintage.png";
+// import homeBG from "./../public/images/hero_2.png";
 import aboutBG from "./../public/images/basket_hero_full.png";
 
 function Hero({ title }) {
@@ -9,7 +10,9 @@ function Hero({ title }) {
       <div
         className="heroWrapper"
         style={
-          title === "About" ? { backgroundImage: `url(${aboutBG.src})` } : { backgroundImage: `url(${homeBG.src})` }
+          title === "About"
+            ? { backgroundImage: `url(${aboutBG.src})`, backgroundPositionY: "bottom 30%" }
+            : { backgroundImage: `url(${homeBG.src})`, backgroundPositionY: "top" }
         }
       >
         <h1>{title}</h1>
