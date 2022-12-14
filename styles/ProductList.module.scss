@@ -14,7 +14,7 @@
     // border-right: solid 1px #002f6cb4;
     border-right: solid 1px rgba(0, 0, 0, 0.35);
     // margin-top: 5rem;
-padding-top: 5rem;
+    padding-top: 5rem;
     > :first-child {
       margin-top: 0rem;
     }
@@ -25,12 +25,20 @@ padding-top: 5rem;
   }
 
   .products {
-    margin-left: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // margin-left: 3rem;
+    h1 {
+      text-align: center;
+      margin: 2rem auto;
+    }
   }
 }
 
 // Product Tile
 .product_grid {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   row-gap: 2rem;
@@ -41,14 +49,16 @@ padding-top: 5rem;
   text-align: center;
   padding: 1rem;
   cursor: pointer;
+  margin: auto;
 
-  &:hover{box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.15);
+  &:hover {
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.15);
     // max-width: 250px;
-  border-radius: 5px;
-  transform: scale(105%);
-  filter: brightness(1.1);
-  transition: all .25s ease;
-}
+    border-radius: 5px;
+    transform: scale(105%);
+    filter: brightness(1.1);
+    transition: all 0.25s ease;
+  }
 
   img {
     object-fit: cover;
@@ -74,7 +84,7 @@ padding-top: 5rem;
   justify-content: center;
   gap: 0.5rem;
   margin-bottom: 1rem;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
 
   p {
     font-size: 1.25rem;
