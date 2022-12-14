@@ -8,7 +8,7 @@ export default function Layout({ children }, { products }) {
   return (
     <>
       <MobileNav />
-      {/* <Nav products={products} /> */}
+      <Nav products={products} />
       <main>{children}</main>
       <Footer />
     </>

@@ -14,7 +14,7 @@ export default function MobileNav() {
     return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
   };
   return (
-    <div className={Styles.mobileNav}>
+    <div className={Styles.mobileNav} id="mobileNav">
       <BurgerMenu />
       <MobileSearch />
 

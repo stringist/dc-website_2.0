@@ -20,7 +20,7 @@ export default function Nav(props) {
   console.log(props.products);
 
   return (
-    <nav className={styles.nav}>
+    <nav className={styles.nav} id="desktopNav">
       <div className={styles.leftWrapper}>
         <Link href="/">
           <div className={styles.logoContainer} title="Home"></div>
