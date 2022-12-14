@@ -1,0 +1,86 @@
+@use "./colors.scss" as color;
+
+.navBar {
+  position: relative;
+}
+
+// svg {
+//   fill: color.$blue-ligher;
+// }
+
+.navBar button {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  width: fit-content;
+}
+
+.menuNav {
+  overflow-y: scroll;
+  list-style: none;
+  position: fixed;
+  top: 0;
+  background-color: color.$blue-dark;
+  right: -40vw;
+  bottom: 0;
+  height: 100vh;
+  width: 40vw;
+  overflow: hidden;
+
+  z-index: 9;
+  margin-top: 0;
+
+  & a {
+    display: flex;
+    padding-left: 2.5rem;
+    align-items: center;
+    gap: 1.2rem;
+    width: 100%;
+  }
+}
+
+.menuNav.showMenu {
+  width: 75vw;
+}
+
+// a {
+//   display: block;
+//   padding: 1rem;
+//   font-size: 1.5rem;
+//   color: color.$blue-ligher;
+//   line-height: 2.5;
+// }
+
+// li:hover {
+//   background-color: color.$grey-light;
+// }
+
+.menuNav li:first-child {
+  margin-top: 5rem;
+}
+
+.showingMenu {
+  transition: all 0.5s ease-out;
+  transform: translateX(80vw);
+}
+.closingMenu {
+  transition: all 0.5s ease-out;
+  transform: translateX(0vw);
+}
+
+@media only screen and (max-width: 700px) {
+  .menuNav {
+    &.showMenu {
+      width: 120vw;
+    }
+  }
+
+  // .navBar button {
+  //   right: 6rem;
+  //   top: 1rem;
+  // }
+}
