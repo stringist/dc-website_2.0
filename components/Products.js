@@ -1,5 +1,4 @@
 import ProductTile from "./product-tile/ProductTile";
-import { v4 as uuidv4 } from "uuid";
 import React from "react";
 import { useState, useConditions } from "react";
 import intersect from "just-intersect";

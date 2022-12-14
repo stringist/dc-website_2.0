@@ -1,0 +1,101 @@
+@use "./colors.scss" as color;
+
+.page {
+  width: 100vw;
+  min-height: 100vh;
+  top: 3.5rem;
+  left: 0;
+  background-color: color.$white;
+  z-index: -1;
+  color: black;
+  padding-bottom: 3rem;
+  &::before {
+    height: 400vh;
+    background-color: black;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    justify-content: center;
+    gap: 1rem;
+    margin: 3rem 6rem;
+  }
+
+  h2 {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .search__input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+  input {
+    width: 30rem;
+    height: 1.75rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px color.$blue-light;
+    padding-left: 0.5rem;
+    color: color.$blue-dark;
+  }
+  ::placeholder {
+    color: color.$blue-dark;
+  }
+
+  h5 {
+    text-align: center;
+    margin-top: 2rem;
+    color: color.$accent-red;
+    font-size: 1rem;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+
+    path {
+      fill: color.$blue-dark;
+    }
+    &:hover path {
+      fill: color.$accent-blue;
+    }
+  }
+
+  .pagination {
+    position: absolute;
+    bottom: 2rem;
+    display: flex;
+
+    button {
+      padding: 0.5rem;
+      min-width: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    button:not(.paginationButton) {
+      background: none;
+      color: color.$blue-dark;
+      box-shadow: none;
+      border: solid 1px color.$blue-dark;
+    }
+    button.paginationButton {
+      min-width: 7rem;
+    }
+    button.active {
+      background-color: color.$accent-red;
+      color: white;
+      border-color: color.$accent-red;
+    }
+  }
+}

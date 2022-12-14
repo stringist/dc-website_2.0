@@ -1,5 +1,20 @@
 @use "./colors.scss" as color;
 
+.mobileNav {
+  position: fixed;
+  bottom: 0;
+  background-color: color.$blue-dark;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1rem;
+
+  button {
+    padding: 0;
+    margin: 0;
+  }
+}
+
 .navBar {
   position: relative;
 }
@@ -9,9 +24,9 @@
 // }
 
 .navBar button {
-  position: fixed;
+  // position: fixed;
   right: 0;
-  top: 0;
+  bottom: 0;
   z-index: 10;
   cursor: pointer;
   background: transparent;
