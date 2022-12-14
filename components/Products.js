@@ -144,17 +144,17 @@ export default function Products({ category, products }) {
           </div>
 
           <Collapsible trigger="Brand">
-            {brands.map((brand) => (
-              <div className={styles.input_group} key={uuidv4}>
+            {brands.map((brand, index) => (
+              <div className={styles.input_group} key={index}>
                 <input type="checkbox" id={brand} name={brand} value={brand} onChange={toggleBrand}></input>
                 <label htmlFor={brand}>{brand}</label>
               </div>
             ))}
           </Collapsible>
           {subcategories.length > 1 ? (
-            <Collapsible trigger="Subcategory ">
-              {subcategories.map((subc) => (
-                <div className={styles.input_group} key={uuidv4}>
+            <Collapsible trigger="Subcategory">
+              {subcategories.map((subc, index) => (
+                <div className={styles.input_group} key={index}>
                   <input type="checkbox" id={subc} name={subc} value={subc} onChange={toggleSubc}></input>
                   <label htmlFor={subc}>{subc}</label>
                 </div>
@@ -163,8 +163,8 @@ export default function Products({ category, products }) {
           ) : null}
 
           <Collapsible trigger="Color">
-            {colors.map((color) => (
-              <div className={styles.input_group} key={uuidv4}>
+            {colors.map((color, index) => (
+              <div className={styles.input_group} key={index}>
                 <input type="checkbox" id={`color${color}`} name={`color${color}`} value={color} onChange={toggleColor}></input>
                 <label htmlFor={`color${color}`}>{color}</label>
               </div>
@@ -173,8 +173,8 @@ export default function Products({ category, products }) {
 
           {subcategories.length > 1 != [] ? (
             <Collapsible trigger="Speed">
-              {speeds.map((speed) => (
-                <div className={styles.input_group} key={uuidv4}>
+              {speeds.map((speed, index) => (
+                <div className={styles.input_group} key={index}>
                   <input type="checkbox" id={`speed${speed}`} name={`speed${speed}`} value={speed} onChange={toggleSpeed}></input>
                   <label htmlFor={`speed${speed}`}>{speed}</label>
                 </div>

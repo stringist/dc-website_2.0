@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { v4 as uuidv4 } from "uuid";
 
 import FlightScore from "./FlightScore";
 
@@ -19,10 +18,10 @@ export default function ProductTile({ product }) {
 
           {product.speed !== 0 ? (
             <div className={styles.flight_score}>
-              <FlightScore kind="Speed" score={product.speed} key={uuidv4} />
-              <FlightScore kind="Glide" score={product.glide} key={uuidv4} />
-              <FlightScore kind="Turn" score={product.turn} key={uuidv4} />
-              <FlightScore kind="Fade" score={product.fade} key={uuidv4} />
+              <FlightScore kind="Speed" score={product.speed} />
+              <FlightScore kind="Glide" score={product.glide} />
+              <FlightScore kind="Turn" score={product.turn} />
+              <FlightScore kind="Fade" score={product.fade} />
             </div>
           ) : null}
 
@@ -33,8 +32,8 @@ export default function ProductTile({ product }) {
           </p>
 
           <div className={styles.colors_available}>
-            {product.color.map((color) => (
-              <div className={styles.color_span} style={{ backgroundColor: color }} key={uuidv4}></div>
+            {product.color.map((color, index) => (
+              <div className={styles.color_span} style={{ backgroundColor: color }} key={index}></div>
             ))}
           </div>
         </div>
