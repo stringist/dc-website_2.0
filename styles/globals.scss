@@ -235,8 +235,10 @@ button:focus-within {
   h1 {
     font-family: $accent-font;
     color: $off-white;
-    font-size: 7vw;
+    font-size: 4.5rem;
     text-align: center;
+    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.87);
+    // filter: drop-shadow(4px 4px 0 $blue-dark);
   }
 }
 
