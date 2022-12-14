@@ -79,6 +79,7 @@ export default function Cart() {
                         console.log(envId),
                         {
                           price: envId,
+                          quantity: item.quantity,
                         }
                       )
                     ),
@@ -86,7 +87,7 @@ export default function Cart() {
                 });
               }}
             >
-              BUY!
+              GO TO CHECKOUT
             </button>
             {/*  <button
                 onClick={() => {
