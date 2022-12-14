@@ -92,5 +92,10 @@
     button.paginationButton {
       min-width: 7rem;
     }
+    button.active {
+      background-color: color.$accent-red;
+      color: white;
+      border-color: color.$accent-red;
+    }
   }
 }
