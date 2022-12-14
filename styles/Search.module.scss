@@ -3,13 +3,70 @@
 .overlay {
   position: absolute;
   width: 100vw;
-  height: calc(100vh - 3.5rem);
+  min-height: 100vh;
   top: 3.5rem;
   left: 0;
-  background-color: red;
+  background-color: color.$white;
   z-index: -1;
-}
+  color: black;
 
-.search__input {
-  width: 5rem;
+  section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  article {
+    min-width: 200px;
+  }
+
+  h2 {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .search__input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+  }
+  input {
+    width: 30rem;
+    height: 1.75rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px color.$blue-light;
+    padding-left: 0.5rem;
+    color: color.$blue-dark;
+  }
+  ::placeholder {
+    color: color.$blue-dark;
+  }
+
+  h5 {
+    text-align: center;
+    margin-top: 2rem;
+    color: color.$accent-red;
+    font-size: 1rem;
+  }
+
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+
+    path {
+      fill: color.$blue-dark;
+    }
+    &:hover path {
+      fill: color.$accent-blue;
+    }
+  }
 }
