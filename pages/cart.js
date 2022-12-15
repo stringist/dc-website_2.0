@@ -1,12 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import Image from "next/image";
-import {
-  incrementQuantity,
-  decrementQuantity,
-  removeFromCart,
-} from "../redux/cart.slice";
+import { incrementQuantity, decrementQuantity, removeFromCart } from "../redux/cart.slice";
 import { checkout } from "../checkout";
 import styles from "../styles/Cart.module.scss";
+import Head from "next/head";
 
 export default function Cart() {
   // Extracting cart state from redux store
@@ -17,10 +14,7 @@ export default function Cart() {
   const dispatch = useDispatch();
 
   function getTotalPrice() {
-    return cart.reduce(
-      (accumulator, item) => accumulator + item.quantity * item.price,
-      0
-    );
+    return cart.reduce((accumulator, item) => accumulator + item.quantity * item.price, 0);
   }
 
   let envId;
@@ -44,13 +38,7 @@ export default function Cart() {
               {cart.map((item) => (
                 <tr className={styles.cart_item} key={item._id}>
                   <td className={styles.cart_image}>
-                    <Image
-                      src={item.img}
-                      height="90"
-                      width="90"
-                      alt={item.name}
-                      responsive
-                    />
+                    <Image src={item.img} height="90" width="90" alt={item.name} responsive />
 
                     <p>{item.name}</p>
                   </td>
@@ -58,17 +46,9 @@ export default function Cart() {
 
                   <td>
                     <div className={styles.cart_quantity}>
-                      <button
-                        onClick={() => dispatch(decrementQuantity(item._id))}
-                      >
-                        -
-                      </button>{" "}
+                      <button onClick={() => dispatch(decrementQuantity(item._id))}>-</button>{" "}
                       <span>{item.quantity}</span>{" "}
-                      <button
-                        onClick={() => dispatch(incrementQuantity(item._id))}
-                      >
-                        +
-                      </button>
+                      <button onClick={() => dispatch(incrementQuantity(item._id))}>+</button>
                     </div>
                   </td>
                   <td>{item.quantity * item.price} dkk</td>

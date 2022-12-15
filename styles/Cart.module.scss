@@ -1,14 +1,23 @@
 @use "./colors.scss" as color;
 
+.cartPage {
+  min-height: 80vh;
+  margin: 4rem 5%;
+  h1 {
+    text-align: center;
+  }
+}
+
 .cart_section {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  margin: 2rem;
+  margin-top: 4rem;
   gap: 3rem;
 
   table {
     width: 100%;
   }
+
   td {
     text-align: center;
   }
@@ -20,15 +29,25 @@
 
   .cart_image {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
+    margin: auto;
+    // padding: 1rem;
     gap: 1rem;
+    p {
+      margin-bottom: 0;
+    }
   }
 }
 
+// .cart_item {
+//   margin-top: 2rem;
+// }
 .cart_quantity {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
 
   button {
     padding: 0.25rem 0.5rem;

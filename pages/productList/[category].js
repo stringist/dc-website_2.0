@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import Products from "../../components/Products";
+import Head from "next/head";
 
 export default function CategoryPage({ products }) {
   const router = useRouter();
@@ -7,6 +8,12 @@ export default function CategoryPage({ products }) {
 
   return (
     <>
+      <Head>
+        <title>{`Shop ${category}`}</title>
+        <meta name="description" content={`See our selection of ${category}`} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="/DC_logo_new.ico" />
+      </Head>
       <Products category={category} products={products}></Products>
     </>
   );

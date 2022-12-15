@@ -7,9 +7,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
-  padding: 1rem;
+  width: 100%;
+  padding: 0.75rem 1.25rem;
   z-index: 99;
+  color: color.$off-white;
 
   button {
     padding: 0;
