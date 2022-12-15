@@ -186,6 +186,24 @@ button:focus-within {
   content: url("../public/images/arrow-right.svg");
 }
 
+.arrowUp,
+.arrowDown {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-position: center;
+  background-size: contain;
+  background-image: url("../public/images/expand_more.svg");
+  transform: rotate(90deg);
+}
+
+.arrowUp {
+  transition: all 0.5s;
+}
+
+.arrowDown {
+  // transform: rotate(-210deg);
+  transition: all 0.5s;
+}
 .desktop,
 #desktopNav {
   display: none;
