@@ -29,6 +29,9 @@ $transition: all #{$speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   padding: 0.75rem 2rem;
   box-shadow: 4px 4px 0px color.$blue-dark;
 
+  &:hover {
+    transform: translate(-1px, -1px);
+  }
   span,
   .icon {
     display: block;
@@ -94,7 +97,7 @@ $transition: all #{$speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   }
 
   &.success {
-    background-color: #27ae60;
+    background-color: color.$blue-ligher;
 
     .icon {
       .fa_remove {
@@ -108,11 +111,6 @@ $transition: all #{$speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
   }
 
   &:hover {
-    opacity: 0.9;
-
-    .icon .fa_remove {
-      height: 46px;
-    }
   }
 
   &:active {
