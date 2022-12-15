@@ -1,14 +1,22 @@
 @use "./colors.scss" as color;
 
 .cartPage {
-  min-height: 80vh;
+  min-height: 50vh;
+  // background-color: aquamarine;
   margin: 4rem 5%;
   h1 {
     text-align: center;
   }
 }
 
+.empty_cart {
+  grid-column: 1/-1;
+  text-align: center;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.6);
+}
 .cart_section {
+  // border: solid 1px black;
   display: grid;
   grid-template-columns: 2fr 1fr;
   margin-top: 4rem;
@@ -16,12 +24,27 @@
 
   table {
     width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 15px;
   }
 
+  th {
+    color: rgba(0, 0, 0, 0.67);
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
   td {
     text-align: center;
+    padding: 0.5rem;
   }
 
+  tr,
+  aside {
+    border-radius: 3px;
+  }
+  tr:nth-child(even) {
+    background-color: #01589b0a;
+  }
   aside {
     background-color: color.$blue-grey;
     padding: 1rem;
@@ -36,6 +59,8 @@
     gap: 1rem;
     p {
       margin-bottom: 0;
+      margin: auto;
+      max-width: 12ch;
     }
   }
 }
@@ -63,7 +88,7 @@
 
 .cart_remove {
   button {
-    background: none;
+    background: #fff;
     color: color.$blue-dark;
     margin: 0;
     padding: 0.5rem;
@@ -71,4 +96,11 @@
   :hover {
     color: color.$accent-red;
   }
+}
+
+.checkoutBtn {
+  text-align: center;
+  justify-content: center;
+}
+@media only screen and (min-width: 800px) {
 }
