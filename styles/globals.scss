@@ -230,19 +230,37 @@ button:focus-within {
   }
 }
 
-.schedule {
+.scheduleCard {
   width: 80%;
-  min-height: 10rem;
+  // min-height: 10rem;
+  display: grid;
+  place-items: center;
   background-color: $blue-dark;
   color: $off-white;
-  // position: relative;
-  padding: 2rem;
-  // margin-left: 60vw;
+  padding: 1.5rem 2rem;
   margin: -15% auto 0.5rem auto;
   box-shadow: $shadow;
   h2 {
     font-size: 1rem;
     color: $off-white;
+  }
+  h4 {
+    text-align: center;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    color: $off-white;
+  }
+  h5 {
+    color: $off-white;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  .locations {
+    display: flex;
+    gap: 3rem;
+  }
+  li {
+    font-size: 0.8rem;
   }
 }
 
@@ -315,19 +333,46 @@ section h2 {
       font-size: 6vw;
     }
   }
-  .schedule {
-    width: 30vw;
-    max-width: 50vw;
+
+  .scheduleCard {
+    width: fit-content;
     min-height: 10rem;
     background-color: $blue-dark;
     color: $off-white;
     position: relative;
-    padding: 2rem;
+    padding: 1rem 3rem;
     margin-right: 10vw;
     margin-top: -5rem;
-    h2 {
+    display: grid;
+    place-content: center;
+  }
+
+  .schedule {
+    h4 {
       font-size: 1.25rem;
       color: $off-white;
+      margin-bottom: 1rem;
+    }
+    h5 {
+      color: $off-white;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    li {
+      font-size: 1rem;
+    }
+  }
+
+  .locations {
+    display: flex;
+    gap: 3rem;
+
+    h5 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+    ul {
+      font-weight: 300;
     }
   }
 }
