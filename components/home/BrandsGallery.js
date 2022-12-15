@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function BrandsGallery() {
   const brandObjectArr = BrandNames.map((brand) => ({
     name: brand.toLowerCase(),
-    src: `/../public/images/brands/${brand.toLowerCase()}.png`,
+    src: `/images/brands/${brand.toLowerCase()}.png`,
   }));
   // const path = "/../public/images/brands/";
   console.log(brandObjectArr);
