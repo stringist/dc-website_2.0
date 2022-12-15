@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import intersect from "just-intersect";
 import Collapsible from "react-collapsible";
-
+import MobileFilters from "./MobileFilters";
 import styles from "../styles/ProductList.module.scss";
 import Styles from "../styles/Search.module.scss";
 
@@ -157,20 +157,23 @@ export default function Products({ category, products }) {
     setPage((old) => old + 1);
   }
 
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpening, setIsOpening] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
+
+  const handleToggle = () => {
+    menuOpen ? setIsOpening(true) : setIsClosing(true);
+    setMenuOpen((prev) => !prev);
+  };
+  const closeMenu = () => {
+    console.log("close menu");
+    setMenuOpen(false);
+  };
+
   return (
     <>
       <div className={styles.category_page}>
         <div className={styles.filters}>
-          <div className={styles.sorting}>
-            <label htmlFor="sorting">Sort by:</label>
-            <select name="sorting" id="sorting" onChange={handleSort}>
-              <option value="name">Name A-Z</option>
-              <option value="price">Lowest Price</option>
-              {console.log("subcatefories:", subcategories)}
-              {subcategories.length > 1 ? <option value="speed">Lowest Speed</option> : null}
-            </select>
-          </div>
-
           <Collapsible trigger="Brand">
             {brands.map((brand, index) => (
               <div className={styles.input_group} key={index}>
@@ -210,19 +213,94 @@ export default function Products({ category, products }) {
             </Collapsible>
           ) : null}
         </div>
+
         <div className={styles.products}>
+          {/* <MobileFilters /> */}
+
+          <button className={`${styles.openFilters} ${menuOpen ? styles.open : styles.closed}`} onClick={handleToggle}>
+            {menuOpen ? <div className="arrowRight"></div> : <div className="arrowLeft"></div>}
+            {menuOpen ? "Close" : "Filter your search"}
+          </button>
+          <div
+            className={`${styles.mobileFilterMenu} ${menuOpen ? styles.showMenu : null} ${
+              isOpening ? styles.showingMenu : null
+            } ${isClosing ? styles.closingMenu : null}`}
+          >
+            {/* <div
+              className={`${menuOpen ? styles.showMenu : null} ${isOpening ? styles.showingMenu : null} ${
+                isClosing ? styles.closingMenu : null
+              }`}
+            > */}
+            {/* <button className={styles.closeFilters} onClick={closeMenu}>
+              <span>Close</span>
+            </button> */}
+            <Collapsible trigger="Brand">
+              {brands.map((brand, index) => (
+                <div className={styles.input_group} key={index}>
+                  <input type="checkbox" id={brand} name={brand} value={brand} onChange={toggleBrand}></input>
+                  <label htmlFor={brand}>{brand}</label>
+                </div>
+              ))}
+            </Collapsible>
+            {subcategories.length > 1 ? (
+              <Collapsible trigger="Subcategory">
+                {subcategories.map((subc, index) => (
+                  <div className={styles.input_group} key={index}>
+                    <input type="checkbox" id={subc} name={subc} value={subc} onChange={toggleSubc}></input>
+                    <label htmlFor={subc}>{subc}</label>
+                  </div>
+                ))}
+              </Collapsible>
+            ) : null}
+
+            <Collapsible trigger="Color">
+              {colors.map((color, index) => (
+                <div className={styles.input_group} key={index}>
+                  <input type="checkbox" id={color} name={color} value={color} onChange={toggleColor}></input>
+                  <label htmlFor={color}>{color.charAt(0).toUpperCase() + color.substring(1)}</label>
+                </div>
+              ))}
+            </Collapsible>
+
+            {subcategories.length > 1 != [] ? (
+              <Collapsible trigger="Speed">
+                {speeds.map((speed, index) => (
+                  <div className={styles.input_group} key={index}>
+                    <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleSpeed}></input>
+                    <label htmlFor={speed}>{speed}</label>
+                  </div>
+                ))}
+              </Collapsible>
+            ) : null}
+          </div>
+          {/* </div> */}
           <h1>{category}</h1>
+          <div className={`${styles.sorting} ${styles.desktop}`}>
+            <label htmlFor="sorting">Sort by:</label>
+            <select name="sorting" id="sorting" onChange={handleSort}>
+              <option value="name">Name A-Z</option>
+              <option value="price">Lowest Price</option>
+              {console.log("subcatefories:", subcategories)}
+              {subcategories.length > 1 ? <option value="speed">Lowest Speed</option> : null}
+            </select>
+          </div>
           <section className={styles.product_grid}>
-            {filteredList.length === 0 ? <p>No product found :(</p> : filteredList.slice(page * pPerPage, page * pPerPage + pPerPage).map((product) => <ProductTile product={product} key={product._id} products={products} />)}
+            {filteredList.length === 0 ? (
+              <p>No product found :(</p>
+            ) : (
+              filteredList
+                .slice(page * pPerPage, page * pPerPage + pPerPage)
+                .map((product) => <ProductTile product={product} key={product._id} products={products} />)
+            )}
           </section>
           {nPages > 1 ? (
             <div className={Styles.pagination}>
               <button className={Styles.paginationButton} onClick={previousPage}>
-                &#60;&#60; Previous
+                &#60; <span>Previous</span>
               </button>
               {buttonss}
               <button className={Styles.paginationButton} onClick={nextPage}>
-                Next &#62;&#62;
+                <span>Next</span> &#62;
               </button>
             </div>
           ) : null}

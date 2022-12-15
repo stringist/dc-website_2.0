@@ -17,8 +17,25 @@ function Hero({ title }) {
       >
         <h1>{title}</h1>
       </div>
-      <div className="schedule">
-        <h2>Opening hours this week:</h2>
+      <div className="scheduleCard">
+        <div className="schedule">
+          <h4>Opening hours this week</h4>
+          <div className="locations">
+            <div>
+              <h5>Greve</h5>
+              <ul>
+                <li>Mon-Fri: 10-17</li>
+              </ul>
+            </div>
+            <div>
+              <h5>Valby Parken</h5>
+              <ul>
+                <li>Mon: 10-17</li>
+                <li>Wed, Fri: 13-17</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
