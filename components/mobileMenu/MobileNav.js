@@ -20,7 +20,7 @@ export default function MobileNav() {
 
       <Link href="/cart">
         <div className={styles.basket}>
-          <div className={styles.countContainer}>{getItemsCount()}</div>
+          {getItemsCount() > 0 ? <div className={styles.countContainer}>{getItemsCount()}</div> : ""}
         </div>
       </Link>
     </div>

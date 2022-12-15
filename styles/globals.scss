@@ -56,26 +56,6 @@ h5 {
   margin-right: 0;
   width: 100%;
 }
-// h1 {
-//   margin-top: 0;
-//   font-size: 4.209rem;
-// }
-
-// h2 {
-//   font-size: 3.157rem;
-// }
-
-// h3 {
-//   font-size: 2.369rem;
-// }
-
-// h4 {
-//   font-size: 1.777rem;
-// }
-
-// h5 {
-//   font-size: 1.333rem;
-// }
 
 small,
 .text_small {
@@ -94,8 +74,6 @@ main {
 }
 
 section {
-  // margin-left: 10%;
-  // margin-right: 10%;
   margin-bottom: $space-after;
 }
 
@@ -287,7 +265,7 @@ section h2 {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 500px) {
   .mobile,
   #mobileNav {
     display: none;
@@ -299,6 +277,9 @@ section h2 {
   #desktopNav {
     display: flex;
   }
+}
+
+@media only screen and (min-width: 768px) {
   section {
     h2 {
       font-size: 2.5rem;

@@ -6,31 +6,24 @@
   background-color: color.$blue-dark;
   display: flex;
   justify-content: space-between;
-  padding: 1rem 4vw;
-  //   position: fixed;
+  padding: 1rem 5vw;
+  position: fixed;
+  top: 0;
   height: 3.5rem;
   font-weight: 400;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  //   margin-bottom: 10vw;
-
   position: relative;
   z-index: 100;
 
   ul {
     list-style: none;
     display: flex;
-    gap: 2.5rem;
+    gap: 4vw;
   }
-  // li {
-  //   &:hover {
-  //     transform: translate(-3rem, -3rem);
-  //   }
-  // }
 
   a {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-weight: 500;
-    // color: color.$off-white;
     text-decoration: none;
     &:hover {
       transition: all 0.3s;
@@ -39,11 +32,6 @@
       text-shadow: 3px 2px 1px #001838;
       color: #fff;
     }
-    // & .active {
-    //   text-decoration: underline;
-    //   border: solid 1px aqua;
-    //   color: deeppink;
-    // }
   }
 }
 
@@ -54,24 +42,30 @@
 .leftWrapper,
 .rightWrapper {
   display: flex;
-  gap: 2rem;
+  gap: 4vw;
 }
 
 .logoContainer {
   cursor: pointer;
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
   position: relative;
   background-image: url("./../public/images/DC_logo_new.svg");
   &:hover {
     // transform: rotate(720deg) scale(1.05);
     // transition: all 0.5s ease-in-out;
-    animation: spin .5s alternate;
-  
+    animation: spin 0.5s alternate;
   }
 }
 
-@keyframes spin {from {transform: rotate(0deg);}to {transform: rotate(720deg);}}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
 
 .basket {
   cursor: pointer;
@@ -105,4 +99,16 @@
 .active {
   border-bottom: solid 2px #fff;
   color: #fff;
+}
+
+@media screen and (min-width: 700px) {
+  .nav {
+    a {
+      font-size: 1.1rem;
+    }
+    .logoContainer {
+      width: 6rem;
+      height: 6rem;
+    }
+  }
 }
