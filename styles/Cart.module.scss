@@ -3,7 +3,7 @@
 .cartPage {
   min-height: 50vh;
   // background-color: aquamarine;
-  margin: 4rem 5%;
+  margin: 6rem 2%;
   h1 {
     text-align: center;
   }
@@ -17,10 +17,11 @@
 }
 .cart_section {
   // border: solid 1px black;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  margin-top: 4rem;
-  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 4vw;
 
   table {
     width: 100%;
@@ -30,12 +31,13 @@
 
   th {
     color: rgba(0, 0, 0, 0.67);
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     font-weight: 500;
   }
   td {
     text-align: center;
     padding: 0.5rem;
+    font-size: 0.7rem;
   }
 
   tr,
@@ -48,15 +50,18 @@
   aside {
     background-color: color.$blue-grey;
     padding: 1rem;
+    width: 100%;
+    // min-height: 30vh;
   }
 
   .cart_image {
     display: flex;
-    justify-content: flex-start;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
     margin: auto;
     // padding: 1rem;
-    gap: 1rem;
+    gap: 0.5rem;
     p {
       margin-bottom: 0;
       margin: auto;
@@ -76,7 +81,7 @@
 
   button {
     padding: 0.25rem 0.5rem;
-    margin: 0 0.2rem;
+    margin: 0;
     box-shadow: none;
   }
   span {
@@ -91,7 +96,7 @@
     background: #fff;
     color: color.$blue-dark;
     margin: 0;
-    padding: 0.5rem;
+    padding: 0.25rem;
   }
   :hover {
     color: color.$accent-red;
@@ -101,6 +106,88 @@
 .checkoutBtn {
   text-align: center;
   justify-content: center;
+  // grid-column: 2/3;
+  // margin-top: 2rem;
+}
+
+@media only screen and (min-width: 500px) {
+  .cart_section {
+    td {
+      font-size: 1rem;
+      padding: 0;
+    }
+  }
 }
 @media only screen and (min-width: 800px) {
+  .cartPage {
+    margin: 4rem 5%;
+  }
+  .cart_section {
+    // border: solid 1px black;
+    align-items: initial;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 2rem;
+    gap: 4vw;
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 15px;
+    }
+
+    th {
+      color: rgba(0, 0, 0, 0.67);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    td {
+      text-align: center;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+
+    tr,
+    aside {
+      border-radius: 3px;
+    }
+    tr:nth-child(even) {
+      background-color: #01589b0a;
+    }
+    aside {
+      background-color: color.$blue-grey;
+      padding: 1rem;
+      // margin-bottom: auto;
+      // min-height: 40vh;
+      width: initial;
+    }
+
+    .cart_image {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      margin: auto;
+      // padding: 1rem;
+      gap: 1rem;
+      p {
+        margin-bottom: 0;
+        margin: auto;
+        max-width: 12ch;
+      }
+    }
+  }
+  .cart_quantity {
+    button {
+      margin: 0 0.2rem;
+    }
+  }
+  .cart_remove {
+    button {
+      background: #fff;
+      color: color.$blue-dark;
+      margin: 0;
+      padding: 0.5rem;
+    }
+  }
 }

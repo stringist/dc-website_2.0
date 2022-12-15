@@ -30,8 +30,8 @@ export default function Cart() {
             <table>
               <tr>
                 <th>Product</th>
-                <th>Quantity</th>
                 <th>Price per item</th>
+                <th>Quantity</th>
                 <th>Subtotal</th>
                 <th></th>
               </tr>
@@ -42,7 +42,7 @@ export default function Cart() {
 
                     <p>{item.name}</p>
                   </td>
-                  <td>{item.price}</td>
+                  <td>{item.price} dkk</td>
 
                   <td>
                     <div className={styles.cart_quantity}>
