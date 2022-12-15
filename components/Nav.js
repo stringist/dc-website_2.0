@@ -47,7 +47,7 @@ export default function Nav(props) {
             }
           >
             <Link href="/productList/Accessories">
-              <a>accessories</a>
+              <a>Accessories</a>
             </Link>
           </li>
           <li className={router.pathname == "/about" ? styles.active : ""}>
