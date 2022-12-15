@@ -1,15 +1,11 @@
 import ProductTile from "./product-tile/ProductTile";
 import React from "react";
-import { useState, useConditions } from "react";
+import { useState, useEffect } from "react";
 import intersect from "just-intersect";
 import Collapsible from "react-collapsible";
 
 import styles from "../styles/ProductList.module.scss";
-
-function cuuid() {
-  const str = (Date.now().toString(16) + Math.random().toString(16).slice(2) + Math.random().toString(16).slice(2) + Math.random().toString(16).slice(2)).slice(0, 32);
-  return str.slice(0, 8) + "-" + str.slice(8, 12) + "-" + str.slice(12, 16) + "-" + str.slice(16, 20) + "-" + str.slice(20);
-}
+import Styles from "../styles/Search.module.scss";
 
 export default function Products({ category, products }) {
   const [brandFilter, setBrandFilter] = useState([]);
@@ -127,9 +123,42 @@ export default function Products({ category, products }) {
     return data.sort((a, b) => a[sort] > b[sort]);
   }
 
+  const [page, setPage] = useState(0);
+  const [nPages, setNPages] = useState(0);
+  const [pageButtons, setPageButtons] = useState([]);
+
+  const pPerPage = 16;
+
+  useEffect(() => {
+    setNPages(Math.ceil(filteredList.length / pPerPage));
+  }, [filteredList.length]);
+
+  const buttonss = [...Array(nPages)].map((e, i) =>
+    page === i ? (
+      <button key={i + 1} onClick={() => handleClick(i)} className={Styles.active}>
+        {i + 1}
+      </button>
+    ) : (
+      <button key={i + 1} onClick={() => handleClick(i)}>
+        {i + 1}
+      </button>
+    )
+  );
+
+  function handleClick(page) {
+    setPage(page);
+    console.log(page);
+  }
+
+  function previousPage() {
+    setPage((old) => old - 1);
+  }
+  function nextPage() {
+    setPage((old) => old + 1);
+  }
+
   return (
     <>
-      {console.log(sortBy)}
       <div className={styles.category_page}>
         <div className={styles.filters}>
           <div className={styles.sorting}>
@@ -183,8 +212,23 @@ export default function Products({ category, products }) {
         </div>
         <div className={styles.products}>
           <h1>{category}</h1>
-          <section className={styles.product_grid}>{filteredList.length === 0 ? <p>No product found :(</p> : filteredList.map((product) => <ProductTile product={product} key={product._id} products={products} />)}</section>
+          <section className={styles.product_grid}>
+            {filteredList.length === 0 ? <p>No product found :(</p> : filteredList.slice(page * pPerPage, page * pPerPage + pPerPage).map((product) => <ProductTile product={product} key={product._id} products={products} />)}
+          </section>
+          {nPages > 1 ? (
+            <div className={Styles.pagination}>
+              <button className={Styles.paginationButton} onClick={previousPage}>
+                &#60;&#60; Previous
+              </button>
+              {buttonss}
+              <button className={Styles.paginationButton} onClick={nextPage}>
+                Next &#62;&#62;
+              </button>
+            </div>
+          ) : null}
         </div>
+
+        {console.log(nPages)}
       </div>
     </>
   );

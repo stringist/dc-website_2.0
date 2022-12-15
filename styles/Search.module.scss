@@ -80,32 +80,32 @@
       fill: color.$accent-blue;
     }
   }
+}
 
-  .pagination {
-    position: absolute;
-    bottom: 2rem;
+.pagination {
+  position: absolute;
+  bottom: 2rem;
+  display: flex;
+
+  button {
+    padding: 0.5rem;
+    min-width: 2rem;
     display: flex;
+    justify-content: center;
+  }
 
-    button {
-      padding: 0.5rem;
-      min-width: 2rem;
-      display: flex;
-      justify-content: center;
-    }
-
-    button:not(.paginationButton) {
-      background: none;
-      color: color.$blue-dark;
-      box-shadow: none;
-      border: solid 1px color.$blue-dark;
-    }
-    button.paginationButton {
-      min-width: 7rem;
-    }
-    button.active {
-      background-color: color.$accent-red;
-      color: white;
-      border-color: color.$accent-red;
-    }
+  button:not(.paginationButton) {
+    background: none;
+    color: color.$blue-dark;
+    box-shadow: none;
+    border: solid 1px color.$blue-dark;
+  }
+  button.paginationButton {
+    min-width: 7rem;
+  }
+  button.active {
+    background-color: color.$accent-red;
+    color: white;
+    border-color: color.$accent-red;
   }
 }
