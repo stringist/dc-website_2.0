@@ -22,11 +22,10 @@ $shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-// typography - move and tidy later
 html {
   font-size: 112.5%;
   min-height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
 } /*18px*/
 
 body {
@@ -69,7 +68,12 @@ small,
   font-family: $primary-font;
 }
 
+header {
+  width: 100%;
+}
 main {
+  padding-top: 3.5rem;
+  min-height: 75vh;
   background-color: $white;
 }
 
@@ -265,7 +269,7 @@ section h2 {
   }
 }
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 550px) {
   .mobile,
   #mobileNav {
     display: none;
