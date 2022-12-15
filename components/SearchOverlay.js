@@ -1,7 +1,7 @@
 import Styles from "../styles/Search.module.scss";
 import { useRef, useState, useEffect } from "react";
 import ProductTile from "./product-tile/ProductTile";
-
+import PaginationButtons from "./PaginationButtons";
 export default function SearchOverlay(props) {
   const [searched, setSearched] = useState("");
   const [products, setProducts] = useState([]);
@@ -102,6 +102,7 @@ export default function SearchOverlay(props) {
             ))}
           </>
         )}
+
         {nPages > 1 ? (
           <div className={Styles.pagination}>
             <button className={Styles.paginationButton} onClick={previousPage}>

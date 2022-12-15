@@ -1,0 +1,119 @@
+@use "./colors.scss" as color;
+
+$speed: "0.25s";
+$transition: all #{$speed} cubic-bezier(0.31, -0.105, 0.43, 1.4);
+
+.button {
+  width: 260px;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  transition: $transition;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+  background: color.$blue;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: color.$off-white;
+  margin: 0 1rem 1rem 0;
+  padding: 0.75rem 2rem;
+  box-shadow: 4px 4px 0px color.$blue-dark;
+
+  &:hover {
+    transform: translate(-1px, -1px);
+  }
+  span,
+  .icon {
+    display: block;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+  }
+  span {
+    width: 72%;
+    line-height: inherit;
+    font-size: 18px;
+    text-transform: uppercase;
+    left: 0;
+    transition: $transition;
+  }
+
+  .icon {
+    width: 28%;
+    right: 0;
+    transition: $transition;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+    .fa {
+      font-size: 24px;
+      vertical-align: middle;
+      transition: $transition, height #{$speed} ease;
+    }
+
+    .fa_remove {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+  .fa_check {
+    // width: 1.5rem;
+    // height: 1.5rem;
+    display: none;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  &.success,
+  &:hover {
+    span {
+      left: -72%;
+      opacity: 0;
+    }
+
+    .icon {
+      width: 100%;
+
+      .fa {
+        font-size: 45px;
+      }
+    }
+  }
+
+  &.success {
+    background-color: color.$blue-ligher;
+
+    .icon {
+      .fa_remove {
+        display: none;
+      }
+
+      .fa_check {
+        display: inline-block;
+      }
+    }
+  }
+
+  &:hover {
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}

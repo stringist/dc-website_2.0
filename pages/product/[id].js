@@ -1,19 +1,32 @@
 import { useRouter } from "next/router";
 import Image from "next/image";
-import React from "react";
+import { React, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/cart.slice";
+import { AiFillCheckCircle } from "react-icons/ai";
 
 import Score from "../../components/product-page/Score";
 
 import styles from "../../styles/Product.module.scss";
+import buttonStyles from "../../styles/BuyButton.module.scss";
 
 export default function ProductPage({ product }) {
   const dispatch = useDispatch();
 
   const { query } = useRouter();
   const { id } = query;
+
+  const buyButton = useRef();
+  const [animate, setAnimate] = useState(false);
+
+  function animateButton() {
+    setAnimate(true);
+
+    setTimeout(function () {
+      setAnimate(false);
+    }, 3000);
+  }
 
   if (!product) {
     return <p> product not found</p>;
@@ -38,6 +51,7 @@ export default function ProductPage({ product }) {
 
   return (
     <div className={styles.product_page}>
+      {console.log("animate", animate)}
       <div className={styles.left}>
         <h2 className="mobile">{product.name}</h2>
         <h4 className="mobile">
@@ -108,8 +122,24 @@ export default function ProductPage({ product }) {
           <span>{product.price}</span> dkk
         </p>
 
-        <button className="primary-button" onClick={() => dispatch(addToCart(product))}>
-          Add to basket <div className={styles.basketContainer} />
+        <button
+          className={`primary-button ${buttonStyles.button} ${animate ? buttonStyles.success : null}`}
+          ref={buyButton}
+          onClick={() => {
+            animateButton();
+            dispatch(addToCart(product));
+          }}
+        >
+          <span>Add to basket </span>
+
+          <div className={buttonStyles.icon}>
+            <i class={`${buttonStyles.fa} ${buttonStyles.fa_remove}`}>
+              <div className={styles.basketContainer}></div>
+            </i>
+            <i class={`${buttonStyles.fa} ${buttonStyles.fa_check}`}>
+              <AiFillCheckCircle />
+            </i>
+          </div>
         </button>
       </div>
     </div>
