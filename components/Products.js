@@ -161,7 +161,7 @@ export default function Products({ category, products }) {
     <>
       <div className={styles.category_page}>
         <div className={styles.filters}>
-          <div className={styles.sorting}>
+          {/* <div className={styles.sorting}>
             <label htmlFor="sorting">Sort by:</label>
             <select name="sorting" id="sorting" onChange={handleSort}>
               <option value="name">Name A-Z</option>
@@ -169,7 +169,7 @@ export default function Products({ category, products }) {
               {console.log("subcatefories:", subcategories)}
               {subcategories.length > 1 ? <option value="speed">Lowest Speed</option> : null}
             </select>
-          </div>
+          </div> */}
 
           <Collapsible trigger="Brand">
             {brands.map((brand, index) => (
@@ -212,8 +212,24 @@ export default function Products({ category, products }) {
         </div>
         <div className={styles.products}>
           <h1>{category}</h1>
+          <div className={styles.sorting}>
+            <label htmlFor="sorting">Sort by:</label>
+            <select name="sorting" id="sorting" onChange={handleSort}>
+              <option value="name">Name A-Z</option>
+              <option value="price">Lowest Price</option>
+              {console.log("subcatefories:", subcategories)}
+              {subcategories.length > 1 ? <option value="speed">Lowest Speed</option> : null}
+            </select>
+          </div>
+
           <section className={styles.product_grid}>
-            {filteredList.length === 0 ? <p>No product found :(</p> : filteredList.slice(page * pPerPage, page * pPerPage + pPerPage).map((product) => <ProductTile product={product} key={product._id} products={products} />)}
+            {filteredList.length === 0 ? (
+              <p>No product found :(</p>
+            ) : (
+              filteredList
+                .slice(page * pPerPage, page * pPerPage + pPerPage)
+                .map((product) => <ProductTile product={product} key={product._id} products={products} />)
+            )}
           </section>
           {nPages > 1 ? (
             <div className={Styles.pagination}>

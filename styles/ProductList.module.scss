@@ -10,6 +10,12 @@
     padding: 1rem 0rem;
   }
 
+  .sorting {
+    text-align: right;
+    // border: solid 1px blue;
+    align-self: flex-end;
+    margin: -1rem 4rem 1rem auto;
+  }
   .filters {
     display: none;
     // border-right: solid 1px #002f6cb4;
