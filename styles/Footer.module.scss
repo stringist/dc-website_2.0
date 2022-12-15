@@ -20,9 +20,12 @@
 
 .soMe {
   display: flex;
-  gap: 2vw;
+  gap: 10vw;
   justify-content: space-between;
   align-items: center;
+  a {
+    font-size: 0;
+  }
 }
 
 .fb,
@@ -47,37 +50,52 @@
   background-image: url("../public/images/icon_yt.svg");
 }
 
-.schedule * {
-  color: color.$off-white;
-}
-
-.schedule h4 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-.locations {
-  display: flex;
-  gap: 3rem;
-
-  h5 {
-    font-size: 1rem;
-    margin-bottom: 0.25rem;
-  }
-  ul {
-    font-weight: 300;
-  }
-}
-
+.schedule,
 .address {
-  ul li {
-    font-weight: 300;
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .soMe {
+    gap: 2vw;
   }
 
-  ul > :first-child {
-    font-weight: 500;
+  .schedule,
+  .address {
+    display: block;
+  }
+  .schedule * {
+    color: color.$off-white;
   }
 
-  ul :last-child {
-    text-decoration: underline;
+  .schedule h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .locations {
+    display: flex;
+    gap: 3rem;
+
+    h5 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+    ul {
+      font-weight: 300;
+    }
+  }
+
+  .address {
+    ul li {
+      font-weight: 300;
+    }
+
+    ul > :first-child {
+      font-weight: 500;
+    }
+
+    ul :last-child {
+      text-decoration: underline;
+    }
   }
 }

@@ -8,12 +8,15 @@ export default function Footer() {
         <div className={styles.soMe}>
           <a href="https://www.facebook.com/discconnection.dk">
             <div class={styles.fb} />
+            Facebook
           </a>
           <a href="https://www.instagram.com/disc_connection_dk/">
             <div class={styles.ig} />
+            Instagram
           </a>
           <a href="#">
             <div class={styles.yt} />
+            Youtube
           </a>
         </div>
         {/* placeholder - make this a dynamic Schedule component later */}
