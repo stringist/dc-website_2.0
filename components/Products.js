@@ -218,7 +218,8 @@ export default function Products({ category, products }) {
           {/* <MobileFilters /> */}
 
           <button className={`${styles.openFilters} ${menuOpen ? styles.open : styles.closed}`} onClick={handleToggle}>
-            {menuOpen ? <div className="arrowUp"></div> : <div className="arrowDown"></div>}Filter your search
+            {menuOpen ? <div className="arrowRight"></div> : <div className="arrowLeft"></div>}
+            {menuOpen ? "Close" : "Filter your search"}
           </button>
           <div
             className={`${styles.mobileFilterMenu} ${menuOpen ? styles.showMenu : null} ${
@@ -230,9 +231,9 @@ export default function Products({ category, products }) {
                 isClosing ? styles.closingMenu : null
               }`}
             > */}
-            <button className={styles.closeFilters} onClick={closeMenu}>
-              Close X
-            </button>
+            {/* <button className={styles.closeFilters} onClick={closeMenu}>
+              <span>Close</span>
+            </button> */}
             <Collapsible trigger="Brand">
               {brands.map((brand, index) => (
                 <div className={styles.input_group} key={index}>
@@ -295,11 +296,11 @@ export default function Products({ category, products }) {
           {nPages > 1 ? (
             <div className={Styles.pagination}>
               <button className={Styles.paginationButton} onClick={previousPage}>
-                &#60;&#60; Previous
+                &#60; <span>Previous</span>
               </button>
               {buttonss}
               <button className={Styles.paginationButton} onClick={nextPage}>
-                Next &#62;&#62;
+                <span>Next</span> &#62;
               </button>
             </div>
           ) : null}
