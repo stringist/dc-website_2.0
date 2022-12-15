@@ -14,7 +14,7 @@ export default function About() {
         <title>About - Disc Connection</title>
         <meta name="description" content="About Disc Connection" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/DC_logo_new.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <header>
         <Hero title="About" />

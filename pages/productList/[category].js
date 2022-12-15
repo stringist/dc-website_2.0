@@ -12,7 +12,7 @@ export default function CategoryPage({ products }) {
         <title>{`Shop ${category}`}</title>
         <meta name="description" content={`See our selection of ${category}`} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" href="/DC_logo_new.ico" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <Products category={category} products={products}></Products>
     </>
