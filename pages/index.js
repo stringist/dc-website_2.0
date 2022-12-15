@@ -15,8 +15,9 @@ export default function Home({ products }) {
   return (
     <>
       <Head>
-        <title>Disc Connection</title>
+        <title>Home - Disc Connection</title>
         <meta name="description" content="Salg af golf discs og udstyr til disc golf ultimate freestyle DDC guts" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/DC_logo_new.ico" />
       </Head>
       <header>
