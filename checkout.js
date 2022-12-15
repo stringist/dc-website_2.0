@@ -10,6 +10,19 @@ export async function checkout({ items }) {
     }
     return stripePromise;
   };
+export async function checkout({ items }) {
+  let stripePromise = null;
+
+  let lineItems = [];
+
+  items.forEach((element) => (lineItems = element));
+
+  console.log(items);
+
+  const getStripe = () => {
+    if (!stripePromise) {
+      stripePromise = loadStripe(process.env.NEXT_PUBLIC_API_KEY);
+    }
 
   const stripe = await getStripe();
   console.log(lineItems);
@@ -20,3 +33,4 @@ export async function checkout({ items }) {
     cancelUrl: window.location.origin,
   });
 }
+
