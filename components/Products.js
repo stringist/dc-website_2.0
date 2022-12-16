@@ -74,7 +74,7 @@ export default function Products({ category, products }) {
     } else {
       setSpeedFilter((old) => old.filter((el) => el !== myNumber));
     }
-    console.log(speedFilter);
+    // console.log(speedFilter);
   }
 
   function toggleFilter() {}
@@ -119,7 +119,7 @@ export default function Products({ category, products }) {
   }
 
   function sortList(data, sort) {
-    console.log(sort);
+    // console.log(sort);
     return data.sort((a, b) => a[sort] > b[sort]);
   }
 
@@ -147,7 +147,7 @@ export default function Products({ category, products }) {
 
   function handleClick(page) {
     setPage(page);
-    console.log(page);
+    // console.log(page);
   }
 
   function previousPage() {
@@ -166,7 +166,7 @@ export default function Products({ category, products }) {
             <select name="sorting" id="sorting" onChange={handleSort}>
               <option value="name">Name A-Z</option>
               <option value="price">Lowest Price</option>
-              {console.log("subcatefories:", subcategories)}
+              {/* {console.log("subcatefories:", subcategories)} */}
               {subcategories.length > 1 ? <option value="speed">Lowest Speed</option> : null}
             </select>
           </div>
@@ -228,7 +228,7 @@ export default function Products({ category, products }) {
           ) : null}
         </div>
 
-        {console.log(nPages)}
+        {/* {console.log(nPages)} */}
       </div>
     </>
   );

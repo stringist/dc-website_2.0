@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import MobileNav from "./mobileMenu/MobileNav";
 
 export default function Layout({ children }, { products }) {
-  console.log("layout", products);
+  // console.log("layout", products);
 
   return (
     <>

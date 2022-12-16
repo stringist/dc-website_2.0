@@ -12,7 +12,7 @@ export default function BurgerMenu(props) {
     setMenuOpen((prev) => !prev);
   };
   const closeMenu = () => {
-    console.log("close menu");
+    // console.log("close menu");
     setMenuOpen(false);
   };
   return (

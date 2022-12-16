@@ -21,6 +21,7 @@ export default function MobileSearchOverlay(props) {
       .then((data) => {
         setProducts(data);
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const searchGroup = useRef();
@@ -38,7 +39,7 @@ export default function MobileSearchOverlay(props) {
     searchedProducts.length === 0 ? setNoProductsFound(true) : setNoProductsFound(false);
 
     input === "" ? setSearched([]) : setSearched(searchedProducts);
-    console.log(input);
+    // console.log(input);
   }
 
   const [page, setPage] = useState(0);
@@ -65,7 +66,7 @@ export default function MobileSearchOverlay(props) {
 
   function handleClick(page) {
     setPage(page);
-    console.log(page);
+    // console.log(page);
   }
 
   function previousPage() {
@@ -82,7 +83,7 @@ export default function MobileSearchOverlay(props) {
 
       {noProductsFound === true ? <h5>Your search gave 0 results. Try again!</h5> : null}
       {searched.length > 0 ? <h2>Results</h2> : <h2>Recommended for you</h2>}
-      {console.log(noProductsFound)}
+      {/* {console.log(noProductsFound)} */}
       <section>
         {searched.length > 0 ? (
           searched.slice(page * pPerPage, page * pPerPage + pPerPage).map((product) => <ProductTile product={product} key={product._id} products={products} />)
@@ -104,7 +105,7 @@ export default function MobileSearchOverlay(props) {
             </button>
           </div>
         ) : null}
-        {console.log("pages: ", nPages)}
+        {/* {console.log("pages: ", nPages)} */}
       </section>
     </div>
   );

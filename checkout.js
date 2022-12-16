@@ -12,7 +12,7 @@ export async function checkout({ items }) {
   };
 
   const stripe = await getStripe();
-  console.log(lineItems);
+  // console.log(lineItems);
   await stripe.redirectToCheckout({
     mode: "payment",
     lineItems,

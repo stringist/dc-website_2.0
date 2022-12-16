@@ -8,7 +8,7 @@ export default function BrandsGallery() {
     src: `/images/brands/${brand.toLowerCase()}.png`,
   }));
   // const path = "/../public/images/brands/";
-  console.log(brandObjectArr);
+  // console.log(brandObjectArr);
 
   // const names = BrandNames.map((name) => name.toLowerCase());
   return (

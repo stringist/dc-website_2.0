@@ -17,7 +17,7 @@ export default function Nav(props) {
     return cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
   };
 
-  console.log(props.products);
+  // console.log(props.products);
 
   return (
     <nav className={styles.nav} id="desktopNav">

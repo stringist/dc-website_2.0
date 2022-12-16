@@ -26,7 +26,7 @@ export default function PaginationButtons(props) {
 
   function handleClick(page) {
     setPage(page);
-    console.log(page);
+    // console.log(page);
   }
 
   function previousPage() {
@@ -36,7 +36,7 @@ export default function PaginationButtons(props) {
     setPage((old) => old + 1);
   }
 
-  console.log(nPages);
+  // console.log(nPages);
 
   return nPages > 1 ? (
     <div className={Styles.pagination}>

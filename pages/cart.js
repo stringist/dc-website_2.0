@@ -8,7 +8,7 @@ import Head from "next/head";
 export default function Cart() {
   // Extracting cart state from redux store
   const cart = useSelector((state) => state.cart);
-  console.log(cart);
+  // console.log(cart);
 
   // Reference to the dispatch function from redux store
   const dispatch = useDispatch();
@@ -46,26 +46,15 @@ export default function Cart() {
 
                   <td>
                     <div className={styles.cart_quantity}>
-                      <button onClick={() => dispatch(decrementQuantity(item._id))}>-</button>{" "}
-                      <span>{item.quantity}</span>{" "}
+                      <button onClick={() => dispatch(decrementQuantity(item._id))}>-</button>
+                      <span>{item.quantity}</span>
                       <button onClick={() => dispatch(incrementQuantity(item._id))}>+</button>
                     </div>
                   </td>
                   <td>{item.quantity * item.price} dkk</td>
                   <td className={styles.cart_remove}>
-                    <button
-                      className="secondary-button"
-                      title="Remove item"
-                      onClick={() => dispatch(removeFromCart(item._id))}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="20"
-                        height="20"
-                        fill="currentColor"
-                        className="bi bi-trash"
-                        viewBox="0 0 16 16"
-                      >
+                    <button className="secondary-button" title="Remove item" onClick={() => dispatch(removeFromCart(item._id))}>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-trash" viewBox="0 0 16 16">
                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
                         <path
                           fillRule="evenodd"

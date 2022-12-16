@@ -23,7 +23,7 @@ export default function GoogleMaps({ ...props }) {
 
 function Map(props) {
   const center = useMemo(() => ({ lat: props.lat, lng: props.lng }), [props.lat, props.lng]);
-  console.log(props);
+  // console.log(props);
 
   return (
     <GoogleMap zoom={13} center={center} mapContainerClassName={styles.map_inner}>

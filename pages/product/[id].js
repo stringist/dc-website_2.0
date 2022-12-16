@@ -33,25 +33,23 @@ export default function ProductPage({ product }) {
   }
 
   let productImages = [];
-  product.img.includes(",")
-    ? (productImages = product.img.split(","))
-    : (productImages = productImages.concat(product.img));
+  product.img.includes(",") ? (productImages = product.img.split(",")) : (productImages = productImages.concat(product.img));
   let imageSrc = productImages[0];
 
   function changeSrcLeft() {
-    console.log("arrow clicked");
+    // console.log("arrow clicked");
     imageSrc === productImages[0] && productImages[2] ? (imageSrc = productImages[2]) : null;
   }
   function changeSrcRight() {
-    console.log("arrow clicked");
+    // console.log("arrow clicked");
 
     imageSrc === productImages[0] && productImages[1] ? (imageSrc = productImages[1]) : null;
-    console.log(imageSrc);
+    // console.log(imageSrc);
   }
 
   return (
     <div className={styles.product_page}>
-      {console.log("animate", animate)}
+      {/* {console.log("animate", animate)} */}
       <div className={styles.left}>
         <h2 className="mobile">{product.name}</h2>
         <h4 className="mobile">
