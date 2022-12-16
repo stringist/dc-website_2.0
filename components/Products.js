@@ -174,15 +174,15 @@ export default function Products({ category, products }) {
     <>
       <div className={styles.category_page}>
         <div className={styles.filters}>
-          <div className={styles.sorting}>
+          {/* <div className={styles.sorting}>
             <label htmlFor="sorting">Sort by:</label>
             <select name="sorting" id="sorting" onChange={handleSort}>
               <option value="name">Name A-Z</option>
               <option value="price">Lowest Price</option>
-              {/* {console.log("subcatefories:", subcategories)} */}
+
               {subcategories.length > 1 ? <option value="speed">Lowest Speed</option> : null}
             </select>
-          </div>
+          </div> */}
 
           <Collapsible trigger="Brand">
             {brands.map((brand, index) => (
