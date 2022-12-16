@@ -41,9 +41,13 @@ export default function Nav(props) {
               <a>Bags</a>
             </Link>
           </li>
-          <li className={router.query.category == "Accessories" ? styles.active : ""}>
+          <li
+            className={
+              router.query.category == "Accessories" ? styles.active : ""
+            }
+          >
             <Link href="/productList/Accessories">
-              <a>Accesories</a>
+              <a>Accessories</a>
             </Link>
           </li>
           <li className={router.pathname == "/about" ? styles.active : ""}>
@@ -58,7 +62,11 @@ export default function Nav(props) {
         <SearchBar products={props.products} />
         <Link href="/cart">
           <div className={styles.basket}>
-            <div className={styles.countContainer}>{getItemsCount()}</div>
+            {getItemsCount() > 0 ? (
+              <div className={styles.countContainer}>{getItemsCount()}</div>
+            ) : (
+              ""
+            )}
           </div>
         </Link>
       </div>

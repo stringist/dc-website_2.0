@@ -22,11 +22,10 @@ $shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-// typography - move and tidy later
 html {
   font-size: 112.5%;
   min-height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
 } /*18px*/
 
 body {
@@ -56,26 +55,6 @@ h5 {
   margin-right: 0;
   width: 100%;
 }
-// h1 {
-//   margin-top: 0;
-//   font-size: 4.209rem;
-// }
-
-// h2 {
-//   font-size: 3.157rem;
-// }
-
-// h3 {
-//   font-size: 2.369rem;
-// }
-
-// h4 {
-//   font-size: 1.777rem;
-// }
-
-// h5 {
-//   font-size: 1.333rem;
-// }
 
 small,
 .text_small {
@@ -89,13 +68,16 @@ small,
   font-family: $primary-font;
 }
 
+header {
+  width: 100%;
+}
 main {
+  padding-top: 3.5rem;
+  min-height: 75vh;
   background-color: $white;
 }
 
 section {
-  // margin-left: 10%;
-  // margin-right: 10%;
   margin-bottom: $space-after;
 }
 
@@ -204,6 +186,25 @@ button:focus-within {
   content: url("../public/images/arrow-right.svg");
 }
 
+.arrowRight,
+.arrowLeft {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-position: center;
+  background-size: contain;
+  background-image: url("../public/images/expand_more.svg");
+  // transform: rotate(270);
+}
+
+.arrowRight {
+  transform: rotate(-90deg);
+  transition: all 0.5s;
+}
+
+.arrowLeft {
+  transform: rotate(-270deg);
+  transition: all 0.5s;
+}
 .desktop,
 #desktopNav {
   display: none;
@@ -229,19 +230,37 @@ button:focus-within {
   }
 }
 
-.schedule {
+.scheduleCard {
   width: 80%;
-  min-height: 10rem;
+  // min-height: 10rem;
+  display: grid;
+  place-items: center;
   background-color: $blue-dark;
   color: $off-white;
-  // position: relative;
-  padding: 2rem;
-  // margin-left: 60vw;
+  padding: 1.5rem 2rem;
   margin: -15% auto 0.5rem auto;
   box-shadow: $shadow;
   h2 {
     font-size: 1rem;
     color: $off-white;
+  }
+  h4 {
+    text-align: center;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+    color: $off-white;
+  }
+  h5 {
+    color: $off-white;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  .locations {
+    display: flex;
+    gap: 3rem;
+  }
+  li {
+    font-size: 0.8rem;
   }
 }
 
@@ -287,7 +306,7 @@ section h2 {
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 550px) {
   .mobile,
   #mobileNav {
     display: none;
@@ -299,6 +318,9 @@ section h2 {
   #desktopNav {
     display: flex;
   }
+}
+
+@media only screen and (min-width: 768px) {
   section {
     h2 {
       font-size: 2.5rem;
@@ -311,19 +333,47 @@ section h2 {
       font-size: 6vw;
     }
   }
-  .schedule {
-    width: 30vw;
-    max-width: 50vw;
+
+  .scheduleCard {
+    width: fit-content;
     min-height: 10rem;
     background-color: $blue-dark;
     color: $off-white;
     position: relative;
-    padding: 2rem;
+    padding: 1rem 3rem;
     margin-right: 10vw;
     margin-top: -5rem;
-    h2 {
+    display: grid;
+    place-content: center;
+  }
+
+  .schedule {
+    h4 {
       font-size: 1.25rem;
       color: $off-white;
+      margin-bottom: 1rem;
+      text-align: left;
+    }
+    h5 {
+      color: $off-white;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    li {
+      font-size: 1rem;
+    }
+  }
+
+  .locations {
+    display: flex;
+    gap: 3rem;
+
+    h5 {
+      font-size: 1rem;
+      margin-bottom: 0.25rem;
+    }
+    ul {
+      font-weight: 300;
     }
   }
 }
