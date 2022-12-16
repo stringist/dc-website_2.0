@@ -1,6 +1,6 @@
 import Image from "next/image";
 // import bg from "https://lumensity.dk/dc/basket_hero_full.png";
-import homeBG from "../public/images/hero_vintage.png";
+import homeBG from "../public/images/hero_vintage.webp";
 // import homeBG from "./../public/images/hero_2.png";
 import aboutBG from "../public/images/basket_hero_full.webp";
 
