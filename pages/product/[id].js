@@ -33,7 +33,9 @@ export default function ProductPage({ product }) {
   }
 
   let productImages = [];
-  product.img.includes(",") ? (productImages = product.img.split(",")) : (productImages = productImages.concat(product.img));
+  product.img.includes(",")
+    ? (productImages = product.img.split(","))
+    : (productImages = productImages.concat(product.img));
   let imageSrc = productImages[0];
 
   function changeSrcLeft() {
@@ -64,7 +66,7 @@ export default function ProductPage({ product }) {
             // layout="intrinsic"
             objectFit="contain"
             placeholder="blur"
-            blurDataURL="/placeholder.png"
+            blurDataURL="/images/placeholder.png"
           />
         </div>
         {productImages[1] ? (

@@ -21,7 +21,7 @@ export default function FeaturedTile({ product }) {
           height={200}
           layout="responsive"
           placeholder="blur"
-          blurDataURL="/placeholder.png"
+          blurDataURL="/images/placeholder.png"
         />
 
         {product.speed !== 0 ? (

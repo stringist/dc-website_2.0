@@ -8,13 +8,23 @@ import styles from "../../styles/ProductList.module.scss";
 
 export default function ProductTile({ product }) {
   let productImages = [];
-  product.img.includes(",") ? (productImages = product.img.split(",")) : (productImages = productImages.concat(product.img));
+  product.img.includes(",")
+    ? (productImages = product.img.split(","))
+    : (productImages = productImages.concat(product.img));
 
   return (
     <article>
       <Link href={`/product/${product._id}`}>
         <div className={styles.product_tile}>
-          <Image src={productImages[0]} alt={product.name} width={200} height={200} layout="responsive" placeholder="blur" blurDataURL="/placeholder.png"></Image>
+          <Image
+            src={productImages[0]}
+            alt={product.name}
+            width={200}
+            height={200}
+            layout="responsive"
+            placeholder="blur"
+            blurDataURL="/images/placeholder.png"
+          ></Image>
 
           {product.speed !== 0 ? (
             <div className={styles.flight_score}>
