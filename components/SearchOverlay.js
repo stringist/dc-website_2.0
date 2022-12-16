@@ -99,7 +99,7 @@ export default function SearchOverlay(props) {
         ) : (
           <>
             {featured.map((product) => (
-              <ProductTile product={product} key={product._id} products={featured} />
+              <ProductTile product={product} key={product._id} products={featured} onClick={toggleOverlay} />
             ))}
           </>
         )}
