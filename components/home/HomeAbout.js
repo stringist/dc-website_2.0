@@ -6,17 +6,22 @@ export default function HomeAbout() {
       <article>
         <h2>About</h2>
         <p>
-          Disc Connection er en 2-mands interessentvirksomhed hvis primære formål er at udbrede disc golf-sporten i
-          Danmark via salg af discs og udstyr til disc golf. Vi er startet sammen i foråret 2006 og er den mest alsidige
-          importør og forhandler af golfdiscs og udstyr til disc golf, og har et meget stort og bredt udvalg af
-          kvalitetsprodukter, samt Danmarks bedste priser - uanset om du handler online, i vores Proshop i Tune, eller i
-          vores partnerbutikker i Roskilde, på RUC, i Viby eller på Østerbro.
+          Disc Connection is a 2-man stakeholder company whose primary purpose
+          is to spread the sport of disc golf in Denmark via sale of discs and
+          equipment for disc golf. We started together in the spring of 2006,
+          and are the most versatile importer and dealer of golf discs and
+          equipment for disc golf, and have a very large inventory and wide
+          selection of quality products, as well as Denmark&#39;s best prices -
+          regardless of whether you shop online, in our Proshop in Tune, or in
+          our partner stores in Roskilde, at RUC, in Viby, or at Østerbro.
         </p>
         <p>
-          Vi er som udgangspunkt til stede med vores &quot;mobile butik&quot; i Valbyparken 3-4 dage om ugen, herunder
-          de fleste weekender (når vi ikke er ude til turneringer). Vi er derudover næsten altid repræsenteret med
-          butikken til turneringer på Sjælland. Derudover kan vores Proshop på Greve-banen ved Tune Kursuscenter
-          besøges, hvor du kan se hele vores lager. Se ugens åbningstider her.
+        We are generally present with our &quot;mobile shop&quot; in
+           Valbyparken 3-4 days a week, including most weekends &#40;when we
+           are not out for tournaments&#41;. In addition, we are almost always
+           representing with the shop for tournaments on Zealand. Besides that,
+           you are welcome to visit our Proshop on the Greve course next to Tune Kursuscenter, where you
+           can see our entire stock.
         </p>
         <Link href="/about">
           <button className="primary-button">
