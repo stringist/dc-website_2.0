@@ -138,6 +138,17 @@ button:hover {
   transform: translate(-1px, -1px);
 }
 
+.aria-invisible {
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px;  
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .secondary-button {
   color: $blue-dark;
   border: solid 1px $blue-dark;

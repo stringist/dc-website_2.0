@@ -31,8 +31,56 @@
   flex-wrap: wrap;
   row-gap: 2rem;
   justify-content: space-evenly;
+  align-items: center;
 }
 
+.controlContainer {
+  border: none;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: var(--header-font);
+  letter-spacing: 1px;
+  background-color: #fff;
+  cursor: pointer;
+  margin: 0;
+  box-shadow: none;
+  padding: 0.75rem 0.5rem;
+
+  &:hover {
+    background-color: #eaeaea;
+    transition: 0.3s all;
+    box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.15);
+    // max-width: 250px;
+    border-radius: 5px;
+    transform: scale(105%);
+    filter: brightness(1.1);
+    transition: all 0.25s ease;
+  }
+}
+.arrowControl {font-size: 0;
+  width: 1rem;
+  height: 1.75rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  &:hover {
+    transition: 0.3s all;
+    border-radius: 5px;
+    transform: scale(105%);
+    filter: brightness(1.1);
+    transition: all 0.25s ease;
+  }
+}
+.arrowControlLeft {
+  background-image: url("../public/images/arrowControlLeft.svg");
+}
+
+.arrowControlRight {
+  background-image: url("../public/images/arrowControlRight.svg");
+}
 .productTile {
   max-width: 40vw;
   text-align: center;
