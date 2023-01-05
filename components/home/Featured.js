@@ -17,10 +17,13 @@ export default function Featured({ products }) {
   );
 
   function Button({ role, children }) {
+    let disabled = false;
+
     return (
       <button
         className={styles.controlContainer}
         onClick={() => updateGallery(role)}
+        disabled={role === "prev" && firstIndex === 0 ? true : false}
       >
         {children}
       </button>
@@ -29,7 +32,7 @@ export default function Featured({ products }) {
 
   function updateGallery(role) {
     console.log(role, firstIndex);
-    if (role === "prev") {
+    if (role === "prev" && firstIndex > 0) {
       setFirstIndex(firstIndex - 4);
       setLastIndex(lastIndex - 4);
     } else {

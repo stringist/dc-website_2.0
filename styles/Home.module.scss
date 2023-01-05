@@ -59,6 +59,8 @@
     filter: brightness(1.1);
     transition: all 0.25s ease;
   }
+
+  &:disabled{opacity: 0;}
 }
 .arrowControl {font-size: 0;
   width: 1rem;
