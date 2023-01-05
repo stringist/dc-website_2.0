@@ -4,33 +4,58 @@ import Link from "next/link";
 import FeaturedTile from "./FeaturedTile";
 import styles from "../../styles/Home.module.scss";
 import { v4 as uuidv4 } from "uuid";
+import { useState } from "react";
 
 export default function Featured({ products }) {
+  const [firstIndex, setFirstIndex] = useState(0);
+  const [lastIndex, setLastIndex] = useState(3);
   let featuredProds = products.filter((product) => product.featured === true);
-  let firstIndex = 0;
-  let lastIndex = 3;
+  // let firstIndex = 0;
+  // let lastIndex = 3;
   let currentProds = featuredProds.filter(
     (prod, i) => i >= firstIndex && i <= lastIndex
   );
-  console.log(featuredProds, currentProds);
+
+  function Button({ role, children }) {
+    return (
+      <button
+        className={styles.controlContainer}
+        onClick={() => updateGallery(role)}
+      >
+        {children}
+      </button>
+    );
+  }
+
+  function updateGallery(role) {
+    console.log(role, firstIndex);
+    if (role === "prev") {
+      setFirstIndex(firstIndex - 4);
+      setLastIndex(lastIndex - 4);
+    } else {
+      setFirstIndex(firstIndex + 4);
+      setLastIndex(lastIndex + 4);
+    }
+  }
+
   return (
     <section className={styles.featured}>
       <h2>Featured</h2>
       <div className={styles.carousel}>
-        <button className={styles.controlContainer}>
+        <Button role="prev">
           <div
             className={`${styles.arrowControl} ${styles.arrowControlLeft}`}
-          onClick={() => this.handleClick()}></div>
-        </button>
+          ></div>
+        </Button>
         {currentProds.map((product) => (
           <FeaturedTile key={uuidv4} product={product} id={product.id} />
         ))}
-        <button className={styles.controlContainer}>
+        <Button role="next">
           <div
             className={`${styles.arrowControl} ${styles.arrowControlRight}`}
-          onClick={() => this.handleClick()}></div>
-        </button>
-  </div>
+          ></div>
+        </Button>
+      </div>
       <Link href="/productList/Discs">
         <div className="section-link">
           <a className="arrow-blue">View all discs </a>
