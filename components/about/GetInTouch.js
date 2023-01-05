@@ -7,14 +7,14 @@ export default function GetInTouch() {
       <article className={styles.get_in_touch__profiles_wrapper}>
         <GetInTouchProfile
           name={"Søren Ivø"}
-          position={"Salgsansvarlig, lageransvarlig"}
+          position={"Sales & inventory"}
           email={"si@discconnection.dk"}
           telefon={93992274}
         />
         <GetInTouchProfile
           name={"Sinus Frank"}
-          position={"Website, økonomi, administration"}
-          email={"sf@discconnection.dk "}
+          position={"Website, finance, administration"}
+          email={"sf@discconnection.dk"}
           telefon={93992274}
         />
       </article>

@@ -111,9 +111,7 @@ select {
   padding: 0.25rem;
 }
 
-button {
-  transition: all 0.3s;
-}
+
 button {
   display: flex;
   align-items: center;
@@ -263,6 +261,9 @@ button:focus-within {
     font-size: 0.8rem;
   }
 }
+
+.blue-link {color: $blue-dark;
+text-decoration: underline;}
 
 .blue-link :hover {
   color: $blue-light;

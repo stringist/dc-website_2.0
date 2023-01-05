@@ -25,7 +25,14 @@ export default function About() {
           <AboutProfile
             image={soeren}
             text={
-              "Disc Connection er en 2-mands interessentvirksomhed hvis primære formål er at udbrede disc golf-sporten i Danmark via salg af discs og udstyr til disc golf. Vi er startet sammen i foråret 2006 og er den mest alsidige importør og forhandler af golfdiscs og udstyr til disc golf, og har et meget stort og bredt udvalg af kvalitetsprodukter, samt Danmarks bedste priser - uanset om du handler online, i vores Proshop i Tune, eller i vores partnerbutikker i Roskilde, på RUC, i Viby eller på Østerbro."
+              `Disc Connection is a 2-man stakeholder company whose primary purpose
+              is to spread the sport of disc golf in Denmark via sale of discs and
+              equipment for disc golf. We started together in the spring of 2006,
+              and are the most versatile importer and dealer of golf discs and
+              equipment for disc golf, and have a very large inventory and wide
+              selection of quality products, as well as Denmark's best prices -
+              regardless of whether you shop online, in our Proshop in Tune, or in
+              our partner stores in Roskilde, at RUC, in Viby, or at Østerbro.`
             }
             name={"Søren"}
             className={styles.profile}
@@ -35,7 +42,7 @@ export default function About() {
             image={sinus}
             name={"Sinus"}
             text={
-              "Vi giver 10% online-rabat (og fysisk i Proshoppen i Tune) på ikke-nedsatte discs og udstyr med en pris på mellem 60 kr. og 2.000 kr. - til medlemmer af KFK Disc Golf, Tune IF Disc Golf, Ejby IF Disc Golf, Eggeslevmagle Discgolf, Helsingør Disc Golf Venner, Næstved Disc Golf Klub og MDK (Mølleparken DiscGolf Klub) , og det kan derfor meget nemt blive en god investering at melde sig ind i en af disse klubber. Læs mere om klubberne på deres respektive Facebook-sider:"
+              `We give a 10% online discount (and physically in the Proshop in Tune); on non-discounted discs and equipment with a price between DKK 60 and DKK 2,000 - to members of KFK Disc Golf, Tune IF Disc Golf, Ejby IF Disc Golf, Eggeslevmagle Discgolf, Helsingør Disc Golf Friends, Næstved Disc Golf Klub and MDK (Mølleparken DiscGolf Club), and it can therefore very easily become a good investment to join one of these clubs. Read more about the clubs on their respective Facebook pages:`
             }
           />
           <ClubLinks />

@@ -16,12 +16,12 @@ export default function HomeAbout() {
           our partner stores in Roskilde, at RUC, in Viby, or at Østerbro.
         </p>
         <p>
-        We are generally present with our &quot;mobile shop&quot; in
-           Valbyparken 3-4 days a week, including most weekends &#40;when we
-           are not out for tournaments&#41;. In addition, we are almost always
-           representing with the shop for tournaments on Zealand. Besides that,
-           you are welcome to visit our Proshop on the Greve course next to Tune Kursuscenter, where you
-           can see our entire stock.
+          We are generally present with our &quot;mobile shop&quot; in
+          Valbyparken 3-4 days a week, including most weekends &#40;when we are
+          not out for tournaments&#41;. In addition, we are almost always
+          representing with the shop for tournaments on Zealand. Besides that,
+          you are welcome to visit our Proshop on the Greve course next to Tune
+          Kursuscenter, where you can see our entire stock.
         </p>
         <Link href="/about">
           <button className="primary-button">
