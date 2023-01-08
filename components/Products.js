@@ -6,7 +6,8 @@ import Collapsible from "react-collapsible";
 import MobileFilters from "./MobileFilters";
 import styles from "../styles/ProductList.module.scss";
 import Styles from "../styles/Search.module.scss";
-
+import stylesProduct from "../styles/Product.module.scss";
+import Link from "next/link";
 export default function Products({ category, products }) {
   const [brandFilter, setBrandFilter] = useState([]);
   const [colorFilter, setColorFilter] = useState([]);
@@ -15,10 +16,14 @@ export default function Products({ category, products }) {
 
   const [sortBy, setSortBy] = useState("name");
 
-  let categoryList = products.filter((product) => product.category === category);
+  let categoryList = products.filter(
+    (product) => product.category === category
+  );
 
   let brands = [...new Set(categoryList.map((product) => product.brand))];
-  let subcategories = [...new Set(categoryList.map((product) => product.subcategory))];
+  let subcategories = [
+    ...new Set(categoryList.map((product) => product.subcategory)),
+  ];
   let colors = [
     ...new Set(
       categoryList.map((product) => {
@@ -135,7 +140,11 @@ export default function Products({ category, products }) {
 
   const buttonss = [...Array(nPages)].map((e, i) =>
     page === i ? (
-      <button key={i + 1} onClick={() => handleClick(i)} className={Styles.active}>
+      <button
+        key={i + 1}
+        onClick={() => handleClick(i)}
+        className={Styles.active}
+      >
         {i + 1}
       </button>
     ) : (
@@ -183,11 +192,25 @@ export default function Products({ category, products }) {
               {subcategories.length > 1 ? <option value="speed">Lowest Speed</option> : null}
             </select>
           </div> */}
-
+          <div className={styles.breadcrumbs}>
+            <Link href="/">
+              <a>Home</a>
+            </Link>{" "}
+            <span>/</span>
+            <Link href={"/productList/" + category}>
+              <a>{category}</a>
+            </Link>{" "}
+          </div>
           <Collapsible trigger="Brand">
             {brands.map((brand, index) => (
               <div className={styles.input_group} key={index}>
-                <input type="checkbox" id={brand} name={brand} value={brand} onChange={toggleBrand}></input>
+                <input
+                  type="checkbox"
+                  id={brand}
+                  name={brand}
+                  value={brand}
+                  onChange={toggleBrand}
+                ></input>
                 <label htmlFor={brand}>{brand}</label>
               </div>
             ))}
@@ -196,7 +219,13 @@ export default function Products({ category, products }) {
             <Collapsible trigger="Subcategory">
               {subcategories.map((subc, index) => (
                 <div className={styles.input_group} key={index}>
-                  <input type="checkbox" id={subc} name={subc} value={subc} onChange={toggleSubc}></input>
+                  <input
+                    type="checkbox"
+                    id={subc}
+                    name={subc}
+                    value={subc}
+                    onChange={toggleSubc}
+                  ></input>
                   <label htmlFor={subc}>{subc}</label>
                 </div>
               ))}
@@ -206,8 +235,16 @@ export default function Products({ category, products }) {
           <Collapsible trigger="Color">
             {colors.map((color, index) => (
               <div className={styles.input_group} key={index}>
-                <input type="checkbox" id={color} name={color} value={color} onChange={toggleColor}></input>
-                <label htmlFor={color}>{color.charAt(0).toUpperCase() + color.substring(1)}</label>
+                <input
+                  type="checkbox"
+                  id={color}
+                  name={color}
+                  value={color}
+                  onChange={toggleColor}
+                ></input>
+                <label htmlFor={color}>
+                  {color.charAt(0).toUpperCase() + color.substring(1)}
+                </label>
               </div>
             ))}
           </Collapsible>
@@ -216,7 +253,13 @@ export default function Products({ category, products }) {
             <Collapsible trigger="Speed">
               {speeds.map((speed, index) => (
                 <div className={styles.input_group} key={index}>
-                  <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleSpeed}></input>
+                  <input
+                    type="checkbox"
+                    id={speed}
+                    name={speed}
+                    value={speed}
+                    onChange={toggleSpeed}
+                  ></input>
                   <label htmlFor={speed}>{speed}</label>
                 </div>
               ))}
@@ -227,11 +270,37 @@ export default function Products({ category, products }) {
         <div className={styles.products}>
           {/* <MobileFilters /> */}
 
-          <button className={`${styles.openFilters} ${menuOpen ? styles.open : styles.closed}`} onClick={handleToggle}>
-            {menuOpen ? <div className="arrowRight"></div> : <div className="arrowLeft"></div>}
+          {
+            <div className={styles.mobile_breadcrumbs}>
+              <Link href="/">
+                <a>Home</a>
+              </Link>{" "}
+              <span>/</span>
+              <Link href={"/productList/" + category}>
+                <a>{category}</a>
+              </Link>{" "}
+            </div>
+          }
+          <button
+            className={`${styles.openFilters} ${
+              menuOpen ? styles.open : styles.closed
+            }`}
+            onClick={handleToggle}
+          >
+            {menuOpen ? (
+              <div className="arrowRight"></div>
+            ) : (
+              <div className="arrowLeft"></div>
+            )}
             {menuOpen ? "Close" : "Filter your search"}
           </button>
-          <div className={`${styles.mobileFilterMenu} ${menuOpen ? styles.showMenu : null} ${isOpening ? styles.showingMenu : null} ${isClosing ? styles.closingMenu : null}`}>
+          <div
+            className={`${styles.mobileFilterMenu} ${
+              menuOpen ? styles.showMenu : null
+            } ${isOpening ? styles.showingMenu : null} ${
+              isClosing ? styles.closingMenu : null
+            }`}
+          >
             {/* <div
               className={`${menuOpen ? styles.showMenu : null} ${isOpening ? styles.showingMenu : null} ${
                 isClosing ? styles.closingMenu : null
@@ -243,7 +312,13 @@ export default function Products({ category, products }) {
             <Collapsible trigger="Brand">
               {brands.map((brand, index) => (
                 <div className={styles.input_group} key={index}>
-                  <input type="checkbox" id={brand} name={brand} value={brand} onChange={toggleBrand}></input>
+                  <input
+                    type="checkbox"
+                    id={brand}
+                    name={brand}
+                    value={brand}
+                    onChange={toggleBrand}
+                  ></input>
                   <label htmlFor={brand}>{brand}</label>
                 </div>
               ))}
@@ -252,7 +327,13 @@ export default function Products({ category, products }) {
               <Collapsible trigger="Subcategory">
                 {subcategories.map((subc, index) => (
                   <div className={styles.input_group} key={index}>
-                    <input type="checkbox" id={subc} name={subc} value={subc} onChange={toggleSubc}></input>
+                    <input
+                      type="checkbox"
+                      id={subc}
+                      name={subc}
+                      value={subc}
+                      onChange={toggleSubc}
+                    ></input>
                     <label htmlFor={subc}>{subc}</label>
                   </div>
                 ))}
@@ -262,8 +343,16 @@ export default function Products({ category, products }) {
             <Collapsible trigger="Color">
               {colors.map((color, index) => (
                 <div className={styles.input_group} key={index}>
-                  <input type="checkbox" id={color} name={color} value={color} onChange={toggleColor}></input>
-                  <label htmlFor={color}>{color.charAt(0).toUpperCase() + color.substring(1)}</label>
+                  <input
+                    type="checkbox"
+                    id={color}
+                    name={color}
+                    value={color}
+                    onChange={toggleColor}
+                  ></input>
+                  <label htmlFor={color}>
+                    {color.charAt(0).toUpperCase() + color.substring(1)}
+                  </label>
                 </div>
               ))}
             </Collapsible>
@@ -272,7 +361,13 @@ export default function Products({ category, products }) {
               <Collapsible trigger="Speed">
                 {speeds.map((speed, index) => (
                   <div className={styles.input_group} key={index}>
-                    <input type="checkbox" id={speed} name={speed} value={speed} onChange={toggleSpeed}></input>
+                    <input
+                      type="checkbox"
+                      id={speed}
+                      name={speed}
+                      value={speed}
+                      onChange={toggleSpeed}
+                    ></input>
                     <label htmlFor={speed}>{speed}</label>
                   </div>
                 ))}
@@ -281,21 +376,39 @@ export default function Products({ category, products }) {
           </div>
           {/* </div> */}
           <h1>{category}</h1>
+
           <div className={`${styles.sorting} ${styles.desktop}`}>
             <label htmlFor="sorting">Sort by:</label>
             <select name="sorting" id="sorting" onChange={handleSort}>
               <option value="name">Name A-Z</option>
               <option value="price">Lowest Price</option>
               {console.log("subcatefories:", subcategories)}
-              {subcategories.length > 1 ? <option value="speed">Lowest Speed</option> : null}
+              {subcategories.length > 1 ? (
+                <option value="speed">Lowest Speed</option>
+              ) : null}
             </select>
           </div>
           <section className={styles.product_grid}>
-            {filteredList.length === 0 ? <p>No product found :(</p> : filteredList.slice(page * pPerPage, page * pPerPage + pPerPage).map((product) => <ProductTile product={product} key={product._id} products={products} />)}
+            {filteredList.length === 0 ? (
+              <p>No product found :(</p>
+            ) : (
+              filteredList
+                .slice(page * pPerPage, page * pPerPage + pPerPage)
+                .map((product) => (
+                  <ProductTile
+                    product={product}
+                    key={product._id}
+                    products={products}
+                  />
+                ))
+            )}
           </section>
           {nPages > 1 ? (
             <div className={Styles.pagination}>
-              <button className={Styles.paginationButton} onClick={previousPage}>
+              <button
+                className={Styles.paginationButton}
+                onClick={previousPage}
+              >
                 &#60; <span>Previous</span>
               </button>
               {buttonss}

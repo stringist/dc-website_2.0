@@ -63,6 +63,7 @@
     flex-direction: row-reverse;
     // background-color: color.$blue-dark;
     // color: white;
+    margin-top: -4.3rem;
   }
 
   .mobileFilterMenu {
@@ -127,6 +128,32 @@
       text-align: center;
       margin: 2rem auto;
     }
+  }
+  .breadcrumbs {
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+  }
+  .breadcrumbs > a {
+    text-decoration: underline;
+    opacity: 0.7;
+    margin-left: 0.1rem;
+  }
+  .breadcrumbs > span {
+    opacity: 0.7;
+    margin-left: 0.1rem;
+  }
+  .mobile_breadcrumbs {
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+  }
+  .mobile_breadcrumbs > a {
+    text-decoration: underline;
+    opacity: 0.7;
+    margin-left: 0.1rem;
+  }
+  .mobile_breadcrumbs > span {
+    opacity: 0.7;
+    margin-left: 0.1rem;
   }
 }
 
@@ -254,6 +281,10 @@
         margin: 2rem auto;
       }
     }
+
+    .mobile_breadcrumbs {
+      display: none;
+    }
   }
 
   // Product Tile
@@ -270,6 +301,15 @@
     padding: 1rem;
     cursor: pointer;
     margin: auto;
+  }
+  .breadcrumbs {
+    display: flex;
+    justify-content: center;
+  }
+
+  .breadcrumbs a {
+    text-decoration: underline;
+    opacity: 0.7;
   }
 }
 

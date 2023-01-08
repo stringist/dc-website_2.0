@@ -43,7 +43,11 @@ export default function ProductTile({ product }) {
 
           <div className={styles.colors_available}>
             {product.color.map((color, index) => (
-              <div className={styles.color_span} style={{ backgroundColor: color }} key={index}></div>
+              <div
+                className={styles.color_span}
+                style={{ backgroundColor: color }}
+                key={index}
+              ></div>
             ))}
           </div>
         </div>
