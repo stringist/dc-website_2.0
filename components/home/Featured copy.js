@@ -9,31 +9,31 @@ import { useState } from "react";
 export default function Featured({ products }) {
   const [firstIndex, setFirstIndex] = useState(0);
   const [lastIndex, setLastIndex] = useState(3);
-
   let featuredProds = products.filter((product) => product.featured === true);
-  let currentProds = featuredProds.filter((_prod, i) => i >= firstIndex && i <= lastIndex);
-  let lastItem = featuredProds.length - 1;
+  // let firstIndex = 0;
+  // let lastIndex = 3;
+  let currentProds = featuredProds.filter((prod, i) => i >= firstIndex && i <= lastIndex);
+  let lastItem = currentProds[currentProds.length - 1];
 
-  // left and right buttons
   function Button({ role, children }) {
+    let disabled = false;
+
     return (
-      <button className={styles.controlContainer} onClick={() => updateGallery(role)}>
+      <button
+        className={styles.controlContainer}
+        onClick={() => updateGallery(role)}
+        disabled={role === "prev" && firstIndex === 0 ? true : false}
+      >
         {children}
       </button>
     );
   }
 
-  //  change which products are showing
   function updateGallery(role) {
-    if (role === "prev" && firstIndex === 0) {
-      setFirstIndex(featuredProds.length - 4);
-      setLastIndex(lastItem);
-    } else if (role === "prev") {
+    console.log(role, firstIndex);
+    if (role === "prev" && firstIndex > 0) {
       setFirstIndex(firstIndex - 4);
       setLastIndex(lastIndex - 4);
-    } else if (role === "next" && lastIndex === lastItem) {
-      setFirstIndex(0);
-      setLastIndex(3);
     } else {
       setFirstIndex(firstIndex + 4);
       setLastIndex(lastIndex + 4);
@@ -44,17 +44,15 @@ export default function Featured({ products }) {
     <section className={styles.featured}>
       <h2>Featured</h2>
       <div className={styles.carousel}>
+        <Button role="prev">
+          <div className={`${styles.arrowControl} ${styles.arrowControlLeft}`}></div>
+        </Button>
         {currentProds.map((product) => (
           <FeaturedTile key={uuidv4} product={product} id={product.id} />
         ))}
-        <div className={styles.controls}>
-          <Button role="prev">
-            <div className={`${styles.arrowControl} ${styles.arrowControlLeft}`}></div>
-          </Button>
-          <Button role="next">
-            <div className={`${styles.arrowControl} ${styles.arrowControlRight}`}></div>
-          </Button>
-        </div>
+        <Button role="next">
+          <div className={`${styles.arrowControl} ${styles.arrowControlRight}`}></div>
+        </Button>
       </div>
       <Link href="/productList/Discs">
         <div className="section-link">
