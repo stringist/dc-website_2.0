@@ -1,3 +1,14 @@
+Make featured section dynamic carousel
+additional 'all products' page?
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------
 Featured section
 
 copy scripts form Products to Featured
