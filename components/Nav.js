@@ -5,6 +5,7 @@ import styles from "../styles/Nav.module.scss";
 // import { ActiveLink } from 'next-active-link';
 import { useRouter } from "next/router";
 import MobileNav from "./mobileMenu/MobileNav";
+import MobileSearch from "./MobileSearch";
 
 export default function Nav(props) {
   // use router for active link styling
@@ -41,11 +42,7 @@ export default function Nav(props) {
               <a>Bags</a>
             </Link>
           </li>
-          <li
-            className={
-              router.query.category == "Accessories" ? styles.active : ""
-            }
-          >
+          <li className={router.query.category == "Accessories" ? styles.active : ""}>
             <Link href="/productList/Accessories">
               <a>Accessories</a>
             </Link>
@@ -59,15 +56,9 @@ export default function Nav(props) {
       </div>
 
       <div className={styles.rightWrapper}>
-        <SearchBar products={props.products} />
+        <SearchBar />
         <Link href="/cart">
-          <div className={styles.basket}>
-            {getItemsCount() > 0 ? (
-              <div className={styles.countContainer}>{getItemsCount()}</div>
-            ) : (
-              ""
-            )}
-          </div>
+          <div className={styles.basket}>{getItemsCount() > 0 ? <div className={styles.countContainer}>{getItemsCount()}</div> : ""}</div>
         </Link>
       </div>
     </nav>

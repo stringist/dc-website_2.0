@@ -1,6 +1,7 @@
 import Styles from "../styles/MobileSearch.module.scss";
 import { useRef, useState, useEffect } from "react";
 import ProductTile from "./product-tile/ProductTile";
+import MyLoader from "../components/MyLoader";
 
 export default function MobileSearchOverlay(props) {
   const [searched, setSearched] = useState("");
@@ -22,8 +23,8 @@ export default function MobileSearchOverlay(props) {
       .then((data) => {
         setProducts(data);
         const timing = setTimeout(() => {
-          setLoadingSch(false);
-        }, 2000);
+          setIsLoading(false);
+        }, 200);
         return () => clearTimeout(timing);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -80,6 +81,14 @@ export default function MobileSearchOverlay(props) {
   function nextPage() {
     setPage((old) => old + 1);
   }
+
+  if (isLoading) {
+    return (
+      <div className={Styles.page}>
+        <MyLoader />
+      </div>
+    );
+  }
   return (
     <div className={Styles.page}>
       <div className={Styles.search__input}>
@@ -110,7 +119,6 @@ export default function MobileSearchOverlay(props) {
             </button>
           </div>
         ) : null}
-        {/* {console.log("pages: ", nPages)} */}
       </section>
     </div>
   );
