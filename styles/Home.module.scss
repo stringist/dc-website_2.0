@@ -221,7 +221,34 @@
     color: color.$accent-blue;
   }
 }
+.linking {
+  color: color.$off-white;
+  background-image: url("../public/images/LinkingChains_img.webp");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  article {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-evenly;
+    font-size: 1.15rem;
+    width: 90%;
+    padding: 4rem 5%;
+    margin: auto;
+  }
 
+  h2 {
+    color: color.$off-white;
+    // margin-bottom: 0;
+    text-align: center;
+  }
+
+  button {
+    text-align: center;
+    margin: auto;
+  }
+}
 .catImage {
   width: 250px;
   height: 250px;
@@ -321,6 +348,21 @@
     }
     .tile {
       width: 75px;
+    }
+  }
+  .linking {
+    article {
+      padding: 6rem 10%;
+      display: block;
+      font-size: 1.25rem;
+
+      // align-items: flex-start;
+    }
+    h2 {
+      text-align: left;
+    }
+    button {
+      margin: 3rem auto auto 0;
     }
   }
 }
