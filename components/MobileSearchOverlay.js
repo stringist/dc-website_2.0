@@ -39,9 +39,9 @@ export default function MobileSearchOverlay(props) {
   function searchProducts(e) {
     const input = e.target.value.toLowerCase();
     const searchedProducts = products.filter((product) => {
-      return product.name.toLowerCase().includes(input) || product.brand.toLowerCase().includes(input);
+      return product.name.toLowerCase().includes(input) || product.brand.toLowerCase().includes(input) || product.subcategory.toLowerCase().includes(input);
     });
-    console.log("searched", searchedProducts);
+    console.log("searched", input);
     searchedProducts.length === 0 ? setNoProductsFound(true) : setNoProductsFound(false);
 
     input === "" ? setSearched([]) : setSearched(searchedProducts);
