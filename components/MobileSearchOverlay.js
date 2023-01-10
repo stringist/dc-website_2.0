@@ -16,10 +16,15 @@ export default function MobileSearchOverlay(props) {
   };
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(url, options)
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
+        const timing = setTimeout(() => {
+          setLoadingSch(false);
+        }, 2000);
+        return () => clearTimeout(timing);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
