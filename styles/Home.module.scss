@@ -27,7 +27,7 @@
 .carousel {
   width: 90%;
   display: flex;
-  // border: solid 1px pink;
+  position: relative;
   flex-wrap: wrap;
   row-gap: 2rem;
   justify-content: space-evenly;
@@ -38,10 +38,13 @@
   display: flex;
   justify-content: space-between;
   // border: solid 1px lime;
-  // position: relative;
-  min-width: 105%;
-  height: 100%;
-  margin-top: -50%;
+  position: absolute;
+  min-width: 110%;
+  height: 3rem;
+  margin: auto 0;
+  // @media (min-width: 825px) and (max-width: 1250px) {
+  //   margin-top: -120%;
+  // }
 }
 
 .controlContainer {
@@ -149,7 +152,7 @@
   margin-top: 0.5rem;
 
   p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 500;
     background-color: color.$blue-dark;
     color: color.$white;
@@ -224,7 +227,7 @@
 .linking {
   color: color.$off-white;
   background-image: url("../public/images/LinkingChains_img.webp");
-  background-position: center;
+  background-position: 20% 50%;
   background-size: cover;
   width: 100%;
   article {
@@ -244,6 +247,16 @@
     text-align: center;
   }
 
+  li a {
+    text-decoration: underline;
+    &:hover {
+      color: color.$blue-light;
+    }
+  }
+
+  li a::before {
+    content: "- ";
+  }
   button {
     text-align: center;
     margin: auto;
@@ -264,6 +277,7 @@
   }
   p {
     margin-bottom: 2rem;
+    width: 100%;
   }
 }
 .catImage {
@@ -306,7 +320,7 @@
 
 @media only screen and (min-width: 768px) {
   .carousel {
-    width: 75%;
+    width: 85%;
     gap: 2rem;
   }
 
@@ -319,7 +333,7 @@
     margin-bottom: 1rem;
     margin-top: 1rem;
     p {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
   }
 
@@ -372,11 +386,13 @@
       padding: 6rem 10%;
       display: block;
       font-size: 1.25rem;
-
       // align-items: flex-start;
     }
     h2 {
       text-align: left;
+    }
+    p {
+      width: 50vw;
     }
     button {
       margin: 3rem auto auto 0;
