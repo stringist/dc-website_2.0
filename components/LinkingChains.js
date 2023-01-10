@@ -11,7 +11,9 @@ export default function Linking() {
             Linking Chains is a brand under Disc Connection and with this we
             bring together all types of players, different manufacturers,
             different courses and different tournament concepts. In other words,
-            we link discgolf and our values together.{" "}
+            we link discgolf and our values together. We arrange tournaments in
+            Denmark every year and if your are interested you can click on the
+            button below to read all about.
           </p>
           <aside>
             <p>Upcoming tournaments: </p>
