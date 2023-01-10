@@ -24,7 +24,7 @@ export default function MobileSearchOverlay(props) {
         setProducts(data);
         const timing = setTimeout(() => {
           setIsLoading(false);
-        }, 200);
+        }, 100);
         return () => clearTimeout(timing);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
