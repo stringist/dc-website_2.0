@@ -72,14 +72,13 @@ export default function MobileSearchOverlay(props) {
 
   function handleClick(page) {
     setPage(page);
-    // console.log(page);
   }
 
   function previousPage() {
-    setPage((old) => old - 1);
+    page > 0 ? setPage((old) => old - 1) : null;
   }
   function nextPage() {
-    setPage((old) => old + 1);
+    page < nPages - 1 ? setPage((old) => old + 1) : null;
   }
 
   if (isLoading) {
