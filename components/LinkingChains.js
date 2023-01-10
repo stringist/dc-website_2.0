@@ -11,8 +11,32 @@ export default function Linking() {
             Linking Chains is a brand under Disc Connection and with this we
             bring together all types of players, different manufacturers,
             different courses and different tournament concepts. In other words,
-            we link discgolf and our values together{" "}
+            we link discgolf and our values together. We arrange tournaments in
+            Denmark every year and if your are interested you can click on the
+            button below to read all about.
           </p>
+          <aside>
+            <p>Upcoming tournaments: </p>
+            <div>
+              <a
+                href="https://sites.google.com/discsalg.dk/linkingchains/lc-dam-tour-2022/1-holbæk-263"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {" "}
+                <span>- LC D&apos;Am Tour #1 - Holbæk, 26/3</span>
+              </a>
+              <a
+                href="https://sites.google.com/discsalg.dk/linkingchains/lc-dam-tour-2022/2-valbyparken-75"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {" "}
+                <span>- LC D&apos;Am Tour #2 - Valbyparken, 7/5</span>
+              </a>
+            </div>
+          </aside>
+
           <a
             href="https://sites.google.com/discsalg.dk/linkingchains/forside"
             rel="noopener noreferrer"

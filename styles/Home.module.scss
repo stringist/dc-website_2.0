@@ -248,6 +248,23 @@
     text-align: center;
     margin: auto;
   }
+  aside {
+    display: flex;
+    flex-direction: column;
+    div {
+      padding-top: 0.5rem;
+    }
+  }
+  h3 {
+    color: color.$white;
+  }
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
 }
 .catImage {
   width: 250px;
@@ -363,6 +380,23 @@
     }
     button {
       margin: 3rem auto auto 0;
+    }
+    aside {
+      display: flex;
+      flex-direction: row;
+      div {
+        padding-top: 0rem;
+        display: flex;
+        flex-direction: column;
+        a {
+          margin-bottom: 1rem;
+          font-style: italic;
+        }
+      }
+      p {
+        margin-right: 1rem;
+        margin-bottom: 2.5rem;
+      }
     }
   }
 }
